@@ -10,39 +10,312 @@
     <display-name lang="ja">ラリーTV FAST+</display-name>
     <icon src="https://www.rally.tv/assets/images/logo.png" />
   </channel>
-  <programme start="20261002060000 +0000" stop="20261002080000 +0000" channel="rally.tv">
-    <title lang="en">WRC Live: Stage Coverage</title>
-    <title lang="ja">WRC ライブ：ステージ中継</title>
-    <desc lang="en">Live coverage of the ongoing WRC special stages.</desc>
-    <desc lang="ja">白熱するWRCスペシャルステージのライブ中継。</desc>
+  <programme start="20261002000000 +0000" stop="20261002040000 +0000" channel="rally.tv">
+    <title lang="en">WRC Night Stage Replay &amp; Onboard</title>
+    <title lang="ja">WRC ナイトステージ・リプレイ ＆ オンボード</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002080000 +0000" stop="20261002100000 +0000" channel="rally.tv">
+  <programme start="20261002040000 +0000" stop="20261002070000 +0000" channel="rally.tv">
+    <title lang="en">WRC Morning Warmup &amp; Shakedown</title>
+    <title lang="ja">WRC モーニング・ウォームアップ ＆ シェイクダウン</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261002070000 +0000" stop="20261002110000 +0000" channel="rally.tv">
+    <title lang="en">WRC Live: Morning Special Stages</title>
+    <title lang="ja">WRC ライブ：モーニング・スペシャルステージ</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261002110000 +0000" stop="20261002130000 +0000" channel="rally.tv">
     <title lang="en">WRC Mid-Day Service &amp; Highlights</title>
-    <title lang="ja">WRC ミッドデイ・サービス＆ハイライト</title>
-    <desc lang="en">Analysis, interviews, and service park updates.</desc>
-    <desc lang="ja">サービスパークからの最新情報やインタビュー、前半戦の振り返り。</desc>
+    <title lang="ja">WRC ミッドデイ・サービス ＆ ハイライト</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002100000 +0000" stop="20261002120000 +0000" channel="rally.tv">
-    <title lang="en">WRC Afternoon Stage Live</title>
-    <title lang="ja">WRC アフタヌーン・ステージ ライブ</title>
-    <desc lang="en">Continuing live action into the afternoon stages.</desc>
-    <desc lang="ja">午後の部へ突入するステージの白熱したライブ走行をお届け。</desc>
+  <programme start="20261002130000 +0000" stop="20261002170000 +0000" channel="rally.tv">
+    <title lang="en">WRC Live: Afternoon Special Stages</title>
+    <title lang="ja">WRC ライブ：アフタヌーン・スペシャルステージ</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002060000 +0000" stop="20261002090000 +0000" channel="rally.tv.fast">
+  <programme start="20261002170000 +0000" stop="20261002200000 +0000" channel="rally.tv">
+    <title lang="en">WRC Daily Review &amp; Interviews</title>
+    <title lang="ja">WRC デイリーレビュー ＆ インタビュー</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261002200000 +0000" stop="20261003000000 +0000" channel="rally.tv">
+    <title lang="en">WRC Stage Encore &amp; Analysis</title>
+    <title lang="ja">WRC ステージアンコール ＆ 分析番組</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003000000 +0000" stop="20261003040000 +0000" channel="rally.tv">
+    <title lang="en">WRC Night Stage Replay &amp; Onboard</title>
+    <title lang="ja">WRC ナイトステージ・リプレイ ＆ オンボード</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003040000 +0000" stop="20261003070000 +0000" channel="rally.tv">
+    <title lang="en">WRC Morning Warmup &amp; Shakedown</title>
+    <title lang="ja">WRC モーニング・ウォームアップ ＆ シェイクダウン</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003070000 +0000" stop="20261003110000 +0000" channel="rally.tv">
+    <title lang="en">WRC Live: Morning Special Stages</title>
+    <title lang="ja">WRC ライブ：モーニング・スペシャルステージ</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003110000 +0000" stop="20261003130000 +0000" channel="rally.tv">
+    <title lang="en">WRC Mid-Day Service &amp; Highlights</title>
+    <title lang="ja">WRC ミッドデイ・サービス ＆ ハイライト</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003130000 +0000" stop="20261003170000 +0000" channel="rally.tv">
+    <title lang="en">WRC Live: Afternoon Special Stages</title>
+    <title lang="ja">WRC ライブ：アフタヌーン・スペシャルステージ</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003170000 +0000" stop="20261003200000 +0000" channel="rally.tv">
+    <title lang="en">WRC Daily Review &amp; Interviews</title>
+    <title lang="ja">WRC デイリーレビュー ＆ インタビュー</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003200000 +0000" stop="20261004000000 +0000" channel="rally.tv">
+    <title lang="en">WRC Stage Encore &amp; Analysis</title>
+    <title lang="ja">WRC ステージアンコール ＆ 分析番組</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004000000 +0000" stop="20261004040000 +0000" channel="rally.tv">
+    <title lang="en">WRC Night Stage Replay &amp; Onboard</title>
+    <title lang="ja">WRC ナイトステージ・リプレイ ＆ オンボード</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004040000 +0000" stop="20261004070000 +0000" channel="rally.tv">
+    <title lang="en">WRC Morning Warmup &amp; Shakedown</title>
+    <title lang="ja">WRC モーニング・ウォームアップ ＆ シェイクダウン</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004070000 +0000" stop="20261004110000 +0000" channel="rally.tv">
+    <title lang="en">WRC Live: Morning Special Stages</title>
+    <title lang="ja">WRC ライブ：モーニング・スペシャルステージ</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004110000 +0000" stop="20261004130000 +0000" channel="rally.tv">
+    <title lang="en">WRC Mid-Day Service &amp; Highlights</title>
+    <title lang="ja">WRC ミッドデイ・サービス ＆ ハイライト</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004130000 +0000" stop="20261004170000 +0000" channel="rally.tv">
+    <title lang="en">WRC Live: Afternoon Special Stages</title>
+    <title lang="ja">WRC ライブ：アフタヌーン・スペシャルステージ</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004170000 +0000" stop="20261004200000 +0000" channel="rally.tv">
+    <title lang="en">WRC Daily Review &amp; Interviews</title>
+    <title lang="ja">WRC デイリーレビュー ＆ インタビュー</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004200000 +0000" stop="20261005000000 +0000" channel="rally.tv">
+    <title lang="en">WRC Stage Encore &amp; Analysis</title>
+    <title lang="ja">WRC ステージアンコール ＆ 分析番組</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005000000 +0000" stop="20261005040000 +0000" channel="rally.tv">
+    <title lang="en">WRC Night Stage Replay &amp; Onboard</title>
+    <title lang="ja">WRC ナイトステージ・リプレイ ＆ オンボード</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005040000 +0000" stop="20261005070000 +0000" channel="rally.tv">
+    <title lang="en">WRC Morning Warmup &amp; Shakedown</title>
+    <title lang="ja">WRC モーニング・ウォームアップ ＆ シェイクダウン</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005070000 +0000" stop="20261005110000 +0000" channel="rally.tv">
+    <title lang="en">WRC Live: Morning Special Stages</title>
+    <title lang="ja">WRC ライブ：モーニング・スペシャルステージ</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005110000 +0000" stop="20261005130000 +0000" channel="rally.tv">
+    <title lang="en">WRC Mid-Day Service &amp; Highlights</title>
+    <title lang="ja">WRC ミッドデイ・サービス ＆ ハイライト</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005130000 +0000" stop="20261005170000 +0000" channel="rally.tv">
+    <title lang="en">WRC Live: Afternoon Special Stages</title>
+    <title lang="ja">WRC ライブ：アフタヌーン・スペシャルステージ</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005170000 +0000" stop="20261005200000 +0000" channel="rally.tv">
+    <title lang="en">WRC Daily Review &amp; Interviews</title>
+    <title lang="ja">WRC デイリーレビュー ＆ インタビュー</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005200000 +0000" stop="20261006000000 +0000" channel="rally.tv">
+    <title lang="en">WRC Stage Encore &amp; Analysis</title>
+    <title lang="ja">WRC ステージアンコール ＆ 分析番組</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261002000000 +0000" stop="20261002060000 +0000" channel="rally.tv.fast">
     <title lang="en">WRC Classic Rally Rewind</title>
     <title lang="ja">WRC クラシック・ラリー・リワインド</title>
-    <desc lang="en">Relive legendary historic races and classic cars.</desc>
-    <desc lang="ja">歴史に残る伝説の名レースや往年の名車たちの走りをプレイバック。</desc>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002090000 +0000" stop="20261002120000 +0000" channel="rally.tv.fast">
+  <programme start="20261002060000 +0000" stop="20261002120000 +0000" channel="rally.tv.fast">
     <title lang="en">WRC Best of Onboard Action</title>
     <title lang="ja">WRC ベスト・オブ・オンボード・アクション</title>
-    <desc lang="en">Breathtaking high-speed onboard camera footage.</desc>
-    <desc lang="ja">ドライバー視点で体感する息をのむ超高速のオンボード映像集。</desc>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261002120000 +0000" stop="20261002180000 +0000" channel="rally.tv.fast">
+    <title lang="en">World RX Supercar Battles</title>
+    <title lang="ja">世界ラリークロス選手権 バトル</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261002180000 +0000" stop="20261003000000 +0000" channel="rally.tv.fast">
+    <title lang="en">Rally.TV 24/7 Non-Stop Mix</title>
+    <title lang="ja">ラリーTV 24/7 ノンストップ・ミックス</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003000000 +0000" stop="20261003060000 +0000" channel="rally.tv.fast">
+    <title lang="en">WRC Classic Rally Rewind</title>
+    <title lang="ja">WRC クラシック・ラリー・リワインド</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003060000 +0000" stop="20261003120000 +0000" channel="rally.tv.fast">
+    <title lang="en">WRC Best of Onboard Action</title>
+    <title lang="ja">WRC ベスト・オブ・オンボード・アクション</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003120000 +0000" stop="20261003180000 +0000" channel="rally.tv.fast">
+    <title lang="en">World RX Supercar Battles</title>
+    <title lang="ja">世界ラリークロス選手権 バトル</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003180000 +0000" stop="20261004000000 +0000" channel="rally.tv.fast">
+    <title lang="en">Rally.TV 24/7 Non-Stop Mix</title>
+    <title lang="ja">ラリーTV 24/7 ノンストップ・ミックス</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004000000 +0000" stop="20261004060000 +0000" channel="rally.tv.fast">
+    <title lang="en">WRC Classic Rally Rewind</title>
+    <title lang="ja">WRC クラシック・ラリー・リワインド</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004060000 +0000" stop="20261004120000 +0000" channel="rally.tv.fast">
+    <title lang="en">WRC Best of Onboard Action</title>
+    <title lang="ja">WRC ベスト・オブ・オンボード・アクション</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004120000 +0000" stop="20261004180000 +0000" channel="rally.tv.fast">
+    <title lang="en">World RX Supercar Battles</title>
+    <title lang="ja">世界ラリークロス選手権 バトル</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004180000 +0000" stop="20261005000000 +0000" channel="rally.tv.fast">
+    <title lang="en">Rally.TV 24/7 Non-Stop Mix</title>
+    <title lang="ja">ラリーTV 24/7 ノンストップ・ミックス</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005000000 +0000" stop="20261005060000 +0000" channel="rally.tv.fast">
+    <title lang="en">WRC Classic Rally Rewind</title>
+    <title lang="ja">WRC クラシック・ラリー・リワインド</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005060000 +0000" stop="20261005120000 +0000" channel="rally.tv.fast">
+    <title lang="en">WRC Best of Onboard Action</title>
+    <title lang="ja">WRC ベスト・オブ・オンボード・アクション</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005120000 +0000" stop="20261005180000 +0000" channel="rally.tv.fast">
+    <title lang="en">World RX Supercar Battles</title>
+    <title lang="ja">世界ラリークロス選手権 バトル</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005180000 +0000" stop="20261006000000 +0000" channel="rally.tv.fast">
+    <title lang="en">Rally.TV 24/7 Non-Stop Mix</title>
+    <title lang="ja">ラリーTV 24/7 ノンストップ・ミックス</title>
+    <desc lang="en">Continuous 24-hour WRC motorsport schedule.</desc>
+    <desc lang="ja">24時間いつでも楽しめるWRCモータースポーツ番組スケジュール。</desc>
     <category lang="en">Sports</category>
   </programme>
 </tv>
