@@ -1,0 +1,32 @@
+name: Generate EPG
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # 毎日1回（UTCの0時＝日本時間の朝9時）自動実行するよ
+  workflow_dispatch:      # 手動でもいつでもポチッと実行できるようにするよ
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+
+    - name: Run EPG generator script
+      run: python generate_epg.py
+
+    - name: Commit and push generated EPG
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.users.noreply.key"
+        git add epg.xml
+        git commit -m "Auto-update EPG XML [skip ci]" || exit 0
+        git push
