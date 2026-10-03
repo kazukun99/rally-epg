@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <tv>
   <channel id="rally.tv">
     <display-name lang="en">Rally.TV Live</display-name>
@@ -8,4 +8,54 @@
     <display-name lang="en">Rally.TV FAST+</display-name>
     <icon src="https://rally.tv" />
   </channel>
+  <programme start="20261003000000 +0900" stop="20261003070000 +0900" channel="rally.tv">
+    <title lang="en">WRC Midnight Shakedown &amp; Onboard Replay</title>
+    <desc lang="en">Detailed replay of the latest WRC stages and onboard cameras.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003070000 +0900" stop="20261003083000 +0900" channel="rally.tv">
+    <title lang="en">LIVE: Stage Analysis &amp; Morning Studio | WRC Rally</title>
+    <desc lang="en">Expert analysis, driver interviews, and live morning stage coverage.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003083000 +0900" stop="20261003110000 +0900" channel="rally.tv">
+    <title lang="en">LIVE: Championship Stages - Main Feed</title>
+    <desc lang="en">Uninterrupted live broadcast of today's key competitive stages.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003110000 +0900" stop="20261003140000 +0900" channel="rally.tv">
+    <title lang="en">Midday Service Park Live &amp; Reactions</title>
+    <desc lang="en">Live coverage from the service park as mechanics repair and adjust the cars.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003140000 +0900" stop="20261003180000 +0900" channel="rally.tv">
+    <title lang="en">LIVE: Afternoon Loop Stages</title>
+    <desc lang="en">The afternoon battle for podium positions continues live.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003180000 +0900" stop="20261003240000 +0900" channel="rally.tv">
+    <title lang="en">Daily Highlights &amp; End of Day Wrap-up</title>
+    <desc lang="en">Comprehensive review of today's fastest stages, incidents, and standings.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003000000 +0900" stop="20261003060000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC Classic Battles: Historic Seasons</title>
+    <desc lang="en">Relive legendary title fights from WRC history.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003060000 +0900" stop="20261003120000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC2 &amp; WRC3 Focus: Future Champions</title>
+    <desc lang="en">In-depth highlights and onboard action from supporting categories.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003120000 +0900" stop="20261003180000 +0900" channel="rally.tv.fast">
+    <title lang="en">Legendary Rallies Marathon: Safari &amp; Monte-Carlo</title>
+    <desc lang="en">Back-to-back broadcasts of the most iconic rallies in motorsport.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003180000 +0900" stop="20261003240000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC Technical Zone &amp; Driver Profiles</title>
+    <desc lang="en">Deep dive into Rally1 hybrid technology and driver features.</desc>
+    <category lang="en">Sports</category>
+  </programme>
 </tv>
