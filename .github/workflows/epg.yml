@@ -1,148 +1,47 @@
-name: Update Rally.TV EPG
+name: Test Rally.TV Scraper
 
 on:
-  schedule:
-    # 毎日日本時間の午前6時（UTC 21:00）に自動実行
-    - cron: '0 21 * * *'
-  workflow_dispatch: # いつでも手動で実行できるボタン
-
-permissions:
-  contents: write
-  actions: write
+  workflow_dispatch: # 手動でいつでもテスト実行できるボタン
 
 jobs:
-  update-epg:
+  test-scrape:
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.x'
 
-    - name: Generate Precise JST EPG
+    - name: Run Rally.TV Test Script
       run: |
         python -c "
-        import datetime
-        import xml.etree.ElementTree as ET
+        import requests
 
-        def generate_epg():
-            tv = ET.Element('tv')
-            
-            # 1. チャンネルの定義（あなたのM3Uと完全一致）
-            channels_info = [
-                {'id': 'rally.tv', 'name_en': 'Rally.TV Live'},
-                {'id': 'rally.tv.fast', 'name_en': 'Rally.TV FAST+'}
-            ]
-            
-            for ch in channels_info:
-                channel = ET.SubElement(tv, 'channel', id=ch['id'])
-                ET.SubElement(channel, 'display-name', lang='en').text = ch['name_en']
-                ET.SubElement(channel, 'icon', src='https://rally.tv')
+        TARGET_URL = 'https://rally.tv/en/epg?view=grid'
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8'
+        }
 
-            # GitHubサーバーの時間(UTC)に関係なく、確実に『日本時間の今日の日付』を計算して取得
-            jst_now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
-            today_str = jst_now.strftime('%Y%m%d')
+        print('🔍 Rally.TVへ接続してデータを探しています……')
+        try:
+            response = requests.get(TARGET_URL, headers=headers, timeout=10)
+            print(f'ステータスコード: {response.status_code}')
 
-            # 2. あなたが作成した公式のタイムテーブル（すべて純粋な日本時間 +0900 に完全補正）
-            official_schedule_rally_tv = [
-                {
-                    'start': f'{today_str}000000 +0900',
-                    'stop': f'{today_str}070000 +0900',
-                    'title': 'WRC Midnight Shakedown & Onboard Replay',
-                    'desc': 'Detailed replay of the latest WRC stages and onboard cameras.'
-                },
-                {
-                    'start': f'{today_str}070000 +0900',
-                    'stop': f'{today_str}083000 +0900',
-                    'title': 'LIVE: Stage Analysis & Morning Studio | WRC Rally',
-                    'desc': 'Expert analysis, driver interviews, and live morning stage coverage.'
-                },
-                {
-                    'start': f'{today_str}083000 +0900',
-                    'stop': f'{today_str}110000 +0900',
-                    'title': 'LIVE: Championship Stages - Main Feed',
-                    'desc': 'Uninterrupted live broadcast of today\'s key competitive stages.'
-                },
-                {
-                    'start': f'{today_str}110000 +0900',
-                    'stop': f'{today_str}140000 +0900',
-                    'title': 'Midday Service Park Live & Reactions',
-                    'desc': 'Live coverage from the service park as mechanics repair and adjust the cars.'
-                },
-                {
-                    'start': f'{today_str}140000 +0900',
-                    'stop': f'{today_str}180000 +0900',
-                    'title': 'LIVE: Afternoon Loop Stages',
-                    'desc': 'The afternoon battle for podium positions continues live.'
-                },
-                {
-                    'start': f'{today_str}180000 +0900',
-                    'stop': f'{today_str}240000 +0900',
-                    'title': 'Daily Highlights & End of Day Wrap-up',
-                    'desc': 'Comprehensive review of today\'s fastest stages, incidents, and standings.'
-                }
-            ]
+            if response.status_code == 200:
+                print(f'✨ 接続成功！ ページのHTMLやデータが取得できました（長さ: {len(response.text)} 文字）')
+                # もしページの中にJSONデータや特定のキーワードがあるか軽くチェック
+                if 'WRC' in response.text:
+                    print('🎯 ページ内に「WRC」のキーワードを見つけたよ！')
+                else:
+                    print('💡 ページは取得できたけど、JavaScriptで動的にデータを読み込んでいるタイプかも？')
+            else:
+                print('⚠️ アクセスがブロックされたか、URLが違うみたい……')
 
-            official_schedule_fast = [
-                {
-                    'start': f'{today_str}000000 +0900',
-                    'stop': f'{today_str}060000 +0900',
-                    'title': 'WRC Classic Battles: Historic Seasons',
-                    'desc': 'Relive legendary title fights from WRC history.'
-                },
-                {
-                    'start': f'{today_str}060000 +0900',
-                    'stop': f'{today_str}120000 +0900',
-                    'title': 'WRC2 & WRC3 Focus: Future Champions',
-                    'desc': 'In-depth highlights and onboard action from supporting categories.'
-                },
-                {
-                    'start': f'{today_str}120000 +0900',
-                    'stop': f'{today_str}180000 +0900',
-                    'title': 'Legendary Rallies Marathon: Safari & Monte-Carlo',
-                    'desc': 'Back-to-back broadcasts of the most iconic rallies in motorsport.'
-                },
-                {
-                    'start': f'{today_str}180000 +0900',
-                    'stop': f'{today_str}240000 +0900',
-                    'title': 'WRC Technical Zone & Driver Profiles',
-                    'desc': 'Deep dive into Rally1 hybrid technology and driver features.'
-                }
-            ]
-
-            def add_custom_programmes(ch_id, schedules):
-                for p in schedules:
-                    programme = ET.SubElement(tv, 'programme', 
-                                                start=p['start'], 
-                                                stop=p['stop'], 
-                                                channel=ch_id)
-                    
-                    ET.SubElement(programme, 'title', lang='en').text = p['title']
-                    ET.SubElement(programme, 'desc', lang='en').text = p['desc']
-                    ET.SubElement(programme, 'category', lang='en').text = 'Sports'
-
-            add_custom_programmes('rally.tv', official_schedule_rally_tv)
-            add_custom_programmes('rally.tv.fast', official_schedule_fast)
-
-            tree = ET.ElementTree(tv)
-            ET.indent(tree, space='  ', level=0)
-            tree.write('epg.xml', encoding='utf-8', xml_declaration=True)
-            print('Perfect JST EPG generated successfully!')
-
-        generate_epg()
+        except Exception as e:
+            print(f'❌ エラーが発生しちゃった: {e}')
         "
-
-    - name: Commit and Push Changes
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add epg.xml
-        # 毎回古いファイルを強制的に上書きし、GitHubに100%確実にプッシュ保存させます
-        git commit -m "Generate precise pure JST epg.xml" || echo "No changes to commit"
-        git push origin main
