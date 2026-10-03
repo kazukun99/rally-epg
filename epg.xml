@@ -8,57 +8,57 @@
     <display-name lang="en">Rally.TV FAST+</display-name>
     <icon src="https://www.rally.tv/assets/images/logo.png" />
   </channel>
-  <programme start="20261002000000 +0000" stop="20261002075000 +0000" channel="rally.tv">
+  <programme start="20261003000000 +0000" stop="20261003075000 +0000" channel="rally.tv">
     <title lang="en">WRC Night Stage Replay &amp; Onboard</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002075000 +0000" stop="20261002090000 +0000" channel="rally.tv">
+  <programme start="20261003075000 +0000" stop="20261003090000 +0000" channel="rally.tv">
     <title lang="en">LIVE: SS4 Monti di Alà - Sa Conchedda - Lerno 1 with Studio | WRC Rally Italia Sardegna 2026</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002090000 +0000" stop="20261002092600 +0000" channel="rally.tv">
+  <programme start="20261003090000 +0000" stop="20261003092600 +0000" channel="rally.tv">
     <title lang="en">Friday Highlights | Rally Italia Sardegna 2026</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002092600 +0000" stop="20261002095200 +0000" channel="rally.tv">
+  <programme start="20261003092600 +0000" stop="20261003095200 +0000" channel="rally.tv">
     <title lang="en">Saturday Highlights | Rally Italia Sardegna 2026</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002095200 +0000" stop="20261002100300 +0000" channel="rally.tv">
+  <programme start="20261003095200 +0000" stop="20261003100300 +0000" channel="rally.tv">
     <title lang="en">Onboard of the rally</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002100300 +0000" stop="20261002240000 +0000" channel="rally.tv">
+  <programme start="20261003100300 +0000" stop="20261003240000 +0000" channel="rally.tv">
     <title lang="en">Full Event Highlights | Rally Italia Sardegna 2026</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002000000 +0000" stop="20261002074100 +0000" channel="rally.tv.fast">
+  <programme start="20261003000000 +0000" stop="20261003074100 +0000" channel="rally.tv.fast">
     <title lang="en">WRC Classic Rally Rewind</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002074100 +0000" stop="20261002083300 +0000" channel="rally.tv.fast">
+  <programme start="20261003074100 +0000" stop="20261003083300 +0000" channel="rally.tv.fast">
     <title lang="en">Full Event Highlights | RallyRACC - Rally de España 202</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002083300 +0000" stop="20261002092500 +0000" channel="rally.tv.fast">
+  <programme start="20261003083300 +0000" stop="20261003092500 +0000" channel="rally.tv.fast">
     <title lang="en">Full Event Highlights | Rally Guanajuato Mexico 2015</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002092500 +0000" stop="20261002095100 +0000" channel="rally.tv.fast">
+  <programme start="20261003092500 +0000" stop="20261003095100 +0000" channel="rally.tv.fast">
     <title lang="en">WRC2 Event Highlights | EKO Acropolis Rally</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002095100 +0000" stop="20261002240000 +0000" channel="rally.tv.fast">
+  <programme start="20261003095100 +0000" stop="20261003240000 +0000" channel="rally.tv.fast">
     <title lang="en">Full Event Highlights | COPEC Rally Chile 2019</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
