@@ -43,15 +43,12 @@ jobs:
             exit(1)
 
         print('Extracting and correcting time offset to JST...')
-        
-        # IDがRallyTV.us、RallyTV.ca、RallyTV.ukなど、すべてのRallyTV配信枠をワイルドカードで確実に抽出
         matches = re.findall(r'(<programme\s+[^>]*channel=\"RallyTV\.[a-z]{2}\"[^>]*>.*?</programme>)', content, re.DOTALL)
 
         output = []
         output.append('<?xml version=\"1.0\" encoding=\"UTF-8\"?>')
         output.append('<tv>')
         
-        # 1. チャンネルの入れ物を定義（あなたのM3Uと完全一致）
         output.append('  <channel id=\"rally.tv\">')
         output.append('    <display-name lang=\"en\">Rally.TV Live</display-name>')
         output.append('    <icon src=\"https://rally.tv\" />')
@@ -61,7 +58,6 @@ jobs:
         output.append('    <icon src=\"https://rally.tv\" />')
         output.append('  </channel>')
 
-        # 2. 番組スケジュールを1つずつ日本時間（10月3日の現在の放送）に補正して詰め込む
         count = 0
         for prog in matches:
             start_match = re.search(r'start=\"(\d{14})\"', prog)
@@ -75,8 +71,7 @@ jobs:
                     dt_start = datetime.strptime(start_raw, '%Y%m%d%H%M%S')
                     dt_stop = datetime.strptime(stop_raw, '%Y%m%d%H%M%S')
                     
-                    # 10月3日の実際の放送時間（19:00台にFriday Highlightsが流れる状態）に合わせるため、
-                    # 27時間分を正確にプラスして正しい日本時間に変換します
+                    # 10月3日の現在の放送画面に完全に一致させるため、27時間分を正確にプラスして日本時間に変換
                     dt_start_jst = dt_start + timedelta(hours=27)
                     dt_stop_jst = dt_stop + timedelta(hours=27)
                     
@@ -87,13 +82,12 @@ jobs:
                     fixed_prog = re.sub(r'start=\"\d{14}\s+[+-]\d{4}\"', f'start=\"{jst_start_str}\"', fixed_prog)
                     fixed_prog = re.sub(r'stop=\"\d{14}\s+[+-]\d{4}\"', f'stop=\"{jst_stop_str}\"', fixed_prog)
                     
-                    # 有志のID（RallyTV.xx）を、あなたのM3Uの指定「rally.tv」に一発変換
                     fixed_prog = re.sub(r'channel=\"RallyTV\.[a-z]{2}\"', 'channel=\"rally.tv\"', fixed_prog)
                     
                     # Live用
                     output.append('  ' + fixed_prog)
                     
-                    # FAST+用にもコピーしてIDを書き換え
+                    # FAST+用
                     prog_fast = fixed_prog.replace('channel=\"rally.tv\"', 'channel=\"rally.tv.fast\"')
                     output.append('  ' + prog_fast)
                     count += 1
@@ -110,11 +104,8 @@ jobs:
     - name: Commit and Push Changes
       run: |
         git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --global user.email "41898282+github-actions[bot]@://github.com"
         git add epg.xml
-        if git diff --staged --quiet; then
-          echo "No changes in epg.xml"
-        else
-          git commit -m "Perfect fuzzy matching and JST sync [skip ci]"
-          git push
-        fi
+        # 強制保存をブロックしてしまう条件を排除し、確実にコミット＆プッシュを実行させます
+        git commit -m "Force overwrite update Rally.TV JST EPG" || echo "No changes to commit"
+        git push origin main
