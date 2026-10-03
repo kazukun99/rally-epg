@@ -1,17 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <tv>
   <channel id="rally.tv">
-    <display-name lang="en">Rally.TV Live &amp; Classics</display-name>
+    <display-name lang="en">Rally.TV Live</display-name>
     <icon src="https://www.rally.tv/assets/images/logo.png" />
   </channel>
   <channel id="rally.tv.fast">
-    <display-name lang="en">Rally.TV FAST+ (24/7 Loop)</display-name>
+    <display-name lang="en">Rally.TV FAST+</display-name>
     <icon src="https://www.rally.tv/assets/images/logo.png" />
   </channel>
-
-  <!-- ========================================== -->
-  <!-- TODAY (Oct 2, 2026): Detailed Schedule     -->
-  <!-- ========================================== -->
   <programme start="20261002000000 +0000" stop="20261002075000 +0000" channel="rally.tv">
     <title lang="en">WRC Night Stage Replay &amp; Onboard</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
@@ -37,109 +33,18 @@
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002100300 +0000" stop="20261002140000 +0000" channel="rally.tv">
+  <programme start="20261002100300 +0000" stop="20261002240000 +0000" channel="rally.tv">
     <title lang="en">Full Event Highlights | Rally Italia Sardegna 2026</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002140000 +0000" stop="20261002180000 +0000" channel="rally.tv">
-    <title lang="en">WRC Classic Battles: 90s &amp; 2000s Legends</title>
-    <desc lang="en">Relive the most iconic championship battles from WRC history.</desc>
-    <category lang="en">Classic Sports</category>
-  </programme>
-  <programme start="20261002180000 +0000" stop="20261002220000 +0000" channel="rally.tv">
-    <title lang="en">WRC Season Review &amp; Best Onboards</title>
-    <desc lang="en">Exclusive in-car camera footage and official season review highlights.</desc>
-    <category lang="en">Documentary</category>
-  </programme>
-  <programme start="20261002220000 +0000" stop="20261003060000 +0000" channel="rally.tv">
-    <title lang="en">WRC Epic Finishes &amp; Power Stage Classics</title>
-    <desc lang="en">A countdown of the most dramatic final-stage finishes in WRC history.</desc>
-    <category lang="en">Classic Sports</category>
-  </programme>
-
-  <!-- ========================================== -->
-  <!-- DAY 3 (Oct 3, 2026): Detailed Blocks       -->
-  <!-- ========================================== -->
-  <programme start="20261003060000 +0000" stop="20261003100000 +0000" channel="rally.tv">
-    <title lang="en">LIVE: Saturday Morning Stages (SS8 - SS10) with Studio | WRC Rally Italia Sardegna 2026</title>
-    <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261003100000 +0000" stop="20261003130000 +0000" channel="rally.tv">
-    <title lang="en">Saturday Midday Service &amp; Onboard Special | Rally Italia Sardegna 2026</title>
-    <desc lang="en">Service park interviews and tactical analysis.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261003130000 +0000" stop="20261003170000 +0000" channel="rally.tv">
-    <title lang="en">LIVE: Saturday Afternoon Stages (SS11 - SS13) &amp; Studio | WRC Rally Italia Sardegna 2026</title>
-    <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261003170000 +0000" stop="20261003210000 +0000" channel="rally.tv">
-    <title lang="en">Saturday Full Day Highlights &amp; Driver Interviews | Rally Italia Sardegna 2026</title>
-    <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261003210000 +0000" stop="20261004060000 +0000" channel="rally.tv">
-    <title lang="en">WRC Classic Night Rewind &amp; Historical Onboards</title>
-    <desc lang="en">Relive legendary night stages from past WRC seasons.</desc>
-    <category lang="en">Classic Sports</category>
-  </programme>
-
-  <!-- ========================================== -->
-  <!-- DAY 4 (Oct 4, 2026): Detailed Blocks       -->
-  <!-- ========================================== -->
-  <programme start="20261004060000 +0000" stop="20261004100000 +0000" channel="rally.tv">
-    <title lang="en">LIVE: Sunday Morning Stages (SS14 - SS16) | WRC Rally Italia Sardegna 2026</title>
-    <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261004100000 +0000" stop="20261004130000 +0000" channel="rally.tv">
-    <title lang="en">LIVE: Wolf Power Stage (SS17) &amp; Ceremonial Finish | WRC Rally Italia Sardegna 2026</title>
-    <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261004130000 +0000" stop="20261004180000 +0000" channel="rally.tv">
-    <title lang="en">Post-Rally Analysis &amp; Podium Celebration | Rally Italia Sardegna 2026</title>
-    <desc lang="en">Official Rally.TV post-event wrap-up.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261004180000 +0000" stop="20261005060000 +0000" channel="rally.tv">
-    <title lang="en">WRC Greatest Power Stages Marathon</title>
-    <desc lang="en">A compilation of the most thrilling power stage finishes.</desc>
-    <category lang="en">Classic Sports</category>
-  </programme>
-
-  <!-- ========================================== -->
-  <!-- OFF-SEASON LOOP (Oct 5 onwards, 6-hr blocks)-->
-  <!-- ========================================== -->
-  <programme start="20261005060000 +0000" stop="20261005120000 +0000" channel="rally.tv">
-    <title lang="en">WRC Classic Battles: 90s Legends (Perpetual Loop)</title>
-    <desc lang="en">Relive iconic championship battles from WRC history.</desc>
-    <category lang="en">Classic Sports</category>
-  </programme>
-  <programme start="20261005120000 +0000" stop="20261005180000 +0000" channel="rally.tv">
-    <title lang="en">WRC Season Review &amp; Best Onboards (Perpetual Loop)</title>
-    <desc lang="en">Exclusive in-car camera footage and season highlights.</desc>
-    <category lang="en">Documentary</category>
-  </programme>
-  <programme start="20261005180000 +0000" stop="20261006000000 +0000" channel="rally.tv">
-    <title lang="en">WRC Epic Finishes &amp; Team Diaries (Perpetual Loop)</title>
-    <desc lang="en">Behind the scenes and dramatic final-stage finishes.</desc>
-    <category lang="en">Classic Sports</category>
-  </programme>
-
-  <!-- ========================================== -->
-  <!-- RALLY.TV FAST+ CHANNEL: Detailed 24/7 Loop -->
-  <!-- ========================================== -->
   <programme start="20261002000000 +0000" stop="20261002074100 +0000" channel="rally.tv.fast">
     <title lang="en">WRC Classic Rally Rewind</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261002074100 +0000" stop="20261002083300 +0000" channel="rally.tv.fast">
-    <title lang="en">Full Event Highlights | RallyRACC - Rally de España</title>
+    <title lang="en">Full Event Highlights | RallyRACC - Rally de España 202</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
@@ -153,24 +58,9 @@
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261002095100 +0000" stop="20261002160000 +0000" channel="rally.tv.fast">
+  <programme start="20261002095100 +0000" stop="20261002240000 +0000" channel="rally.tv.fast">
     <title lang="en">Full Event Highlights | COPEC Rally Chile 2019</title>
     <desc lang="en">Official Rally.TV live and highlight schedule.</desc>
     <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261002160000 +0000" stop="20261002220000 +0000" channel="rally.tv.fast">
-    <title lang="en">WRC 24/7 Non-Stop Onboard Camera Stream</title>
-    <desc lang="en">Continuous raw in-car footage from legendary stages.</desc>
-    <category lang="en">Motorsport</category>
-  </programme>
-  <programme start="20261002220000 +0000" stop="20261003040000 +0000" channel="rally.tv.fast">
-    <title lang="en">WRC Historic Rally Rewind &amp; Legends</title>
-    <desc lang="en">Classic moments from the archives.</desc>
-    <category lang="en">Motorsport</category>
-  </programme>
-  <programme start="20261003040000 +0000" stop="20261006000000 +0000" channel="rally.tv.fast">
-    <title lang="en">WRC 24/7 Onboard &amp; Classic Marathon Loop</title>
-    <desc lang="en">Continuous historical WRC highlights and onboard footage.</desc>
-    <category lang="en">Motorsport</category>
   </programme>
 </tv>
