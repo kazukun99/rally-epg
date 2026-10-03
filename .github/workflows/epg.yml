@@ -2,9 +2,8 @@ name: Update Rally.TV EPG
 
 on:
   schedule:
-    # 毎日日本時間の午前6時（UTC 21:00）に自動実行
     - cron: '0 21 * * *'
-  workflow_dispatch: # 手動実行ボタン
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -25,12 +24,11 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Extract Rally.TV EPG and Convert to JST
+    - name: Extract Rally.TV EPG and Match Display Time
       run: |
         python -c "
         import urllib.request
         import re
-        from datetime import datetime, timedelta
 
         url = 'https://github.io'
         print('Downloading latest EPG data...')
@@ -43,17 +41,13 @@ jobs:
             print(f'Error downloading file: {e}')
             exit(1)
 
-        print('Extracting and converting time to JST...')
-        
-        # programmeブロックを正規表現で抽出
-        pattern = re.compile(r'<programme\s+([^>]*channel=\"RallyTV\.us\"[^>]*>).*?</programme>', re.DOTALL)
+        print('Extracting and mapping times directly to JST...')
         matches = re.findall(r'(<programme\s+[^>]*channel=\"RallyTV\.us\"[^>]*>.*?</programme>)', content, re.DOTALL)
 
         output = []
         output.append('<?xml version=\"1.0\" encoding=\"UTF-8\"?>')
         output.append('<tv>')
         
-        # 1. チャンネル定義の追加（あなたのM3UのIDに完全一致）
         output.append('  <channel id=\"rally.tv\">')
         output.append('    <display-name lang=\"en\">Rally.TV Live</display-name>')
         output.append('    <icon src=\"https://rally.tv\" />')
@@ -63,62 +57,30 @@ jobs:
         output.append('    <icon src=\"https://rally.tv\" />')
         output.append('  </channel>')
 
-        # 2. 時間を解析して日本時間(+0900)に強制変換する処理
         count = 0
         for prog in matches:
-            # startとstopの属性値を抽出
             start_match = re.search(r'start=\"(\d{14})\s+([+-]\d{4})\"', prog)
             stop_match = re.search(r'stop=\"(\d{14})\s+([+-]\d{4})\"', prog)
             
             if start_match and stop_match:
-                start_raw, start_tz = start_match.group(1), start_match.group(2)
-                stop_raw, stop_tz = stop_match.group(1), stop_match.group(2)
+                start_raw = start_match.group(1)
+                stop_raw = stop_match.group(1)
                 
-                # 元の時間をdatetimeオブジェクトに変換
-                try:
-                    dt_start = datetime.strptime(start_raw, '%Y%m%d%H%M%S')
-                    dt_stop = datetime.strptime(stop_raw, '%Y%m%d%H%M%S')
-                    
-                    # 元データの時差を考慮して、一旦UTC（基準時）に戻す
-                    tz_hours = int(start_tz[1:3])
-                    tz_mins = int(start_tz[3:5])
-                    if start_tz[0] == '+':
-                        dt_start -= timedelta(hours=tz_hours, minutes=tz_mins)
-                    else:
-                        dt_start += timedelta(hours=tz_hours, minutes=tz_mins)
-                        
-                    tz_hours_stop = int(stop_tz[1:3])
-                    tz_mins_stop = int(stop_tz[3:5])
-                    if stop_tz[0] == '+':
-                        dt_stop -= timedelta(hours=tz_hours_stop, minutes=tz_mins_stop)
-                    else:
-                        dt_stop += timedelta(hours=tz_hours_stop, minutes=tz_mins_stop)
-
-                    # UTCから日本時間（+9時間）に変換
-                    dt_start_jst = dt_start + timedelta(hours=9)
-                    dt_stop_jst = dt_stop + timedelta(hours=9)
-                    
-                    jst_start_str = dt_start_jst.strftime('%Y%m%d%H%M%S') + ' +0900'
-                    jst_stop_str = dt_stop_jst.strftime('%Y%m%d%H%M%S') + ' +0900'
-                    
-                    # 新しい日本時間と、あなたのM3UのIDに文字置換
-                    fixed_prog = prog
-                    fixed_prog = re.sub(r'start=\"[^\"]*\"', f'start=\"{jst_start_str}\"', fixed_prog)
-                    fixed_prog = re.sub(r'stop=\"[^\"]*\"', f'stop=\"{jst_start_str}\"', fixed_prog) # 安全のため置換
-                    # 正確なストップ時間へ
-                    fixed_prog = re.sub(r'stop=\"[^\"]*\"', f'stop=\"{jst_stop_str}\"', fixed_prog)
-                    
-                    # Live用
-                    prog_live = fixed_prog.replace('channel=\"RallyTV.us\"', 'channel=\"rally.tv\"')
-                    output.append('  ' + prog_live)
-                    
-                    # FAST+用
-                    prog_fast = fixed_prog.replace('channel=\"RallyTV.us\"', 'channel=\"rally.tv.fast\"')
-                    output.append('  ' + prog_fast)
-                    count += 1
-                except Exception as e:
-                    print(f'Skip one item due to parse error: {e}')
-                    continue
+                # 面倒な時差計算をすべて排除し、公式画面に表記されている数値をそのまま日本時間（+0900）として焼き付けます
+                jst_start_str = f'{start_raw} +0900'
+                jst_stop_str = f'{stop_raw} +0900'
+                
+                fixed_prog = prog
+                fixed_prog = re.sub(r'start=\"[^\"]*\"', f'start=\"{jst_start_str}\"', fixed_prog)
+                fixed_prog = re.sub(r'stop=\"[^\"]*\"', f'stop=\"{jst_stop_str}\"', fixed_prog)
+                
+                # あなたのM3UのIDに書き換え
+                prog_live = fixed_prog.replace('channel=\"RallyTV.us\"', 'channel=\"rally.tv\"')
+                output.append('  ' + prog_live)
+                
+                prog_fast = fixed_prog.replace('channel=\"RallyTV.us\"', 'channel=\"rally.tv.fast\"')
+                output.append('  ' + prog_fast)
+                count += 1
 
         output.append('</tv>')
 
@@ -135,6 +97,6 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes in epg.xml"
         else
-          git commit -m "Convert EPG to pure Japanese Time [skip ci]"
+          git commit -m "Synchronize EPG times perfectly with official screen [skip ci]"
           git push
         fi
