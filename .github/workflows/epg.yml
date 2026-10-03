@@ -6,8 +6,10 @@ on:
     - cron: '0 21 * * *'
   workflow_dispatch: # 手動実行ボタン
 
+# ↓ ここでGitHub Actionに対してリポジトリへの強制書き込み権限を与えます
 permissions:
   contents: write
+  actions: write
 
 jobs:
   update-epg:
@@ -16,6 +18,9 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v4
+      with:
+        # トークンを明示的に指定して権限エラーを回避
+        token: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Set up Python
       uses: actions/setup-python@v5
@@ -41,18 +46,15 @@ jobs:
 
         print('Extracting Rally.TV programmes via Text Scan...')
         
-        # 正規表現で RallyTV.us の番組ブロックをすべて抽出
         pattern = re.compile(r'(<programme\s+[^>]*channel=\"RallyTV\.us\"[^>]*>.*?</programme>)', re.DOTALL)
         matches = pattern.findall(content)
 
         print(f'Found {len(matches)} programmes.')
 
-        # 新しい XMLTV 形式を構築
         output = []
         output.append('<?xml version=\"1.0\" encoding=\"UTF-8\"?>')
         output.append('<tv>')
         
-        # 1. チャンネル定義の追加（あなたのM3UのIDに完全一致させる）
         output.append('  <channel id=\"rally.tv\">')
         output.append('    <display-name lang=\"en\">Rally.TV Live</display-name>')
         output.append('    <icon src=\"https://rally.tv\" />')
@@ -62,19 +64,15 @@ jobs:
         output.append('    <icon src=\"https://rally.tv\" />')
         output.append('  </channel>')
 
-        # 2. 番組情報のマッピング（IDを rally.tv と rally.tv.fast に書き換え）
         for prog in matches:
-            # メインチャンネル用に書き換え
             prog_live = prog.replace('channel=\"RallyTV.us\"', 'channel=\"rally.tv\"')
             output.append('  ' + prog_live)
             
-            # FAST+チャンネル用にも同じ番組をコピーして書き換え
             prog_fast = prog.replace('channel=\"RallyTV.us\"', 'channel=\"rally.tv.fast\"')
             output.append('  ' + prog_fast)
 
         output.append('</tv>')
 
-        # epg.xml として保存
         with open('epg.xml', 'w', encoding='utf-8') as f:
             f.write('\n'.join(output))
         print('epg.xml successfully generated!')
@@ -88,10 +86,6 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes in epg.xml"
         else
-          git commit -m "Perfect Automated EPG Update [skip ci]"
-          git push
-        fi
-
-          git commit -m "Perfect Automated EPG Update [skip ci]"
+          git commit -m "Perfect Automated EPG Update with Permissions [skip ci]"
           git push
         fi
