@@ -22,63 +22,62 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Extract Rally.TV EPG
+    - name: Extract Rally.TV EPG via Regex
       run: |
         python -c "
         import urllib.request
-        import xml.etree.ElementTree as ET
+        import re
 
-        # 毎日確実に更新されている iptv-org の最新EPG（us.xml）を使用
         url = 'https://github.io'
         print('Downloading latest EPG from iptv-org...')
         req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
         
         try:
             with urllib.request.urlopen(req) as response:
-                xml_data = response.read()
+                content = response.read().decode('utf-8', errors='ignore')
         except Exception as e:
             print(f'Error downloading file: {e}')
             exit(1)
 
-        print('Parsing XML data...')
-        root = ET.fromstring(xml_data)
+        print('Extracting Rally.TV programmes via Text Scan...')
+        
+        # 正規表現で RallyTV.us の番組ブロックをすべて抽出
+        pattern = re.compile(r'(<programme\s+[^>]*channel=\"RallyTV\.us\"[^>]*>.*?</programme>)', re.DOTALL)
+        matches = pattern.findall(content)
 
-        # 新しい空のXMLTV構造を作成
-        new_root = ET.Element('tv')
+        print(f'Found {len(matches)} programmes.')
 
-        # 1. チャンネル定義の追加（あなたのM3Uのtvg-idに合わせる）
-        ch1 = ET.SubElement(new_root, 'channel', id='rally.tv')
-        ET.SubElement(ch1, 'display-name', lang='en').text = 'Rally.TV Live'
-        ET.SubElement(ch1, 'icon', src='https://rally.tv')
+        # 新しい XMLTV 形式を構築
+        output = []
+        output.append('<?xml version=\"1.0\" encoding=\"UTF-8\"?>')
+        output.append('<tv>')
+        
+        # 1. チャンネル定義の追加（あなたのM3UのIDに完全一致させる）
+        output.append('  <channel id=\"rally.tv\">')
+        output.append('    <display-name lang=\"en\">Rally.TV Live</display-name>')
+        output.append('    <icon src=\"https://rally.tv\" />')
+        output.append('  </channel>')
+        output.append('  <channel id=\"rally.tv.fast\">')
+        output.append('    <display-name lang=\"en\">Rally.TV FAST+</display-name>')
+        output.append('    <icon src=\"https://rally.tv\" />')
+        output.append('  </channel>')
 
-        ch2 = ET.SubElement(new_root, 'channel', id='rally.tv.fast')
-        ET.SubElement(ch2, 'display-name', lang='en').text = 'Rally.TV FAST+'
-        ET.SubElement(ch2, 'icon', src='https://rally.tv')
+        # 2. 番組情報のマッピング（IDを rally.tv と rally.tv.fast に書き換え）
+        for prog in matches:
+            # メインチャンネル用に書き換え
+            prog_live = prog.replace('channel=\"RallyTV.us\"', 'channel=\"rally.tv\"')
+            output.append('  ' + prog_live)
+            
+            # FAST+チャンネル用にも同じ番組をコピーして書き換え
+            prog_fast = prog.replace('channel=\"RallyTV.us\"', 'channel=\"rally.tv.fast\"')
+            output.append('  ' + prog_fast)
 
-        # 2. 番組情報の抽出とマッピング
-        # iptv-org側で稼働している「RallyTV.us」の番組データを取得
-        count = 0
-        for prog in root.findall('programme'):
-            if prog.get('channel') == 'RallyTV.us':
-                # メインのRally.TV Live用にIDを書き換えて追加
-                prog_live = ET.Element('programme', start=prog.get('start'), stop=prog.get('stop'), channel='rally.tv')
-                for elem in prog:
-                    prog_live.append(elem)
-                new_root.append(prog_live)
+        output.append('</tv>')
 
-                # FAST+用にも同じ番組スケジュールを割り当て
-                prog_fast = ET.Element('programme', start=prog.get('start'), stop=prog.get('stop'), channel='rally.tv.fast')
-                for elem in prog:
-                    prog_fast.append(elem)
-                new_root.append(prog_fast)
-                count += 1
-
-        print(f'Extracted {count} programmes for Rally.TV from iptv-org source.')
-
-        # ファイルに書き出し
-        tree = ET.ElementTree(new_root)
-        ET.indent(tree, space='  ', level=0)
-        tree.write('epg.xml', encoding='utf-8', xml_declaration=True)
+        # epg.xml として保存
+        with open('epg.xml', 'w', encoding='utf-8') as f:
+            f.write('\n'.join(output))
+        print('epg.xml successfully generated!')
         "
 
     - name: Commit and Push Changes
@@ -89,6 +88,10 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes in epg.xml"
         else
-          git commit -m "Automated EPG Update via iptv-org [skip ci]"
+          git commit -m "Perfect Automated EPG Update [skip ci]"
+          git push
+        fi
+
+          git commit -m "Perfect Automated EPG Update [skip ci]"
           git push
         fi
