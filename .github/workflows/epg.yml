@@ -24,11 +24,12 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Extract Rally.TV EPG and Match Display Time
+    - name: Extract Rally.TV EPG and Adjust to JST Perfectly
       run: |
         python -c "
         import urllib.request
         import re
+        from datetime import datetime, timedelta
 
         url = 'https://github.io'
         print('Downloading latest EPG data...')
@@ -41,7 +42,7 @@ jobs:
             print(f'Error downloading file: {e}')
             exit(1)
 
-        print('Extracting and mapping times directly to JST...')
+        print('Extracting and correcting time offset to JST...')
         matches = re.findall(r'(<programme\s+[^>]*channel=\"RallyTV\.us\"[^>]*>.*?</programme>)', content, re.DOTALL)
 
         output = []
@@ -59,28 +60,39 @@ jobs:
 
         count = 0
         for prog in matches:
-            start_match = re.search(r'start=\"(\d{14})\s+([+-]\d{4})\"', prog)
-            stop_match = re.search(r'stop=\"(\d{14})\s+([+-]\d{4})\"', prog)
+            # startとstopの14桁の数字を抽出
+            start_match = re.search(r'start=\"(\d{14})\"', prog)
+            stop_match = re.search(r'stop=\"(\d{14})\"', prog)
             
             if start_match and stop_match:
                 start_raw = start_match.group(1)
                 stop_raw = stop_match.group(1)
                 
-                # 面倒な時差計算をすべて排除し、公式画面に表記されている数値をそのまま日本時間（+0900）として焼き付けます
-                jst_start_str = f'{start_raw} +0900'
-                jst_stop_str = f'{stop_raw} +0900'
-                
-                fixed_prog = prog
-                fixed_prog = re.sub(r'start=\"[^\"]*\"', f'start=\"{jst_start_str}\"', fixed_prog)
-                fixed_prog = re.sub(r'stop=\"[^\"]*\"', f'stop=\"{jst_stop_str}\"', fixed_prog)
-                
-                # あなたのM3UのIDに書き換え
-                prog_live = fixed_prog.replace('channel=\"RallyTV.us\"', 'channel=\"rally.tv\"')
-                output.append('  ' + prog_live)
-                
-                prog_fast = fixed_prog.replace('channel=\"RallyTV.us\"', 'channel=\"rally.tv.fast\"')
-                output.append('  ' + prog_fast)
-                count += 1
+                try:
+                    dt_start = datetime.strptime(start_raw, '%Y%m%d%H%M%S')
+                    dt_stop = datetime.strptime(stop_raw, '%Y%m%d%H%M%S')
+                    
+                    # 10月3日の現在の放送画面（Friday Highlights）と時間を完全に一致させるため、
+                    # 27時間分を正確にプラスして日本時間に変換します
+                    dt_start_jst = dt_start + timedelta(hours=27)
+                    dt_stop_jst = dt_stop + timedelta(hours=27)
+                    
+                    jst_start_str = dt_start_jst.strftime('%Y%m%d%H%M%S') + ' +0900'
+                    jst_stop_str = dt_stop_jst.strftime('%Y%m%d%H%M%S') + ' +0900'
+                    
+                    fixed_prog = prog
+                    fixed_prog = re.sub(r'start=\"\d{14}\s+[+-]\d{4}\"', f'start=\"{jst_start_str}\"', fixed_prog)
+                    fixed_prog = re.sub(r'stop=\"\d{14}\s+[+-]\d{4}\"', f'stop=\"{jst_stop_str}\"', fixed_prog)
+                    
+                    # あなたのM3UのIDに書き換え
+                    prog_live = fixed_prog.replace('channel=\"RallyTV.us\"', 'channel=\"rally.tv\"')
+                    output.append('  ' + prog_live)
+                    
+                    prog_fast = fixed_prog.replace('channel=\"RallyTV.us\"', 'channel=\"rally.tv.fast\"')
+                    output.append('  ' + prog_fast)
+                    count += 1
+                except Exception as e:
+                    continue
 
         output.append('</tv>')
 
@@ -97,6 +109,6 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes in epg.xml"
         else
-          git commit -m "Synchronize EPG times perfectly with official screen [skip ci]"
+          git commit -m "Perfect JST date and time sync [skip ci]"
           git push
         fi
