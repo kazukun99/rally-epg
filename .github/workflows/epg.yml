@@ -50,20 +50,30 @@ jobs:
             
             programs = []
 
-            # 今日(0)と明日(1)の2日間に絞る
+            # 今日(0)と明日(1)の2日間
             for day_offset in range(0, 2):
                 target_date = base_date + datetime.timedelta(days=day_offset)
                 date_str = target_date.strftime('%Y%m%d')
                 next_date_str = (target_date + datetime.timedelta(days=1)).strftime('%Y%m%d')
                 
+                # 日付ごとに少しステージ番号を変化させてリアル感を出すよ！
+                if day_offset == 0:
+                    ss_morning = 'WRC Live: Morning Stages (SS11 - SS12)'
+                    ss_afternoon = 'WRC Live: Afternoon Stages (SS13 - SS14)'
+                    rally_subtitle = 'Day 2'
+                else:
+                    ss_morning = 'WRC Live: Championship Sunday (SS15 - SS16)'
+                    ss_afternoon = 'WRC Live: Wolf Power Stage (SS17 - Final)'
+                    rally_subtitle = 'Final Day'
+
                 live_slots = [
-                    (0, 6, 'Rally.TV Live: Night Stage & Overnight Archive', 'Overnight replay of key special stages and onboard highlights.'),
-                    (6, 9, 'Rally.TV Live: Morning Buildup & Shakedown', 'Morning news, service park atmosphere, and stage previews.'),
-                    (9, 13, 'WRC Live: Morning Stages (SS1-SS4)', 'Live coverage of the morning loop and remote service.'),
-                    (13, 15, 'Midday Service Park & Driver Interviews', 'Live reactions from the service park, tyre fitting, and tactical analysis.'),
-                    (15, 19, 'WRC Live: Afternoon Stages (SS5-SS8)', 'Afternoon special stages and high-speed action.'),
-                    (19, 22, 'WRC Daily Highlights & Wrap-up', 'Comprehensive review of today stages, standings, and press conference.'),
-                    (22, 24, 'Rally.TV Live: Late Night Onboards', 'Exclusive night stages and technical breakdown.')
+                    (0, 6, f'Rally.TV Live: Overnight Onboard & Stage {rally_subtitle} Preview', 'Overnight replay of key special stages and onboard highlights.'),
+                    (6, 9, 'WRC Live: Morning Buildup & Shakedown Review', 'Morning news, service park atmosphere, and team strategies.'),
+                    (9, 13, ss_morning, 'Live coverage of the morning loop, split times, and remote service.'),
+                    (13, 15, 'Midday Service Park & Driver Interviews', 'Live reactions from the service park, tyre fitting, and mechanical repairs.'),
+                    (15, 19, ss_afternoon, 'Afternoon special stages, high-speed gravel/tarmac action, and dramatic moments.'),
+                    (19, 22, f'WRC Daily Highlights & Press Conference ({rally_subtitle})', 'Comprehensive review of today stages, overall standings, and press conference.'),
+                    (22, 24, 'Rally.TV Live: Late Night Technical Zone', 'Exclusive night onboards and deep technical analysis of the cars.')
                 ]
                 
                 for start_h, end_h, title, desc in live_slots:
@@ -74,17 +84,17 @@ jobs:
                         'channel': 'rally.tv',
                         'start': start_str,
                         'stop': end_str,
-                        'title': f'{title} ({target_date.strftime(\"%b %d\")})',
+                        'title': title,
                         'desc': desc
                     })
 
                 fast_slots = [
-                    (0, 4, 'WRC FAST+: Night Onboard Specials', 'Non-stock high-speed night stage onboard cameras.'),
-                    (4, 8, 'WRC FAST+: Classic Rally Battles (1990s-2010s)', 'Relive legendary championship battles from the past.'),
-                    (8, 12, 'WRC FAST+: Epic Jumps & Service Highlights', 'A collection of the most spectacular jumps and mechanical dramas.'),
-                    (12, 16, 'WRC FAST+: Driver Profiles & Tech Zone', 'Deep dive into rally car engineering and driver stories.'),
-                    (16, 20, 'WRC FAST+: Power Stage Classics', 'Historical thrilling Power Stage finishes.'),
-                    (20, 24, 'WRC FAST+: 24/7 Action & Drift Mix', 'Non-stop action, gravel, tarmac, and snow highlights.')
+                    (0, 4, 'WRC FAST+: Night Onboard Specials', 'Non-stop high-speed night stage onboard camera footage.'),
+                    (4, 8, 'WRC FAST+: Classic Rally Battles (1990s-2010s)', 'Relive legendary championship battles from WRC history.'),
+                    (8, 12, 'WRC FAST+: Epic Jumps & Service Drama', 'A collection of the most spectacular jumps and mechanical troubles.'),
+                    (12, 16, 'WRC FAST+: Driver Profiles & Tech Zone', 'Deep dive into rally car engineering, aerodynamics, and driver stories.'),
+                    (16, 20, 'WRC FAST+: Historic Power Stage Finishes', 'Historical thrilling Power Stage finishes from past seasons.'),
+                    (20, 24, 'WRC FAST+: 24/7 Action & Drift Mix', 'Non-stop action, gravel slides, tarmac grip, and snow highlights.')
                 ]
                 
                 for start_h, end_h, title, desc in fast_slots:
@@ -95,7 +105,7 @@ jobs:
                         'channel': 'rally.tv.fast',
                         'start': start_str,
                         'stop': end_str,
-                        'title': f'{title} ({target_date.strftime(\"%b %d\")})',
+                        'title': title,
                         'desc': desc
                     })
 
@@ -111,7 +121,7 @@ jobs:
             tree = ET.ElementTree(tv)
             ET.indent(tree, space='  ', level=0)
             tree.write('epg.xml', encoding='utf-8', xml_declaration=True)
-            print('Clean 2-Day Hourly EPG generated successfully!')
+            print('Realistic SS-based EPG generated successfully!')
 
         generate_advanced_epg()
         "
@@ -121,5 +131,5 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add epg.xml
-        git commit -m "Update EPG: 2 days with unique hourly slots" || echo "No changes to commit"
+        git commit -m "Update EPG: Add realistic SS stages and rally names" || echo "No changes to commit"
         git push origin main
