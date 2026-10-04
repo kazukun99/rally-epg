@@ -1,36 +1,15 @@
-name: Rally.TV Auto Scrape EPG
-
-on:
-  schedule:
-    - cron: '0 * * * *'   # 毎時0分に1時間おきで実行！
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  actions: write
-
-jobs:
-  update-epg:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
-
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.x'
-
-    - name: Install Dependencies
-      run: |
-        pip install requests beautifulsoup4
-
-    - name: Generate Detailed Hourly EPG from Rally.TV
+- name: Generate Detailed Hourly EPG from Rally.TV
+      env:
+        RALLYTV_COOKIE: ${{ secrets.RALLYTV_COOKIE }}
       run: |
         python -c "
+        import os
         import datetime
         import xml.etree.ElementTree as ET
+
+        # ちゃんとCookieが読み込めているかテストできるようにしておくね
+        cookie_value = os.environ.get('RALLYTV_COOKIE')
+        print('Cookie loaded successfully, length:', len(cookie_value) if cookie_value else 0)
 
         def generate_advanced_epg():
             tv = ET.Element('tv')
@@ -111,9 +90,9 @@ jobs:
 
             for p in programs:
                 programme = ET.SubElement(tv, 'programme', 
-                                            start=p['start'], 
-                                            stop=p['stop'], 
-                                            channel=p['channel'])
+                                          start=p['start'], 
+                                          stop=p['stop'], 
+                                          channel=p['channel'])
                 ET.SubElement(programme, 'title', lang='en').text = p['title']
                 ET.SubElement(programme, 'desc', lang='en').text = p['desc']
                 ET.SubElement(programme, 'category', lang='en').text = 'Sports'
@@ -125,11 +104,3 @@ jobs:
 
         generate_advanced_epg()
         "
-
-    - name: Commit and Push Changes if Updated
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add epg.xml
-        git commit -m "Update EPG: Add realistic SS stages and rally names" || echo "No changes to commit"
-        git push origin main
