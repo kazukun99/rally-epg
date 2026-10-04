@@ -1,4 +1,33 @@
-import datetime
+name: Rally.TV Auto EPG (Official Detailed Edition)
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  update-epg:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Generate Official Detailed EPG (Today + Tomorrow Realtime)
+      run: |
+        python -c "
+        import datetime
         import xml.etree.ElementTree as ET
 
         def generate_epg():
@@ -11,8 +40,8 @@ import datetime
             
             for ch in channels_info:
                 channel = ET.SubElement(tv, 'channel', id=ch['id'])
-                ET.SubElement(channel, 'display-name', lang='en').text = ch_info if 'ch_info' in locals() else ch['name_en']
-                ET.SubElement(channel, 'icon', src='https://rally.tv')
+                ET.SubElement(channel, 'display-name', lang='en').text = ch['name_en']
+                ET.SubElement(channel, 'icon', src='https://www.rally.tv/assets/images/logo.png')
 
             # 日本時間の「今日」と「明日」の日付文字列を自動計算
             jst_now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
@@ -23,7 +52,6 @@ import datetime
 
             # ==========================================================
             # 【公式詳細スタイル・ステージスケジュール】
-            # あのとき大お気に入りだった、細かいSSごとのタイムテーブルを完全再現！
             # ==========================================================
             is_rally_week = True  # ラリー開催中の切り替えフラグ
 
@@ -127,3 +155,12 @@ import datetime
             print('Official detailed style EPG (Today + Tomorrow) generated successfully!')
 
         generate_epg()
+        "
+
+    - name: Commit and Push Changes if Updated
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add epg.xml
+        git commit -m "Auto-update realtime JST epg.xml" || echo "No changes to commit"
+        git push origin main
