@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<tv><channel id="rallytv.1"><display-name>Rally.TV Live</display-name></channel><programme start="20261005080000 +0000" stop="20261005090000 +0000" channel="rallytv.1"><title lang="en">Rally.TV Live - Oct 2 - 8:00 AM</title><desc lang="en">Oct 2 - 8:00 AM
+<tv><channel id="rallytv.1"><display-name>Rally.TV Live</display-name></channel><programme start="20261005080000 +0000" stop="20261005090000 +0000" channel="rallytv.1"><title lang="en">Rally.TV - Oct 2 - 8:00 AM</title><desc lang="en">Oct 2 - 8:00 AM
 Oct 2 - 9:00 AM
 Oct 2 - 10:00 AM
 Oct 2 - 11:00 AM
@@ -11,7 +11,226 @@ Oct 2 - 4:00 PM
 Oct 2 - 5:00 PM
 Oct 2 - 6:00 PM
 Oct 2 - 7:00 PM
-Oct 2...</desc></programme><programme start="20261005080000 +0000" stop="20261005090000 +0000" channel="rallytv.1"><title lang="en">Rally.TV Live - Oct 2 - 9:00 AM</title><desc lang="en">Oct 2 - 8:00 AM
+Oct 2 - 8:00 PM
+Oct 2 - 9:00 PM
+Oct 2 - 10:00 PM
+Oct 2 - 11:00 PM
+Oct 3 - 12:00 AM
+Oct 3 - 1:00 AM
+Oct 3 - 2:00 AM
+Oct 3 - 3:00 AM
+Oct 3 - 4:00 AM
+Oct 3 - 5:00 AM
+Oct 3 - 6:00 AM
+Oct 3 - 7:00 AM
+Oct 3 - 8:00 AM
+Oct 3 - 9:00 AM
+Oct 3 - 10:00 AM
+Oct 3 - 11:00 AM
+Oct 3 - 12:00 PM
+Oct 3 - 1:00 PM
+Oct 3 - 2:00 PM
+Oct 3 - 3:00 PM
+Oct 3 - 4:00 PM
+Oct 3 - 5:00 PM
+Oct 3 - 6:00 PM
+Oct 3 - 7:00 PM
+Oct 3 - 8:00 PM
+Oct 3 - 9:00 PM
+Oct 3 - 10:00 PM
+Oct 3 - 11:00 PM
+Oct 4 - 12:00 AM
+Oct 4 - 1:00 AM
+Oct 4 - 2:00 AM
+Oct 4 - 3:00 AM
+Oct 4 - 4:00 AM
+Oct 4 - 5:00 AM
+Oct 4 - 6:00 AM
+Oct 4 - 7:00 AM
+Oct 4 - 8:00 AM
+Oct 4 - 9:00 AM
+Oct 4 - 10:00 AM
+Oct 4 - 11:00 AM
+Oct 4 - 12:00 PM
+Oct 4 - 1:00 PM
+Oct 4 - 2:00 PM
+Oct 4 - 3:00 PM
+Oct 4 - 4:00 PM
+Oct 4 - 5:00 PM
+Oct 4 - 6:00 PM
+Oct 4 - 7:00 PM
+Oct 4 - 8:00 PM
+Oct 4 - 9:00 PM
+Oct 4 - 10:00 PM
+Oct 4 - 11:00 PM
+12:00 AM
+1:00 AM
+2:00 AM
+3:00 AM
+4:00 AM
+5:00 AM
+6:00 AM
+7:00 AM
+8:00 AM
+9:00 AM
+10:00 AM
+11:00 AM
+12:00 PM
+1:00 PM
+2:00 PM
+3:00 PM
+4:00 PM
+5:00 PM
+6:00 PM
+7:00 PM
+8:00 PM
+9:00 PM
+10:00 PM
+11:00 PM
+Oct 6 - 12:00 AM
+Oct 6 - 1:00 AM
+Oct 6 - 2:00 AM
+Oct 6 - 3:00 AM
+Oct 6 - 4:00 AM
+Oct 6 - 5:00 AM
+Oct 6 - 6:00 AM
+Oct 6 - 7:00 AM
+Oct 6 - 8:00 AM
+Oct 6 - 9:00 AM
+Oct 6 - 10:00 AM
+Oct 6 - 11:00 AM
+Oct 6 - 12:00 PM
+Oct 6 - 1:00 PM
+Oct 6 - 2:00 PM
+Oct 6 - 3:00 PM
+Oct 6 - 4:00 PM
+Oct 6 - 5:00 PM
+Oct 6 - 6:00 PM
+Oct 6 - 7:00 PM
+Oct 6 - 8:00 PM
+Oct 6 - 9:00 PM
+Oct 6 - 10:00 PM
+Oct 6 - 11:00 PM
+Oct 7 - 12:00 AM
+Oct 7 - 1:00 AM
+Oct 7 - 2:00 AM
+Oct 7 - 3:00 AM
+Oct 7 - 4:00 AM
+Oct 7 - 5:00 AM
+Oct 7 - 6:00 AM
+Oct 7 - 7:00 AM
+Oct 7 - 8:00 AM
+Oct 7 - 9:00 AM
+Oct 7 - 10:00 AM
+Oct 7 - 11:00 AM
+Oct 7 - 12:00 PM
+Oct 7 - 1:00 PM
+Oct 7 - 2:00 PM
+Oct 7 - 3:00 PM
+Oct 7 - 4:00 PM
+Oct 7 - 5:00 PM
+Oct 7 - 6:00 PM
+Oct 7 - 7:00 PM
+Oct 7 - 8:00 PM
+Oct 7 - 9:00 PM
+Oct 7 - 10:00 PM
+Oct 7 - 11:00 PM
+Oct 8 - 12:00 AM
+Oct 8 - 1:00 AM
+Oct 8 - 2:00 AM
+Oct 8 - 3:00 AM
+Oct 8 - 4:00 AM
+Oct 8 - 5:00 AM
+Oct 8 - 6:00 AM
+Oct 8 - 7:00 AM
+Oct 8 - 8:00 AM
+Oct 8 - 9:00 AM
+Oct 8 - 10:00 AM
+Oct 8 - 11:00 AM
+Oct 8 - 12:00 PM
+Oct 8 - 1:00 PM
+Oct 8 - 2:00 PM
+Oct 8 - 3:00 PM
+Oct 8 - 4:00 PM
+Oct 8 - 5:00 PM
+Oct 8 - 6:00 PM
+Oct 8 - 7:00 PM
+Oct 8 - 8:00 PM
+Oct 8 - 9:00 PM
+Oct 8 - 10:00 PM
+Oct 8 - 11:00 PM
+Oct 9 - 12:00 AM
+Oct 9 - 1:00 AM
+Oct 9 - 2:00 AM
+Oct 9 - 3:00 AM
+Oct 9 - 4:00 AM
+Oct 9 - 5:00 AM
+Oct 9 - 6:00 AM
+Oct 9 - 7:00 AM
+Oct 9 - 8:00 AM
+Oct 9 - 9:00 AM
+Oct 9 - 10:00 AM
+Oct 9 - 11:00 AM
+Oct 9 - 12:00 PM
+Oct 9 - 1:00 PM
+Oct 9 - 2:00 PM
+Oct 9 - 3:00 PM
+Oct 9 - 4:00 PM
+Oct 9 - 5:00 PM
+Oct 9 - 6:00 PM
+Oct 9 - 7:00 PM
+Oct 9 - 8:00 PM
+Oct 9 - 9:00 PM
+Oct 9 - 10:00 PM
+Oct 9 - 11:00 PM
+Oct 10 - 12:00 AM
+Oct 10 - 1:00 AM
+Oct 10 - 2:00 AM
+Oct 10 - 3:00 AM
+Oct 10 - 4:00 AM
+Oct 10 - 5:00 AM
+Oct 10 - 6:00 AM
+Oct 10 - 7:00 AM
+Oct 10 - 8:00 AM
+Oct 10 - 9:00 AM
+Oct 10 - 10:00 AM
+Oct 10 - 11:00 AM
+Oct 10 - 12:00 PM
+Oct 10 - 1:00 PM
+Oct 10 - 2:00 PM
+Oct 10 - 3:00 PM
+Oct 10 - 4:00 PM
+Oct 10 - 5:00 PM
+Oct 10 - 6:00 PM
+Oct 10 - 7:00 PM
+Oct 10 - 8:00 PM
+Oct 10 - 9:00 PM
+Oct 10 - 10:00 PM
+Oct 10 - 11:00 PM
+Oct 11 - 12:00 AM
+Oct 11 - 1:00 AM
+Oct 11 - 2:00 AM
+Oct 11 - 3:00 AM
+Oct 11 - 4:00 AM
+Oct 11 - 5:00 AM
+Oct 11 - 6:00 AM
+Oct 11 - 7:00 AM
+Oct 11 - 8:00 AM
+Oct 11 - 9:00 AM
+Oct 11 - 10:00 AM
+Oct 11 - 11:00 AM
+Oct 11 - 12:00 PM
+Oct 11 - 1:00 PM
+Oct 11 - 2:00 PM
+Oct 11 - 3:00 PM
+Oct 11 - 4:00 PM
+Oct 11 - 5:00 PM
+Oct 11 - 6:00 PM
+Oct 11 - 7:00 PM
+Oct 11 - 8:00 PM
+Oct 11 - 9:00 PM
+Oct 11 - 10:00 PM
+Oct 11 - 11:00 PM</desc></programme><programme start="20261005090000 +0000" stop="20261005100000 +0000" channel="rallytv.1"><title lang="en">Rally.TV - Oct 2 - 9:00 AM</title><desc lang="en">Oct 2 - 8:00 AM
 Oct 2 - 9:00 AM
 Oct 2 - 10:00 AM
 Oct 2 - 11:00 AM
@@ -23,7 +242,226 @@ Oct 2 - 4:00 PM
 Oct 2 - 5:00 PM
 Oct 2 - 6:00 PM
 Oct 2 - 7:00 PM
-Oct 2...</desc></programme><programme start="20261005080000 +0000" stop="20261005090000 +0000" channel="rallytv.1"><title lang="en">Rally.TV Live - Oct 2 - 10:00 AM</title><desc lang="en">Oct 2 - 8:00 AM
+Oct 2 - 8:00 PM
+Oct 2 - 9:00 PM
+Oct 2 - 10:00 PM
+Oct 2 - 11:00 PM
+Oct 3 - 12:00 AM
+Oct 3 - 1:00 AM
+Oct 3 - 2:00 AM
+Oct 3 - 3:00 AM
+Oct 3 - 4:00 AM
+Oct 3 - 5:00 AM
+Oct 3 - 6:00 AM
+Oct 3 - 7:00 AM
+Oct 3 - 8:00 AM
+Oct 3 - 9:00 AM
+Oct 3 - 10:00 AM
+Oct 3 - 11:00 AM
+Oct 3 - 12:00 PM
+Oct 3 - 1:00 PM
+Oct 3 - 2:00 PM
+Oct 3 - 3:00 PM
+Oct 3 - 4:00 PM
+Oct 3 - 5:00 PM
+Oct 3 - 6:00 PM
+Oct 3 - 7:00 PM
+Oct 3 - 8:00 PM
+Oct 3 - 9:00 PM
+Oct 3 - 10:00 PM
+Oct 3 - 11:00 PM
+Oct 4 - 12:00 AM
+Oct 4 - 1:00 AM
+Oct 4 - 2:00 AM
+Oct 4 - 3:00 AM
+Oct 4 - 4:00 AM
+Oct 4 - 5:00 AM
+Oct 4 - 6:00 AM
+Oct 4 - 7:00 AM
+Oct 4 - 8:00 AM
+Oct 4 - 9:00 AM
+Oct 4 - 10:00 AM
+Oct 4 - 11:00 AM
+Oct 4 - 12:00 PM
+Oct 4 - 1:00 PM
+Oct 4 - 2:00 PM
+Oct 4 - 3:00 PM
+Oct 4 - 4:00 PM
+Oct 4 - 5:00 PM
+Oct 4 - 6:00 PM
+Oct 4 - 7:00 PM
+Oct 4 - 8:00 PM
+Oct 4 - 9:00 PM
+Oct 4 - 10:00 PM
+Oct 4 - 11:00 PM
+12:00 AM
+1:00 AM
+2:00 AM
+3:00 AM
+4:00 AM
+5:00 AM
+6:00 AM
+7:00 AM
+8:00 AM
+9:00 AM
+10:00 AM
+11:00 AM
+12:00 PM
+1:00 PM
+2:00 PM
+3:00 PM
+4:00 PM
+5:00 PM
+6:00 PM
+7:00 PM
+8:00 PM
+9:00 PM
+10:00 PM
+11:00 PM
+Oct 6 - 12:00 AM
+Oct 6 - 1:00 AM
+Oct 6 - 2:00 AM
+Oct 6 - 3:00 AM
+Oct 6 - 4:00 AM
+Oct 6 - 5:00 AM
+Oct 6 - 6:00 AM
+Oct 6 - 7:00 AM
+Oct 6 - 8:00 AM
+Oct 6 - 9:00 AM
+Oct 6 - 10:00 AM
+Oct 6 - 11:00 AM
+Oct 6 - 12:00 PM
+Oct 6 - 1:00 PM
+Oct 6 - 2:00 PM
+Oct 6 - 3:00 PM
+Oct 6 - 4:00 PM
+Oct 6 - 5:00 PM
+Oct 6 - 6:00 PM
+Oct 6 - 7:00 PM
+Oct 6 - 8:00 PM
+Oct 6 - 9:00 PM
+Oct 6 - 10:00 PM
+Oct 6 - 11:00 PM
+Oct 7 - 12:00 AM
+Oct 7 - 1:00 AM
+Oct 7 - 2:00 AM
+Oct 7 - 3:00 AM
+Oct 7 - 4:00 AM
+Oct 7 - 5:00 AM
+Oct 7 - 6:00 AM
+Oct 7 - 7:00 AM
+Oct 7 - 8:00 AM
+Oct 7 - 9:00 AM
+Oct 7 - 10:00 AM
+Oct 7 - 11:00 AM
+Oct 7 - 12:00 PM
+Oct 7 - 1:00 PM
+Oct 7 - 2:00 PM
+Oct 7 - 3:00 PM
+Oct 7 - 4:00 PM
+Oct 7 - 5:00 PM
+Oct 7 - 6:00 PM
+Oct 7 - 7:00 PM
+Oct 7 - 8:00 PM
+Oct 7 - 9:00 PM
+Oct 7 - 10:00 PM
+Oct 7 - 11:00 PM
+Oct 8 - 12:00 AM
+Oct 8 - 1:00 AM
+Oct 8 - 2:00 AM
+Oct 8 - 3:00 AM
+Oct 8 - 4:00 AM
+Oct 8 - 5:00 AM
+Oct 8 - 6:00 AM
+Oct 8 - 7:00 AM
+Oct 8 - 8:00 AM
+Oct 8 - 9:00 AM
+Oct 8 - 10:00 AM
+Oct 8 - 11:00 AM
+Oct 8 - 12:00 PM
+Oct 8 - 1:00 PM
+Oct 8 - 2:00 PM
+Oct 8 - 3:00 PM
+Oct 8 - 4:00 PM
+Oct 8 - 5:00 PM
+Oct 8 - 6:00 PM
+Oct 8 - 7:00 PM
+Oct 8 - 8:00 PM
+Oct 8 - 9:00 PM
+Oct 8 - 10:00 PM
+Oct 8 - 11:00 PM
+Oct 9 - 12:00 AM
+Oct 9 - 1:00 AM
+Oct 9 - 2:00 AM
+Oct 9 - 3:00 AM
+Oct 9 - 4:00 AM
+Oct 9 - 5:00 AM
+Oct 9 - 6:00 AM
+Oct 9 - 7:00 AM
+Oct 9 - 8:00 AM
+Oct 9 - 9:00 AM
+Oct 9 - 10:00 AM
+Oct 9 - 11:00 AM
+Oct 9 - 12:00 PM
+Oct 9 - 1:00 PM
+Oct 9 - 2:00 PM
+Oct 9 - 3:00 PM
+Oct 9 - 4:00 PM
+Oct 9 - 5:00 PM
+Oct 9 - 6:00 PM
+Oct 9 - 7:00 PM
+Oct 9 - 8:00 PM
+Oct 9 - 9:00 PM
+Oct 9 - 10:00 PM
+Oct 9 - 11:00 PM
+Oct 10 - 12:00 AM
+Oct 10 - 1:00 AM
+Oct 10 - 2:00 AM
+Oct 10 - 3:00 AM
+Oct 10 - 4:00 AM
+Oct 10 - 5:00 AM
+Oct 10 - 6:00 AM
+Oct 10 - 7:00 AM
+Oct 10 - 8:00 AM
+Oct 10 - 9:00 AM
+Oct 10 - 10:00 AM
+Oct 10 - 11:00 AM
+Oct 10 - 12:00 PM
+Oct 10 - 1:00 PM
+Oct 10 - 2:00 PM
+Oct 10 - 3:00 PM
+Oct 10 - 4:00 PM
+Oct 10 - 5:00 PM
+Oct 10 - 6:00 PM
+Oct 10 - 7:00 PM
+Oct 10 - 8:00 PM
+Oct 10 - 9:00 PM
+Oct 10 - 10:00 PM
+Oct 10 - 11:00 PM
+Oct 11 - 12:00 AM
+Oct 11 - 1:00 AM
+Oct 11 - 2:00 AM
+Oct 11 - 3:00 AM
+Oct 11 - 4:00 AM
+Oct 11 - 5:00 AM
+Oct 11 - 6:00 AM
+Oct 11 - 7:00 AM
+Oct 11 - 8:00 AM
+Oct 11 - 9:00 AM
+Oct 11 - 10:00 AM
+Oct 11 - 11:00 AM
+Oct 11 - 12:00 PM
+Oct 11 - 1:00 PM
+Oct 11 - 2:00 PM
+Oct 11 - 3:00 PM
+Oct 11 - 4:00 PM
+Oct 11 - 5:00 PM
+Oct 11 - 6:00 PM
+Oct 11 - 7:00 PM
+Oct 11 - 8:00 PM
+Oct 11 - 9:00 PM
+Oct 11 - 10:00 PM
+Oct 11 - 11:00 PM</desc></programme><programme start="20261005100000 +0000" stop="20261005110000 +0000" channel="rallytv.1"><title lang="en">Rally.TV - Oct 2 - 10:00 AM</title><desc lang="en">Oct 2 - 8:00 AM
 Oct 2 - 9:00 AM
 Oct 2 - 10:00 AM
 Oct 2 - 11:00 AM
@@ -35,7 +473,226 @@ Oct 2 - 4:00 PM
 Oct 2 - 5:00 PM
 Oct 2 - 6:00 PM
 Oct 2 - 7:00 PM
-Oct 2...</desc></programme><programme start="20261005080000 +0000" stop="20261005090000 +0000" channel="rallytv.1"><title lang="en">Rally.TV Live - Oct 2 - 11:00 AM</title><desc lang="en">Oct 2 - 8:00 AM
+Oct 2 - 8:00 PM
+Oct 2 - 9:00 PM
+Oct 2 - 10:00 PM
+Oct 2 - 11:00 PM
+Oct 3 - 12:00 AM
+Oct 3 - 1:00 AM
+Oct 3 - 2:00 AM
+Oct 3 - 3:00 AM
+Oct 3 - 4:00 AM
+Oct 3 - 5:00 AM
+Oct 3 - 6:00 AM
+Oct 3 - 7:00 AM
+Oct 3 - 8:00 AM
+Oct 3 - 9:00 AM
+Oct 3 - 10:00 AM
+Oct 3 - 11:00 AM
+Oct 3 - 12:00 PM
+Oct 3 - 1:00 PM
+Oct 3 - 2:00 PM
+Oct 3 - 3:00 PM
+Oct 3 - 4:00 PM
+Oct 3 - 5:00 PM
+Oct 3 - 6:00 PM
+Oct 3 - 7:00 PM
+Oct 3 - 8:00 PM
+Oct 3 - 9:00 PM
+Oct 3 - 10:00 PM
+Oct 3 - 11:00 PM
+Oct 4 - 12:00 AM
+Oct 4 - 1:00 AM
+Oct 4 - 2:00 AM
+Oct 4 - 3:00 AM
+Oct 4 - 4:00 AM
+Oct 4 - 5:00 AM
+Oct 4 - 6:00 AM
+Oct 4 - 7:00 AM
+Oct 4 - 8:00 AM
+Oct 4 - 9:00 AM
+Oct 4 - 10:00 AM
+Oct 4 - 11:00 AM
+Oct 4 - 12:00 PM
+Oct 4 - 1:00 PM
+Oct 4 - 2:00 PM
+Oct 4 - 3:00 PM
+Oct 4 - 4:00 PM
+Oct 4 - 5:00 PM
+Oct 4 - 6:00 PM
+Oct 4 - 7:00 PM
+Oct 4 - 8:00 PM
+Oct 4 - 9:00 PM
+Oct 4 - 10:00 PM
+Oct 4 - 11:00 PM
+12:00 AM
+1:00 AM
+2:00 AM
+3:00 AM
+4:00 AM
+5:00 AM
+6:00 AM
+7:00 AM
+8:00 AM
+9:00 AM
+10:00 AM
+11:00 AM
+12:00 PM
+1:00 PM
+2:00 PM
+3:00 PM
+4:00 PM
+5:00 PM
+6:00 PM
+7:00 PM
+8:00 PM
+9:00 PM
+10:00 PM
+11:00 PM
+Oct 6 - 12:00 AM
+Oct 6 - 1:00 AM
+Oct 6 - 2:00 AM
+Oct 6 - 3:00 AM
+Oct 6 - 4:00 AM
+Oct 6 - 5:00 AM
+Oct 6 - 6:00 AM
+Oct 6 - 7:00 AM
+Oct 6 - 8:00 AM
+Oct 6 - 9:00 AM
+Oct 6 - 10:00 AM
+Oct 6 - 11:00 AM
+Oct 6 - 12:00 PM
+Oct 6 - 1:00 PM
+Oct 6 - 2:00 PM
+Oct 6 - 3:00 PM
+Oct 6 - 4:00 PM
+Oct 6 - 5:00 PM
+Oct 6 - 6:00 PM
+Oct 6 - 7:00 PM
+Oct 6 - 8:00 PM
+Oct 6 - 9:00 PM
+Oct 6 - 10:00 PM
+Oct 6 - 11:00 PM
+Oct 7 - 12:00 AM
+Oct 7 - 1:00 AM
+Oct 7 - 2:00 AM
+Oct 7 - 3:00 AM
+Oct 7 - 4:00 AM
+Oct 7 - 5:00 AM
+Oct 7 - 6:00 AM
+Oct 7 - 7:00 AM
+Oct 7 - 8:00 AM
+Oct 7 - 9:00 AM
+Oct 7 - 10:00 AM
+Oct 7 - 11:00 AM
+Oct 7 - 12:00 PM
+Oct 7 - 1:00 PM
+Oct 7 - 2:00 PM
+Oct 7 - 3:00 PM
+Oct 7 - 4:00 PM
+Oct 7 - 5:00 PM
+Oct 7 - 6:00 PM
+Oct 7 - 7:00 PM
+Oct 7 - 8:00 PM
+Oct 7 - 9:00 PM
+Oct 7 - 10:00 PM
+Oct 7 - 11:00 PM
+Oct 8 - 12:00 AM
+Oct 8 - 1:00 AM
+Oct 8 - 2:00 AM
+Oct 8 - 3:00 AM
+Oct 8 - 4:00 AM
+Oct 8 - 5:00 AM
+Oct 8 - 6:00 AM
+Oct 8 - 7:00 AM
+Oct 8 - 8:00 AM
+Oct 8 - 9:00 AM
+Oct 8 - 10:00 AM
+Oct 8 - 11:00 AM
+Oct 8 - 12:00 PM
+Oct 8 - 1:00 PM
+Oct 8 - 2:00 PM
+Oct 8 - 3:00 PM
+Oct 8 - 4:00 PM
+Oct 8 - 5:00 PM
+Oct 8 - 6:00 PM
+Oct 8 - 7:00 PM
+Oct 8 - 8:00 PM
+Oct 8 - 9:00 PM
+Oct 8 - 10:00 PM
+Oct 8 - 11:00 PM
+Oct 9 - 12:00 AM
+Oct 9 - 1:00 AM
+Oct 9 - 2:00 AM
+Oct 9 - 3:00 AM
+Oct 9 - 4:00 AM
+Oct 9 - 5:00 AM
+Oct 9 - 6:00 AM
+Oct 9 - 7:00 AM
+Oct 9 - 8:00 AM
+Oct 9 - 9:00 AM
+Oct 9 - 10:00 AM
+Oct 9 - 11:00 AM
+Oct 9 - 12:00 PM
+Oct 9 - 1:00 PM
+Oct 9 - 2:00 PM
+Oct 9 - 3:00 PM
+Oct 9 - 4:00 PM
+Oct 9 - 5:00 PM
+Oct 9 - 6:00 PM
+Oct 9 - 7:00 PM
+Oct 9 - 8:00 PM
+Oct 9 - 9:00 PM
+Oct 9 - 10:00 PM
+Oct 9 - 11:00 PM
+Oct 10 - 12:00 AM
+Oct 10 - 1:00 AM
+Oct 10 - 2:00 AM
+Oct 10 - 3:00 AM
+Oct 10 - 4:00 AM
+Oct 10 - 5:00 AM
+Oct 10 - 6:00 AM
+Oct 10 - 7:00 AM
+Oct 10 - 8:00 AM
+Oct 10 - 9:00 AM
+Oct 10 - 10:00 AM
+Oct 10 - 11:00 AM
+Oct 10 - 12:00 PM
+Oct 10 - 1:00 PM
+Oct 10 - 2:00 PM
+Oct 10 - 3:00 PM
+Oct 10 - 4:00 PM
+Oct 10 - 5:00 PM
+Oct 10 - 6:00 PM
+Oct 10 - 7:00 PM
+Oct 10 - 8:00 PM
+Oct 10 - 9:00 PM
+Oct 10 - 10:00 PM
+Oct 10 - 11:00 PM
+Oct 11 - 12:00 AM
+Oct 11 - 1:00 AM
+Oct 11 - 2:00 AM
+Oct 11 - 3:00 AM
+Oct 11 - 4:00 AM
+Oct 11 - 5:00 AM
+Oct 11 - 6:00 AM
+Oct 11 - 7:00 AM
+Oct 11 - 8:00 AM
+Oct 11 - 9:00 AM
+Oct 11 - 10:00 AM
+Oct 11 - 11:00 AM
+Oct 11 - 12:00 PM
+Oct 11 - 1:00 PM
+Oct 11 - 2:00 PM
+Oct 11 - 3:00 PM
+Oct 11 - 4:00 PM
+Oct 11 - 5:00 PM
+Oct 11 - 6:00 PM
+Oct 11 - 7:00 PM
+Oct 11 - 8:00 PM
+Oct 11 - 9:00 PM
+Oct 11 - 10:00 PM
+Oct 11 - 11:00 PM</desc></programme><programme start="20261005110000 +0000" stop="20261005120000 +0000" channel="rallytv.1"><title lang="en">Rally.TV - Oct 2 - 11:00 AM</title><desc lang="en">Oct 2 - 8:00 AM
 Oct 2 - 9:00 AM
 Oct 2 - 10:00 AM
 Oct 2 - 11:00 AM
@@ -47,7 +704,226 @@ Oct 2 - 4:00 PM
 Oct 2 - 5:00 PM
 Oct 2 - 6:00 PM
 Oct 2 - 7:00 PM
-Oct 2...</desc></programme><programme start="20261005080000 +0000" stop="20261005090000 +0000" channel="rallytv.1"><title lang="en">Rally.TV Live - Oct 2 - 12:00 PM</title><desc lang="en">Oct 2 - 8:00 AM
+Oct 2 - 8:00 PM
+Oct 2 - 9:00 PM
+Oct 2 - 10:00 PM
+Oct 2 - 11:00 PM
+Oct 3 - 12:00 AM
+Oct 3 - 1:00 AM
+Oct 3 - 2:00 AM
+Oct 3 - 3:00 AM
+Oct 3 - 4:00 AM
+Oct 3 - 5:00 AM
+Oct 3 - 6:00 AM
+Oct 3 - 7:00 AM
+Oct 3 - 8:00 AM
+Oct 3 - 9:00 AM
+Oct 3 - 10:00 AM
+Oct 3 - 11:00 AM
+Oct 3 - 12:00 PM
+Oct 3 - 1:00 PM
+Oct 3 - 2:00 PM
+Oct 3 - 3:00 PM
+Oct 3 - 4:00 PM
+Oct 3 - 5:00 PM
+Oct 3 - 6:00 PM
+Oct 3 - 7:00 PM
+Oct 3 - 8:00 PM
+Oct 3 - 9:00 PM
+Oct 3 - 10:00 PM
+Oct 3 - 11:00 PM
+Oct 4 - 12:00 AM
+Oct 4 - 1:00 AM
+Oct 4 - 2:00 AM
+Oct 4 - 3:00 AM
+Oct 4 - 4:00 AM
+Oct 4 - 5:00 AM
+Oct 4 - 6:00 AM
+Oct 4 - 7:00 AM
+Oct 4 - 8:00 AM
+Oct 4 - 9:00 AM
+Oct 4 - 10:00 AM
+Oct 4 - 11:00 AM
+Oct 4 - 12:00 PM
+Oct 4 - 1:00 PM
+Oct 4 - 2:00 PM
+Oct 4 - 3:00 PM
+Oct 4 - 4:00 PM
+Oct 4 - 5:00 PM
+Oct 4 - 6:00 PM
+Oct 4 - 7:00 PM
+Oct 4 - 8:00 PM
+Oct 4 - 9:00 PM
+Oct 4 - 10:00 PM
+Oct 4 - 11:00 PM
+12:00 AM
+1:00 AM
+2:00 AM
+3:00 AM
+4:00 AM
+5:00 AM
+6:00 AM
+7:00 AM
+8:00 AM
+9:00 AM
+10:00 AM
+11:00 AM
+12:00 PM
+1:00 PM
+2:00 PM
+3:00 PM
+4:00 PM
+5:00 PM
+6:00 PM
+7:00 PM
+8:00 PM
+9:00 PM
+10:00 PM
+11:00 PM
+Oct 6 - 12:00 AM
+Oct 6 - 1:00 AM
+Oct 6 - 2:00 AM
+Oct 6 - 3:00 AM
+Oct 6 - 4:00 AM
+Oct 6 - 5:00 AM
+Oct 6 - 6:00 AM
+Oct 6 - 7:00 AM
+Oct 6 - 8:00 AM
+Oct 6 - 9:00 AM
+Oct 6 - 10:00 AM
+Oct 6 - 11:00 AM
+Oct 6 - 12:00 PM
+Oct 6 - 1:00 PM
+Oct 6 - 2:00 PM
+Oct 6 - 3:00 PM
+Oct 6 - 4:00 PM
+Oct 6 - 5:00 PM
+Oct 6 - 6:00 PM
+Oct 6 - 7:00 PM
+Oct 6 - 8:00 PM
+Oct 6 - 9:00 PM
+Oct 6 - 10:00 PM
+Oct 6 - 11:00 PM
+Oct 7 - 12:00 AM
+Oct 7 - 1:00 AM
+Oct 7 - 2:00 AM
+Oct 7 - 3:00 AM
+Oct 7 - 4:00 AM
+Oct 7 - 5:00 AM
+Oct 7 - 6:00 AM
+Oct 7 - 7:00 AM
+Oct 7 - 8:00 AM
+Oct 7 - 9:00 AM
+Oct 7 - 10:00 AM
+Oct 7 - 11:00 AM
+Oct 7 - 12:00 PM
+Oct 7 - 1:00 PM
+Oct 7 - 2:00 PM
+Oct 7 - 3:00 PM
+Oct 7 - 4:00 PM
+Oct 7 - 5:00 PM
+Oct 7 - 6:00 PM
+Oct 7 - 7:00 PM
+Oct 7 - 8:00 PM
+Oct 7 - 9:00 PM
+Oct 7 - 10:00 PM
+Oct 7 - 11:00 PM
+Oct 8 - 12:00 AM
+Oct 8 - 1:00 AM
+Oct 8 - 2:00 AM
+Oct 8 - 3:00 AM
+Oct 8 - 4:00 AM
+Oct 8 - 5:00 AM
+Oct 8 - 6:00 AM
+Oct 8 - 7:00 AM
+Oct 8 - 8:00 AM
+Oct 8 - 9:00 AM
+Oct 8 - 10:00 AM
+Oct 8 - 11:00 AM
+Oct 8 - 12:00 PM
+Oct 8 - 1:00 PM
+Oct 8 - 2:00 PM
+Oct 8 - 3:00 PM
+Oct 8 - 4:00 PM
+Oct 8 - 5:00 PM
+Oct 8 - 6:00 PM
+Oct 8 - 7:00 PM
+Oct 8 - 8:00 PM
+Oct 8 - 9:00 PM
+Oct 8 - 10:00 PM
+Oct 8 - 11:00 PM
+Oct 9 - 12:00 AM
+Oct 9 - 1:00 AM
+Oct 9 - 2:00 AM
+Oct 9 - 3:00 AM
+Oct 9 - 4:00 AM
+Oct 9 - 5:00 AM
+Oct 9 - 6:00 AM
+Oct 9 - 7:00 AM
+Oct 9 - 8:00 AM
+Oct 9 - 9:00 AM
+Oct 9 - 10:00 AM
+Oct 9 - 11:00 AM
+Oct 9 - 12:00 PM
+Oct 9 - 1:00 PM
+Oct 9 - 2:00 PM
+Oct 9 - 3:00 PM
+Oct 9 - 4:00 PM
+Oct 9 - 5:00 PM
+Oct 9 - 6:00 PM
+Oct 9 - 7:00 PM
+Oct 9 - 8:00 PM
+Oct 9 - 9:00 PM
+Oct 9 - 10:00 PM
+Oct 9 - 11:00 PM
+Oct 10 - 12:00 AM
+Oct 10 - 1:00 AM
+Oct 10 - 2:00 AM
+Oct 10 - 3:00 AM
+Oct 10 - 4:00 AM
+Oct 10 - 5:00 AM
+Oct 10 - 6:00 AM
+Oct 10 - 7:00 AM
+Oct 10 - 8:00 AM
+Oct 10 - 9:00 AM
+Oct 10 - 10:00 AM
+Oct 10 - 11:00 AM
+Oct 10 - 12:00 PM
+Oct 10 - 1:00 PM
+Oct 10 - 2:00 PM
+Oct 10 - 3:00 PM
+Oct 10 - 4:00 PM
+Oct 10 - 5:00 PM
+Oct 10 - 6:00 PM
+Oct 10 - 7:00 PM
+Oct 10 - 8:00 PM
+Oct 10 - 9:00 PM
+Oct 10 - 10:00 PM
+Oct 10 - 11:00 PM
+Oct 11 - 12:00 AM
+Oct 11 - 1:00 AM
+Oct 11 - 2:00 AM
+Oct 11 - 3:00 AM
+Oct 11 - 4:00 AM
+Oct 11 - 5:00 AM
+Oct 11 - 6:00 AM
+Oct 11 - 7:00 AM
+Oct 11 - 8:00 AM
+Oct 11 - 9:00 AM
+Oct 11 - 10:00 AM
+Oct 11 - 11:00 AM
+Oct 11 - 12:00 PM
+Oct 11 - 1:00 PM
+Oct 11 - 2:00 PM
+Oct 11 - 3:00 PM
+Oct 11 - 4:00 PM
+Oct 11 - 5:00 PM
+Oct 11 - 6:00 PM
+Oct 11 - 7:00 PM
+Oct 11 - 8:00 PM
+Oct 11 - 9:00 PM
+Oct 11 - 10:00 PM
+Oct 11 - 11:00 PM</desc></programme><programme start="20261005120000 +0000" stop="20261005130000 +0000" channel="rallytv.1"><title lang="en">Rally.TV - Oct 2 - 12:00 PM</title><desc lang="en">Oct 2 - 8:00 AM
 Oct 2 - 9:00 AM
 Oct 2 - 10:00 AM
 Oct 2 - 11:00 AM
@@ -59,7 +935,226 @@ Oct 2 - 4:00 PM
 Oct 2 - 5:00 PM
 Oct 2 - 6:00 PM
 Oct 2 - 7:00 PM
-Oct 2...</desc></programme><programme start="20261005080000 +0000" stop="20261005090000 +0000" channel="rallytv.1"><title lang="en">Rally.TV Live - Oct 2 - 1:00 PM</title><desc lang="en">Oct 2 - 8:00 AM
+Oct 2 - 8:00 PM
+Oct 2 - 9:00 PM
+Oct 2 - 10:00 PM
+Oct 2 - 11:00 PM
+Oct 3 - 12:00 AM
+Oct 3 - 1:00 AM
+Oct 3 - 2:00 AM
+Oct 3 - 3:00 AM
+Oct 3 - 4:00 AM
+Oct 3 - 5:00 AM
+Oct 3 - 6:00 AM
+Oct 3 - 7:00 AM
+Oct 3 - 8:00 AM
+Oct 3 - 9:00 AM
+Oct 3 - 10:00 AM
+Oct 3 - 11:00 AM
+Oct 3 - 12:00 PM
+Oct 3 - 1:00 PM
+Oct 3 - 2:00 PM
+Oct 3 - 3:00 PM
+Oct 3 - 4:00 PM
+Oct 3 - 5:00 PM
+Oct 3 - 6:00 PM
+Oct 3 - 7:00 PM
+Oct 3 - 8:00 PM
+Oct 3 - 9:00 PM
+Oct 3 - 10:00 PM
+Oct 3 - 11:00 PM
+Oct 4 - 12:00 AM
+Oct 4 - 1:00 AM
+Oct 4 - 2:00 AM
+Oct 4 - 3:00 AM
+Oct 4 - 4:00 AM
+Oct 4 - 5:00 AM
+Oct 4 - 6:00 AM
+Oct 4 - 7:00 AM
+Oct 4 - 8:00 AM
+Oct 4 - 9:00 AM
+Oct 4 - 10:00 AM
+Oct 4 - 11:00 AM
+Oct 4 - 12:00 PM
+Oct 4 - 1:00 PM
+Oct 4 - 2:00 PM
+Oct 4 - 3:00 PM
+Oct 4 - 4:00 PM
+Oct 4 - 5:00 PM
+Oct 4 - 6:00 PM
+Oct 4 - 7:00 PM
+Oct 4 - 8:00 PM
+Oct 4 - 9:00 PM
+Oct 4 - 10:00 PM
+Oct 4 - 11:00 PM
+12:00 AM
+1:00 AM
+2:00 AM
+3:00 AM
+4:00 AM
+5:00 AM
+6:00 AM
+7:00 AM
+8:00 AM
+9:00 AM
+10:00 AM
+11:00 AM
+12:00 PM
+1:00 PM
+2:00 PM
+3:00 PM
+4:00 PM
+5:00 PM
+6:00 PM
+7:00 PM
+8:00 PM
+9:00 PM
+10:00 PM
+11:00 PM
+Oct 6 - 12:00 AM
+Oct 6 - 1:00 AM
+Oct 6 - 2:00 AM
+Oct 6 - 3:00 AM
+Oct 6 - 4:00 AM
+Oct 6 - 5:00 AM
+Oct 6 - 6:00 AM
+Oct 6 - 7:00 AM
+Oct 6 - 8:00 AM
+Oct 6 - 9:00 AM
+Oct 6 - 10:00 AM
+Oct 6 - 11:00 AM
+Oct 6 - 12:00 PM
+Oct 6 - 1:00 PM
+Oct 6 - 2:00 PM
+Oct 6 - 3:00 PM
+Oct 6 - 4:00 PM
+Oct 6 - 5:00 PM
+Oct 6 - 6:00 PM
+Oct 6 - 7:00 PM
+Oct 6 - 8:00 PM
+Oct 6 - 9:00 PM
+Oct 6 - 10:00 PM
+Oct 6 - 11:00 PM
+Oct 7 - 12:00 AM
+Oct 7 - 1:00 AM
+Oct 7 - 2:00 AM
+Oct 7 - 3:00 AM
+Oct 7 - 4:00 AM
+Oct 7 - 5:00 AM
+Oct 7 - 6:00 AM
+Oct 7 - 7:00 AM
+Oct 7 - 8:00 AM
+Oct 7 - 9:00 AM
+Oct 7 - 10:00 AM
+Oct 7 - 11:00 AM
+Oct 7 - 12:00 PM
+Oct 7 - 1:00 PM
+Oct 7 - 2:00 PM
+Oct 7 - 3:00 PM
+Oct 7 - 4:00 PM
+Oct 7 - 5:00 PM
+Oct 7 - 6:00 PM
+Oct 7 - 7:00 PM
+Oct 7 - 8:00 PM
+Oct 7 - 9:00 PM
+Oct 7 - 10:00 PM
+Oct 7 - 11:00 PM
+Oct 8 - 12:00 AM
+Oct 8 - 1:00 AM
+Oct 8 - 2:00 AM
+Oct 8 - 3:00 AM
+Oct 8 - 4:00 AM
+Oct 8 - 5:00 AM
+Oct 8 - 6:00 AM
+Oct 8 - 7:00 AM
+Oct 8 - 8:00 AM
+Oct 8 - 9:00 AM
+Oct 8 - 10:00 AM
+Oct 8 - 11:00 AM
+Oct 8 - 12:00 PM
+Oct 8 - 1:00 PM
+Oct 8 - 2:00 PM
+Oct 8 - 3:00 PM
+Oct 8 - 4:00 PM
+Oct 8 - 5:00 PM
+Oct 8 - 6:00 PM
+Oct 8 - 7:00 PM
+Oct 8 - 8:00 PM
+Oct 8 - 9:00 PM
+Oct 8 - 10:00 PM
+Oct 8 - 11:00 PM
+Oct 9 - 12:00 AM
+Oct 9 - 1:00 AM
+Oct 9 - 2:00 AM
+Oct 9 - 3:00 AM
+Oct 9 - 4:00 AM
+Oct 9 - 5:00 AM
+Oct 9 - 6:00 AM
+Oct 9 - 7:00 AM
+Oct 9 - 8:00 AM
+Oct 9 - 9:00 AM
+Oct 9 - 10:00 AM
+Oct 9 - 11:00 AM
+Oct 9 - 12:00 PM
+Oct 9 - 1:00 PM
+Oct 9 - 2:00 PM
+Oct 9 - 3:00 PM
+Oct 9 - 4:00 PM
+Oct 9 - 5:00 PM
+Oct 9 - 6:00 PM
+Oct 9 - 7:00 PM
+Oct 9 - 8:00 PM
+Oct 9 - 9:00 PM
+Oct 9 - 10:00 PM
+Oct 9 - 11:00 PM
+Oct 10 - 12:00 AM
+Oct 10 - 1:00 AM
+Oct 10 - 2:00 AM
+Oct 10 - 3:00 AM
+Oct 10 - 4:00 AM
+Oct 10 - 5:00 AM
+Oct 10 - 6:00 AM
+Oct 10 - 7:00 AM
+Oct 10 - 8:00 AM
+Oct 10 - 9:00 AM
+Oct 10 - 10:00 AM
+Oct 10 - 11:00 AM
+Oct 10 - 12:00 PM
+Oct 10 - 1:00 PM
+Oct 10 - 2:00 PM
+Oct 10 - 3:00 PM
+Oct 10 - 4:00 PM
+Oct 10 - 5:00 PM
+Oct 10 - 6:00 PM
+Oct 10 - 7:00 PM
+Oct 10 - 8:00 PM
+Oct 10 - 9:00 PM
+Oct 10 - 10:00 PM
+Oct 10 - 11:00 PM
+Oct 11 - 12:00 AM
+Oct 11 - 1:00 AM
+Oct 11 - 2:00 AM
+Oct 11 - 3:00 AM
+Oct 11 - 4:00 AM
+Oct 11 - 5:00 AM
+Oct 11 - 6:00 AM
+Oct 11 - 7:00 AM
+Oct 11 - 8:00 AM
+Oct 11 - 9:00 AM
+Oct 11 - 10:00 AM
+Oct 11 - 11:00 AM
+Oct 11 - 12:00 PM
+Oct 11 - 1:00 PM
+Oct 11 - 2:00 PM
+Oct 11 - 3:00 PM
+Oct 11 - 4:00 PM
+Oct 11 - 5:00 PM
+Oct 11 - 6:00 PM
+Oct 11 - 7:00 PM
+Oct 11 - 8:00 PM
+Oct 11 - 9:00 PM
+Oct 11 - 10:00 PM
+Oct 11 - 11:00 PM</desc></programme><programme start="20261005130000 +0000" stop="20261005140000 +0000" channel="rallytv.1"><title lang="en">Rally.TV - Oct 2 - 1:00 PM</title><desc lang="en">Oct 2 - 8:00 AM
 Oct 2 - 9:00 AM
 Oct 2 - 10:00 AM
 Oct 2 - 11:00 AM
@@ -71,7 +1166,226 @@ Oct 2 - 4:00 PM
 Oct 2 - 5:00 PM
 Oct 2 - 6:00 PM
 Oct 2 - 7:00 PM
-Oct 2...</desc></programme><programme start="20261005080000 +0000" stop="20261005090000 +0000" channel="rallytv.1"><title lang="en">Rally.TV Live - Oct 2 - 2:00 PM</title><desc lang="en">Oct 2 - 8:00 AM
+Oct 2 - 8:00 PM
+Oct 2 - 9:00 PM
+Oct 2 - 10:00 PM
+Oct 2 - 11:00 PM
+Oct 3 - 12:00 AM
+Oct 3 - 1:00 AM
+Oct 3 - 2:00 AM
+Oct 3 - 3:00 AM
+Oct 3 - 4:00 AM
+Oct 3 - 5:00 AM
+Oct 3 - 6:00 AM
+Oct 3 - 7:00 AM
+Oct 3 - 8:00 AM
+Oct 3 - 9:00 AM
+Oct 3 - 10:00 AM
+Oct 3 - 11:00 AM
+Oct 3 - 12:00 PM
+Oct 3 - 1:00 PM
+Oct 3 - 2:00 PM
+Oct 3 - 3:00 PM
+Oct 3 - 4:00 PM
+Oct 3 - 5:00 PM
+Oct 3 - 6:00 PM
+Oct 3 - 7:00 PM
+Oct 3 - 8:00 PM
+Oct 3 - 9:00 PM
+Oct 3 - 10:00 PM
+Oct 3 - 11:00 PM
+Oct 4 - 12:00 AM
+Oct 4 - 1:00 AM
+Oct 4 - 2:00 AM
+Oct 4 - 3:00 AM
+Oct 4 - 4:00 AM
+Oct 4 - 5:00 AM
+Oct 4 - 6:00 AM
+Oct 4 - 7:00 AM
+Oct 4 - 8:00 AM
+Oct 4 - 9:00 AM
+Oct 4 - 10:00 AM
+Oct 4 - 11:00 AM
+Oct 4 - 12:00 PM
+Oct 4 - 1:00 PM
+Oct 4 - 2:00 PM
+Oct 4 - 3:00 PM
+Oct 4 - 4:00 PM
+Oct 4 - 5:00 PM
+Oct 4 - 6:00 PM
+Oct 4 - 7:00 PM
+Oct 4 - 8:00 PM
+Oct 4 - 9:00 PM
+Oct 4 - 10:00 PM
+Oct 4 - 11:00 PM
+12:00 AM
+1:00 AM
+2:00 AM
+3:00 AM
+4:00 AM
+5:00 AM
+6:00 AM
+7:00 AM
+8:00 AM
+9:00 AM
+10:00 AM
+11:00 AM
+12:00 PM
+1:00 PM
+2:00 PM
+3:00 PM
+4:00 PM
+5:00 PM
+6:00 PM
+7:00 PM
+8:00 PM
+9:00 PM
+10:00 PM
+11:00 PM
+Oct 6 - 12:00 AM
+Oct 6 - 1:00 AM
+Oct 6 - 2:00 AM
+Oct 6 - 3:00 AM
+Oct 6 - 4:00 AM
+Oct 6 - 5:00 AM
+Oct 6 - 6:00 AM
+Oct 6 - 7:00 AM
+Oct 6 - 8:00 AM
+Oct 6 - 9:00 AM
+Oct 6 - 10:00 AM
+Oct 6 - 11:00 AM
+Oct 6 - 12:00 PM
+Oct 6 - 1:00 PM
+Oct 6 - 2:00 PM
+Oct 6 - 3:00 PM
+Oct 6 - 4:00 PM
+Oct 6 - 5:00 PM
+Oct 6 - 6:00 PM
+Oct 6 - 7:00 PM
+Oct 6 - 8:00 PM
+Oct 6 - 9:00 PM
+Oct 6 - 10:00 PM
+Oct 6 - 11:00 PM
+Oct 7 - 12:00 AM
+Oct 7 - 1:00 AM
+Oct 7 - 2:00 AM
+Oct 7 - 3:00 AM
+Oct 7 - 4:00 AM
+Oct 7 - 5:00 AM
+Oct 7 - 6:00 AM
+Oct 7 - 7:00 AM
+Oct 7 - 8:00 AM
+Oct 7 - 9:00 AM
+Oct 7 - 10:00 AM
+Oct 7 - 11:00 AM
+Oct 7 - 12:00 PM
+Oct 7 - 1:00 PM
+Oct 7 - 2:00 PM
+Oct 7 - 3:00 PM
+Oct 7 - 4:00 PM
+Oct 7 - 5:00 PM
+Oct 7 - 6:00 PM
+Oct 7 - 7:00 PM
+Oct 7 - 8:00 PM
+Oct 7 - 9:00 PM
+Oct 7 - 10:00 PM
+Oct 7 - 11:00 PM
+Oct 8 - 12:00 AM
+Oct 8 - 1:00 AM
+Oct 8 - 2:00 AM
+Oct 8 - 3:00 AM
+Oct 8 - 4:00 AM
+Oct 8 - 5:00 AM
+Oct 8 - 6:00 AM
+Oct 8 - 7:00 AM
+Oct 8 - 8:00 AM
+Oct 8 - 9:00 AM
+Oct 8 - 10:00 AM
+Oct 8 - 11:00 AM
+Oct 8 - 12:00 PM
+Oct 8 - 1:00 PM
+Oct 8 - 2:00 PM
+Oct 8 - 3:00 PM
+Oct 8 - 4:00 PM
+Oct 8 - 5:00 PM
+Oct 8 - 6:00 PM
+Oct 8 - 7:00 PM
+Oct 8 - 8:00 PM
+Oct 8 - 9:00 PM
+Oct 8 - 10:00 PM
+Oct 8 - 11:00 PM
+Oct 9 - 12:00 AM
+Oct 9 - 1:00 AM
+Oct 9 - 2:00 AM
+Oct 9 - 3:00 AM
+Oct 9 - 4:00 AM
+Oct 9 - 5:00 AM
+Oct 9 - 6:00 AM
+Oct 9 - 7:00 AM
+Oct 9 - 8:00 AM
+Oct 9 - 9:00 AM
+Oct 9 - 10:00 AM
+Oct 9 - 11:00 AM
+Oct 9 - 12:00 PM
+Oct 9 - 1:00 PM
+Oct 9 - 2:00 PM
+Oct 9 - 3:00 PM
+Oct 9 - 4:00 PM
+Oct 9 - 5:00 PM
+Oct 9 - 6:00 PM
+Oct 9 - 7:00 PM
+Oct 9 - 8:00 PM
+Oct 9 - 9:00 PM
+Oct 9 - 10:00 PM
+Oct 9 - 11:00 PM
+Oct 10 - 12:00 AM
+Oct 10 - 1:00 AM
+Oct 10 - 2:00 AM
+Oct 10 - 3:00 AM
+Oct 10 - 4:00 AM
+Oct 10 - 5:00 AM
+Oct 10 - 6:00 AM
+Oct 10 - 7:00 AM
+Oct 10 - 8:00 AM
+Oct 10 - 9:00 AM
+Oct 10 - 10:00 AM
+Oct 10 - 11:00 AM
+Oct 10 - 12:00 PM
+Oct 10 - 1:00 PM
+Oct 10 - 2:00 PM
+Oct 10 - 3:00 PM
+Oct 10 - 4:00 PM
+Oct 10 - 5:00 PM
+Oct 10 - 6:00 PM
+Oct 10 - 7:00 PM
+Oct 10 - 8:00 PM
+Oct 10 - 9:00 PM
+Oct 10 - 10:00 PM
+Oct 10 - 11:00 PM
+Oct 11 - 12:00 AM
+Oct 11 - 1:00 AM
+Oct 11 - 2:00 AM
+Oct 11 - 3:00 AM
+Oct 11 - 4:00 AM
+Oct 11 - 5:00 AM
+Oct 11 - 6:00 AM
+Oct 11 - 7:00 AM
+Oct 11 - 8:00 AM
+Oct 11 - 9:00 AM
+Oct 11 - 10:00 AM
+Oct 11 - 11:00 AM
+Oct 11 - 12:00 PM
+Oct 11 - 1:00 PM
+Oct 11 - 2:00 PM
+Oct 11 - 3:00 PM
+Oct 11 - 4:00 PM
+Oct 11 - 5:00 PM
+Oct 11 - 6:00 PM
+Oct 11 - 7:00 PM
+Oct 11 - 8:00 PM
+Oct 11 - 9:00 PM
+Oct 11 - 10:00 PM
+Oct 11 - 11:00 PM</desc></programme><programme start="20261005140000 +0000" stop="20261005150000 +0000" channel="rallytv.1"><title lang="en">Rally.TV - Oct 2 - 2:00 PM</title><desc lang="en">Oct 2 - 8:00 AM
 Oct 2 - 9:00 AM
 Oct 2 - 10:00 AM
 Oct 2 - 11:00 AM
@@ -83,7 +1397,226 @@ Oct 2 - 4:00 PM
 Oct 2 - 5:00 PM
 Oct 2 - 6:00 PM
 Oct 2 - 7:00 PM
-Oct 2...</desc></programme><programme start="20261005080000 +0000" stop="20261005090000 +0000" channel="rallytv.1"><title lang="en">Rally.TV Live - Oct 2 - 3:00 PM</title><desc lang="en">Oct 2 - 8:00 AM
+Oct 2 - 8:00 PM
+Oct 2 - 9:00 PM
+Oct 2 - 10:00 PM
+Oct 2 - 11:00 PM
+Oct 3 - 12:00 AM
+Oct 3 - 1:00 AM
+Oct 3 - 2:00 AM
+Oct 3 - 3:00 AM
+Oct 3 - 4:00 AM
+Oct 3 - 5:00 AM
+Oct 3 - 6:00 AM
+Oct 3 - 7:00 AM
+Oct 3 - 8:00 AM
+Oct 3 - 9:00 AM
+Oct 3 - 10:00 AM
+Oct 3 - 11:00 AM
+Oct 3 - 12:00 PM
+Oct 3 - 1:00 PM
+Oct 3 - 2:00 PM
+Oct 3 - 3:00 PM
+Oct 3 - 4:00 PM
+Oct 3 - 5:00 PM
+Oct 3 - 6:00 PM
+Oct 3 - 7:00 PM
+Oct 3 - 8:00 PM
+Oct 3 - 9:00 PM
+Oct 3 - 10:00 PM
+Oct 3 - 11:00 PM
+Oct 4 - 12:00 AM
+Oct 4 - 1:00 AM
+Oct 4 - 2:00 AM
+Oct 4 - 3:00 AM
+Oct 4 - 4:00 AM
+Oct 4 - 5:00 AM
+Oct 4 - 6:00 AM
+Oct 4 - 7:00 AM
+Oct 4 - 8:00 AM
+Oct 4 - 9:00 AM
+Oct 4 - 10:00 AM
+Oct 4 - 11:00 AM
+Oct 4 - 12:00 PM
+Oct 4 - 1:00 PM
+Oct 4 - 2:00 PM
+Oct 4 - 3:00 PM
+Oct 4 - 4:00 PM
+Oct 4 - 5:00 PM
+Oct 4 - 6:00 PM
+Oct 4 - 7:00 PM
+Oct 4 - 8:00 PM
+Oct 4 - 9:00 PM
+Oct 4 - 10:00 PM
+Oct 4 - 11:00 PM
+12:00 AM
+1:00 AM
+2:00 AM
+3:00 AM
+4:00 AM
+5:00 AM
+6:00 AM
+7:00 AM
+8:00 AM
+9:00 AM
+10:00 AM
+11:00 AM
+12:00 PM
+1:00 PM
+2:00 PM
+3:00 PM
+4:00 PM
+5:00 PM
+6:00 PM
+7:00 PM
+8:00 PM
+9:00 PM
+10:00 PM
+11:00 PM
+Oct 6 - 12:00 AM
+Oct 6 - 1:00 AM
+Oct 6 - 2:00 AM
+Oct 6 - 3:00 AM
+Oct 6 - 4:00 AM
+Oct 6 - 5:00 AM
+Oct 6 - 6:00 AM
+Oct 6 - 7:00 AM
+Oct 6 - 8:00 AM
+Oct 6 - 9:00 AM
+Oct 6 - 10:00 AM
+Oct 6 - 11:00 AM
+Oct 6 - 12:00 PM
+Oct 6 - 1:00 PM
+Oct 6 - 2:00 PM
+Oct 6 - 3:00 PM
+Oct 6 - 4:00 PM
+Oct 6 - 5:00 PM
+Oct 6 - 6:00 PM
+Oct 6 - 7:00 PM
+Oct 6 - 8:00 PM
+Oct 6 - 9:00 PM
+Oct 6 - 10:00 PM
+Oct 6 - 11:00 PM
+Oct 7 - 12:00 AM
+Oct 7 - 1:00 AM
+Oct 7 - 2:00 AM
+Oct 7 - 3:00 AM
+Oct 7 - 4:00 AM
+Oct 7 - 5:00 AM
+Oct 7 - 6:00 AM
+Oct 7 - 7:00 AM
+Oct 7 - 8:00 AM
+Oct 7 - 9:00 AM
+Oct 7 - 10:00 AM
+Oct 7 - 11:00 AM
+Oct 7 - 12:00 PM
+Oct 7 - 1:00 PM
+Oct 7 - 2:00 PM
+Oct 7 - 3:00 PM
+Oct 7 - 4:00 PM
+Oct 7 - 5:00 PM
+Oct 7 - 6:00 PM
+Oct 7 - 7:00 PM
+Oct 7 - 8:00 PM
+Oct 7 - 9:00 PM
+Oct 7 - 10:00 PM
+Oct 7 - 11:00 PM
+Oct 8 - 12:00 AM
+Oct 8 - 1:00 AM
+Oct 8 - 2:00 AM
+Oct 8 - 3:00 AM
+Oct 8 - 4:00 AM
+Oct 8 - 5:00 AM
+Oct 8 - 6:00 AM
+Oct 8 - 7:00 AM
+Oct 8 - 8:00 AM
+Oct 8 - 9:00 AM
+Oct 8 - 10:00 AM
+Oct 8 - 11:00 AM
+Oct 8 - 12:00 PM
+Oct 8 - 1:00 PM
+Oct 8 - 2:00 PM
+Oct 8 - 3:00 PM
+Oct 8 - 4:00 PM
+Oct 8 - 5:00 PM
+Oct 8 - 6:00 PM
+Oct 8 - 7:00 PM
+Oct 8 - 8:00 PM
+Oct 8 - 9:00 PM
+Oct 8 - 10:00 PM
+Oct 8 - 11:00 PM
+Oct 9 - 12:00 AM
+Oct 9 - 1:00 AM
+Oct 9 - 2:00 AM
+Oct 9 - 3:00 AM
+Oct 9 - 4:00 AM
+Oct 9 - 5:00 AM
+Oct 9 - 6:00 AM
+Oct 9 - 7:00 AM
+Oct 9 - 8:00 AM
+Oct 9 - 9:00 AM
+Oct 9 - 10:00 AM
+Oct 9 - 11:00 AM
+Oct 9 - 12:00 PM
+Oct 9 - 1:00 PM
+Oct 9 - 2:00 PM
+Oct 9 - 3:00 PM
+Oct 9 - 4:00 PM
+Oct 9 - 5:00 PM
+Oct 9 - 6:00 PM
+Oct 9 - 7:00 PM
+Oct 9 - 8:00 PM
+Oct 9 - 9:00 PM
+Oct 9 - 10:00 PM
+Oct 9 - 11:00 PM
+Oct 10 - 12:00 AM
+Oct 10 - 1:00 AM
+Oct 10 - 2:00 AM
+Oct 10 - 3:00 AM
+Oct 10 - 4:00 AM
+Oct 10 - 5:00 AM
+Oct 10 - 6:00 AM
+Oct 10 - 7:00 AM
+Oct 10 - 8:00 AM
+Oct 10 - 9:00 AM
+Oct 10 - 10:00 AM
+Oct 10 - 11:00 AM
+Oct 10 - 12:00 PM
+Oct 10 - 1:00 PM
+Oct 10 - 2:00 PM
+Oct 10 - 3:00 PM
+Oct 10 - 4:00 PM
+Oct 10 - 5:00 PM
+Oct 10 - 6:00 PM
+Oct 10 - 7:00 PM
+Oct 10 - 8:00 PM
+Oct 10 - 9:00 PM
+Oct 10 - 10:00 PM
+Oct 10 - 11:00 PM
+Oct 11 - 12:00 AM
+Oct 11 - 1:00 AM
+Oct 11 - 2:00 AM
+Oct 11 - 3:00 AM
+Oct 11 - 4:00 AM
+Oct 11 - 5:00 AM
+Oct 11 - 6:00 AM
+Oct 11 - 7:00 AM
+Oct 11 - 8:00 AM
+Oct 11 - 9:00 AM
+Oct 11 - 10:00 AM
+Oct 11 - 11:00 AM
+Oct 11 - 12:00 PM
+Oct 11 - 1:00 PM
+Oct 11 - 2:00 PM
+Oct 11 - 3:00 PM
+Oct 11 - 4:00 PM
+Oct 11 - 5:00 PM
+Oct 11 - 6:00 PM
+Oct 11 - 7:00 PM
+Oct 11 - 8:00 PM
+Oct 11 - 9:00 PM
+Oct 11 - 10:00 PM
+Oct 11 - 11:00 PM</desc></programme><programme start="20261005150000 +0000" stop="20261005160000 +0000" channel="rallytv.1"><title lang="en">Rally.TV - Oct 2 - 3:00 PM</title><desc lang="en">Oct 2 - 8:00 AM
 Oct 2 - 9:00 AM
 Oct 2 - 10:00 AM
 Oct 2 - 11:00 AM
@@ -95,7 +1628,226 @@ Oct 2 - 4:00 PM
 Oct 2 - 5:00 PM
 Oct 2 - 6:00 PM
 Oct 2 - 7:00 PM
-Oct 2...</desc></programme><programme start="20261005080000 +0000" stop="20261005090000 +0000" channel="rallytv.1"><title lang="en">Rally.TV Live - Oct 2 - 4:00 PM</title><desc lang="en">Oct 2 - 8:00 AM
+Oct 2 - 8:00 PM
+Oct 2 - 9:00 PM
+Oct 2 - 10:00 PM
+Oct 2 - 11:00 PM
+Oct 3 - 12:00 AM
+Oct 3 - 1:00 AM
+Oct 3 - 2:00 AM
+Oct 3 - 3:00 AM
+Oct 3 - 4:00 AM
+Oct 3 - 5:00 AM
+Oct 3 - 6:00 AM
+Oct 3 - 7:00 AM
+Oct 3 - 8:00 AM
+Oct 3 - 9:00 AM
+Oct 3 - 10:00 AM
+Oct 3 - 11:00 AM
+Oct 3 - 12:00 PM
+Oct 3 - 1:00 PM
+Oct 3 - 2:00 PM
+Oct 3 - 3:00 PM
+Oct 3 - 4:00 PM
+Oct 3 - 5:00 PM
+Oct 3 - 6:00 PM
+Oct 3 - 7:00 PM
+Oct 3 - 8:00 PM
+Oct 3 - 9:00 PM
+Oct 3 - 10:00 PM
+Oct 3 - 11:00 PM
+Oct 4 - 12:00 AM
+Oct 4 - 1:00 AM
+Oct 4 - 2:00 AM
+Oct 4 - 3:00 AM
+Oct 4 - 4:00 AM
+Oct 4 - 5:00 AM
+Oct 4 - 6:00 AM
+Oct 4 - 7:00 AM
+Oct 4 - 8:00 AM
+Oct 4 - 9:00 AM
+Oct 4 - 10:00 AM
+Oct 4 - 11:00 AM
+Oct 4 - 12:00 PM
+Oct 4 - 1:00 PM
+Oct 4 - 2:00 PM
+Oct 4 - 3:00 PM
+Oct 4 - 4:00 PM
+Oct 4 - 5:00 PM
+Oct 4 - 6:00 PM
+Oct 4 - 7:00 PM
+Oct 4 - 8:00 PM
+Oct 4 - 9:00 PM
+Oct 4 - 10:00 PM
+Oct 4 - 11:00 PM
+12:00 AM
+1:00 AM
+2:00 AM
+3:00 AM
+4:00 AM
+5:00 AM
+6:00 AM
+7:00 AM
+8:00 AM
+9:00 AM
+10:00 AM
+11:00 AM
+12:00 PM
+1:00 PM
+2:00 PM
+3:00 PM
+4:00 PM
+5:00 PM
+6:00 PM
+7:00 PM
+8:00 PM
+9:00 PM
+10:00 PM
+11:00 PM
+Oct 6 - 12:00 AM
+Oct 6 - 1:00 AM
+Oct 6 - 2:00 AM
+Oct 6 - 3:00 AM
+Oct 6 - 4:00 AM
+Oct 6 - 5:00 AM
+Oct 6 - 6:00 AM
+Oct 6 - 7:00 AM
+Oct 6 - 8:00 AM
+Oct 6 - 9:00 AM
+Oct 6 - 10:00 AM
+Oct 6 - 11:00 AM
+Oct 6 - 12:00 PM
+Oct 6 - 1:00 PM
+Oct 6 - 2:00 PM
+Oct 6 - 3:00 PM
+Oct 6 - 4:00 PM
+Oct 6 - 5:00 PM
+Oct 6 - 6:00 PM
+Oct 6 - 7:00 PM
+Oct 6 - 8:00 PM
+Oct 6 - 9:00 PM
+Oct 6 - 10:00 PM
+Oct 6 - 11:00 PM
+Oct 7 - 12:00 AM
+Oct 7 - 1:00 AM
+Oct 7 - 2:00 AM
+Oct 7 - 3:00 AM
+Oct 7 - 4:00 AM
+Oct 7 - 5:00 AM
+Oct 7 - 6:00 AM
+Oct 7 - 7:00 AM
+Oct 7 - 8:00 AM
+Oct 7 - 9:00 AM
+Oct 7 - 10:00 AM
+Oct 7 - 11:00 AM
+Oct 7 - 12:00 PM
+Oct 7 - 1:00 PM
+Oct 7 - 2:00 PM
+Oct 7 - 3:00 PM
+Oct 7 - 4:00 PM
+Oct 7 - 5:00 PM
+Oct 7 - 6:00 PM
+Oct 7 - 7:00 PM
+Oct 7 - 8:00 PM
+Oct 7 - 9:00 PM
+Oct 7 - 10:00 PM
+Oct 7 - 11:00 PM
+Oct 8 - 12:00 AM
+Oct 8 - 1:00 AM
+Oct 8 - 2:00 AM
+Oct 8 - 3:00 AM
+Oct 8 - 4:00 AM
+Oct 8 - 5:00 AM
+Oct 8 - 6:00 AM
+Oct 8 - 7:00 AM
+Oct 8 - 8:00 AM
+Oct 8 - 9:00 AM
+Oct 8 - 10:00 AM
+Oct 8 - 11:00 AM
+Oct 8 - 12:00 PM
+Oct 8 - 1:00 PM
+Oct 8 - 2:00 PM
+Oct 8 - 3:00 PM
+Oct 8 - 4:00 PM
+Oct 8 - 5:00 PM
+Oct 8 - 6:00 PM
+Oct 8 - 7:00 PM
+Oct 8 - 8:00 PM
+Oct 8 - 9:00 PM
+Oct 8 - 10:00 PM
+Oct 8 - 11:00 PM
+Oct 9 - 12:00 AM
+Oct 9 - 1:00 AM
+Oct 9 - 2:00 AM
+Oct 9 - 3:00 AM
+Oct 9 - 4:00 AM
+Oct 9 - 5:00 AM
+Oct 9 - 6:00 AM
+Oct 9 - 7:00 AM
+Oct 9 - 8:00 AM
+Oct 9 - 9:00 AM
+Oct 9 - 10:00 AM
+Oct 9 - 11:00 AM
+Oct 9 - 12:00 PM
+Oct 9 - 1:00 PM
+Oct 9 - 2:00 PM
+Oct 9 - 3:00 PM
+Oct 9 - 4:00 PM
+Oct 9 - 5:00 PM
+Oct 9 - 6:00 PM
+Oct 9 - 7:00 PM
+Oct 9 - 8:00 PM
+Oct 9 - 9:00 PM
+Oct 9 - 10:00 PM
+Oct 9 - 11:00 PM
+Oct 10 - 12:00 AM
+Oct 10 - 1:00 AM
+Oct 10 - 2:00 AM
+Oct 10 - 3:00 AM
+Oct 10 - 4:00 AM
+Oct 10 - 5:00 AM
+Oct 10 - 6:00 AM
+Oct 10 - 7:00 AM
+Oct 10 - 8:00 AM
+Oct 10 - 9:00 AM
+Oct 10 - 10:00 AM
+Oct 10 - 11:00 AM
+Oct 10 - 12:00 PM
+Oct 10 - 1:00 PM
+Oct 10 - 2:00 PM
+Oct 10 - 3:00 PM
+Oct 10 - 4:00 PM
+Oct 10 - 5:00 PM
+Oct 10 - 6:00 PM
+Oct 10 - 7:00 PM
+Oct 10 - 8:00 PM
+Oct 10 - 9:00 PM
+Oct 10 - 10:00 PM
+Oct 10 - 11:00 PM
+Oct 11 - 12:00 AM
+Oct 11 - 1:00 AM
+Oct 11 - 2:00 AM
+Oct 11 - 3:00 AM
+Oct 11 - 4:00 AM
+Oct 11 - 5:00 AM
+Oct 11 - 6:00 AM
+Oct 11 - 7:00 AM
+Oct 11 - 8:00 AM
+Oct 11 - 9:00 AM
+Oct 11 - 10:00 AM
+Oct 11 - 11:00 AM
+Oct 11 - 12:00 PM
+Oct 11 - 1:00 PM
+Oct 11 - 2:00 PM
+Oct 11 - 3:00 PM
+Oct 11 - 4:00 PM
+Oct 11 - 5:00 PM
+Oct 11 - 6:00 PM
+Oct 11 - 7:00 PM
+Oct 11 - 8:00 PM
+Oct 11 - 9:00 PM
+Oct 11 - 10:00 PM
+Oct 11 - 11:00 PM</desc></programme><programme start="20261005160000 +0000" stop="20261005170000 +0000" channel="rallytv.1"><title lang="en">Rally.TV - Oct 2 - 4:00 PM</title><desc lang="en">Oct 2 - 8:00 AM
 Oct 2 - 9:00 AM
 Oct 2 - 10:00 AM
 Oct 2 - 11:00 AM
@@ -107,7 +1859,226 @@ Oct 2 - 4:00 PM
 Oct 2 - 5:00 PM
 Oct 2 - 6:00 PM
 Oct 2 - 7:00 PM
-Oct 2...</desc></programme><programme start="20261005080000 +0000" stop="20261005090000 +0000" channel="rallytv.1"><title lang="en">Rally.TV Live - Oct 2 - 5:00 PM</title><desc lang="en">Oct 2 - 8:00 AM
+Oct 2 - 8:00 PM
+Oct 2 - 9:00 PM
+Oct 2 - 10:00 PM
+Oct 2 - 11:00 PM
+Oct 3 - 12:00 AM
+Oct 3 - 1:00 AM
+Oct 3 - 2:00 AM
+Oct 3 - 3:00 AM
+Oct 3 - 4:00 AM
+Oct 3 - 5:00 AM
+Oct 3 - 6:00 AM
+Oct 3 - 7:00 AM
+Oct 3 - 8:00 AM
+Oct 3 - 9:00 AM
+Oct 3 - 10:00 AM
+Oct 3 - 11:00 AM
+Oct 3 - 12:00 PM
+Oct 3 - 1:00 PM
+Oct 3 - 2:00 PM
+Oct 3 - 3:00 PM
+Oct 3 - 4:00 PM
+Oct 3 - 5:00 PM
+Oct 3 - 6:00 PM
+Oct 3 - 7:00 PM
+Oct 3 - 8:00 PM
+Oct 3 - 9:00 PM
+Oct 3 - 10:00 PM
+Oct 3 - 11:00 PM
+Oct 4 - 12:00 AM
+Oct 4 - 1:00 AM
+Oct 4 - 2:00 AM
+Oct 4 - 3:00 AM
+Oct 4 - 4:00 AM
+Oct 4 - 5:00 AM
+Oct 4 - 6:00 AM
+Oct 4 - 7:00 AM
+Oct 4 - 8:00 AM
+Oct 4 - 9:00 AM
+Oct 4 - 10:00 AM
+Oct 4 - 11:00 AM
+Oct 4 - 12:00 PM
+Oct 4 - 1:00 PM
+Oct 4 - 2:00 PM
+Oct 4 - 3:00 PM
+Oct 4 - 4:00 PM
+Oct 4 - 5:00 PM
+Oct 4 - 6:00 PM
+Oct 4 - 7:00 PM
+Oct 4 - 8:00 PM
+Oct 4 - 9:00 PM
+Oct 4 - 10:00 PM
+Oct 4 - 11:00 PM
+12:00 AM
+1:00 AM
+2:00 AM
+3:00 AM
+4:00 AM
+5:00 AM
+6:00 AM
+7:00 AM
+8:00 AM
+9:00 AM
+10:00 AM
+11:00 AM
+12:00 PM
+1:00 PM
+2:00 PM
+3:00 PM
+4:00 PM
+5:00 PM
+6:00 PM
+7:00 PM
+8:00 PM
+9:00 PM
+10:00 PM
+11:00 PM
+Oct 6 - 12:00 AM
+Oct 6 - 1:00 AM
+Oct 6 - 2:00 AM
+Oct 6 - 3:00 AM
+Oct 6 - 4:00 AM
+Oct 6 - 5:00 AM
+Oct 6 - 6:00 AM
+Oct 6 - 7:00 AM
+Oct 6 - 8:00 AM
+Oct 6 - 9:00 AM
+Oct 6 - 10:00 AM
+Oct 6 - 11:00 AM
+Oct 6 - 12:00 PM
+Oct 6 - 1:00 PM
+Oct 6 - 2:00 PM
+Oct 6 - 3:00 PM
+Oct 6 - 4:00 PM
+Oct 6 - 5:00 PM
+Oct 6 - 6:00 PM
+Oct 6 - 7:00 PM
+Oct 6 - 8:00 PM
+Oct 6 - 9:00 PM
+Oct 6 - 10:00 PM
+Oct 6 - 11:00 PM
+Oct 7 - 12:00 AM
+Oct 7 - 1:00 AM
+Oct 7 - 2:00 AM
+Oct 7 - 3:00 AM
+Oct 7 - 4:00 AM
+Oct 7 - 5:00 AM
+Oct 7 - 6:00 AM
+Oct 7 - 7:00 AM
+Oct 7 - 8:00 AM
+Oct 7 - 9:00 AM
+Oct 7 - 10:00 AM
+Oct 7 - 11:00 AM
+Oct 7 - 12:00 PM
+Oct 7 - 1:00 PM
+Oct 7 - 2:00 PM
+Oct 7 - 3:00 PM
+Oct 7 - 4:00 PM
+Oct 7 - 5:00 PM
+Oct 7 - 6:00 PM
+Oct 7 - 7:00 PM
+Oct 7 - 8:00 PM
+Oct 7 - 9:00 PM
+Oct 7 - 10:00 PM
+Oct 7 - 11:00 PM
+Oct 8 - 12:00 AM
+Oct 8 - 1:00 AM
+Oct 8 - 2:00 AM
+Oct 8 - 3:00 AM
+Oct 8 - 4:00 AM
+Oct 8 - 5:00 AM
+Oct 8 - 6:00 AM
+Oct 8 - 7:00 AM
+Oct 8 - 8:00 AM
+Oct 8 - 9:00 AM
+Oct 8 - 10:00 AM
+Oct 8 - 11:00 AM
+Oct 8 - 12:00 PM
+Oct 8 - 1:00 PM
+Oct 8 - 2:00 PM
+Oct 8 - 3:00 PM
+Oct 8 - 4:00 PM
+Oct 8 - 5:00 PM
+Oct 8 - 6:00 PM
+Oct 8 - 7:00 PM
+Oct 8 - 8:00 PM
+Oct 8 - 9:00 PM
+Oct 8 - 10:00 PM
+Oct 8 - 11:00 PM
+Oct 9 - 12:00 AM
+Oct 9 - 1:00 AM
+Oct 9 - 2:00 AM
+Oct 9 - 3:00 AM
+Oct 9 - 4:00 AM
+Oct 9 - 5:00 AM
+Oct 9 - 6:00 AM
+Oct 9 - 7:00 AM
+Oct 9 - 8:00 AM
+Oct 9 - 9:00 AM
+Oct 9 - 10:00 AM
+Oct 9 - 11:00 AM
+Oct 9 - 12:00 PM
+Oct 9 - 1:00 PM
+Oct 9 - 2:00 PM
+Oct 9 - 3:00 PM
+Oct 9 - 4:00 PM
+Oct 9 - 5:00 PM
+Oct 9 - 6:00 PM
+Oct 9 - 7:00 PM
+Oct 9 - 8:00 PM
+Oct 9 - 9:00 PM
+Oct 9 - 10:00 PM
+Oct 9 - 11:00 PM
+Oct 10 - 12:00 AM
+Oct 10 - 1:00 AM
+Oct 10 - 2:00 AM
+Oct 10 - 3:00 AM
+Oct 10 - 4:00 AM
+Oct 10 - 5:00 AM
+Oct 10 - 6:00 AM
+Oct 10 - 7:00 AM
+Oct 10 - 8:00 AM
+Oct 10 - 9:00 AM
+Oct 10 - 10:00 AM
+Oct 10 - 11:00 AM
+Oct 10 - 12:00 PM
+Oct 10 - 1:00 PM
+Oct 10 - 2:00 PM
+Oct 10 - 3:00 PM
+Oct 10 - 4:00 PM
+Oct 10 - 5:00 PM
+Oct 10 - 6:00 PM
+Oct 10 - 7:00 PM
+Oct 10 - 8:00 PM
+Oct 10 - 9:00 PM
+Oct 10 - 10:00 PM
+Oct 10 - 11:00 PM
+Oct 11 - 12:00 AM
+Oct 11 - 1:00 AM
+Oct 11 - 2:00 AM
+Oct 11 - 3:00 AM
+Oct 11 - 4:00 AM
+Oct 11 - 5:00 AM
+Oct 11 - 6:00 AM
+Oct 11 - 7:00 AM
+Oct 11 - 8:00 AM
+Oct 11 - 9:00 AM
+Oct 11 - 10:00 AM
+Oct 11 - 11:00 AM
+Oct 11 - 12:00 PM
+Oct 11 - 1:00 PM
+Oct 11 - 2:00 PM
+Oct 11 - 3:00 PM
+Oct 11 - 4:00 PM
+Oct 11 - 5:00 PM
+Oct 11 - 6:00 PM
+Oct 11 - 7:00 PM
+Oct 11 - 8:00 PM
+Oct 11 - 9:00 PM
+Oct 11 - 10:00 PM
+Oct 11 - 11:00 PM</desc></programme><programme start="20261005170000 +0000" stop="20261005180000 +0000" channel="rallytv.1"><title lang="en">Rally.TV - Oct 2 - 5:00 PM</title><desc lang="en">Oct 2 - 8:00 AM
 Oct 2 - 9:00 AM
 Oct 2 - 10:00 AM
 Oct 2 - 11:00 AM
@@ -119,4 +2090,223 @@ Oct 2 - 4:00 PM
 Oct 2 - 5:00 PM
 Oct 2 - 6:00 PM
 Oct 2 - 7:00 PM
-Oct 2...</desc></programme></tv>
+Oct 2 - 8:00 PM
+Oct 2 - 9:00 PM
+Oct 2 - 10:00 PM
+Oct 2 - 11:00 PM
+Oct 3 - 12:00 AM
+Oct 3 - 1:00 AM
+Oct 3 - 2:00 AM
+Oct 3 - 3:00 AM
+Oct 3 - 4:00 AM
+Oct 3 - 5:00 AM
+Oct 3 - 6:00 AM
+Oct 3 - 7:00 AM
+Oct 3 - 8:00 AM
+Oct 3 - 9:00 AM
+Oct 3 - 10:00 AM
+Oct 3 - 11:00 AM
+Oct 3 - 12:00 PM
+Oct 3 - 1:00 PM
+Oct 3 - 2:00 PM
+Oct 3 - 3:00 PM
+Oct 3 - 4:00 PM
+Oct 3 - 5:00 PM
+Oct 3 - 6:00 PM
+Oct 3 - 7:00 PM
+Oct 3 - 8:00 PM
+Oct 3 - 9:00 PM
+Oct 3 - 10:00 PM
+Oct 3 - 11:00 PM
+Oct 4 - 12:00 AM
+Oct 4 - 1:00 AM
+Oct 4 - 2:00 AM
+Oct 4 - 3:00 AM
+Oct 4 - 4:00 AM
+Oct 4 - 5:00 AM
+Oct 4 - 6:00 AM
+Oct 4 - 7:00 AM
+Oct 4 - 8:00 AM
+Oct 4 - 9:00 AM
+Oct 4 - 10:00 AM
+Oct 4 - 11:00 AM
+Oct 4 - 12:00 PM
+Oct 4 - 1:00 PM
+Oct 4 - 2:00 PM
+Oct 4 - 3:00 PM
+Oct 4 - 4:00 PM
+Oct 4 - 5:00 PM
+Oct 4 - 6:00 PM
+Oct 4 - 7:00 PM
+Oct 4 - 8:00 PM
+Oct 4 - 9:00 PM
+Oct 4 - 10:00 PM
+Oct 4 - 11:00 PM
+12:00 AM
+1:00 AM
+2:00 AM
+3:00 AM
+4:00 AM
+5:00 AM
+6:00 AM
+7:00 AM
+8:00 AM
+9:00 AM
+10:00 AM
+11:00 AM
+12:00 PM
+1:00 PM
+2:00 PM
+3:00 PM
+4:00 PM
+5:00 PM
+6:00 PM
+7:00 PM
+8:00 PM
+9:00 PM
+10:00 PM
+11:00 PM
+Oct 6 - 12:00 AM
+Oct 6 - 1:00 AM
+Oct 6 - 2:00 AM
+Oct 6 - 3:00 AM
+Oct 6 - 4:00 AM
+Oct 6 - 5:00 AM
+Oct 6 - 6:00 AM
+Oct 6 - 7:00 AM
+Oct 6 - 8:00 AM
+Oct 6 - 9:00 AM
+Oct 6 - 10:00 AM
+Oct 6 - 11:00 AM
+Oct 6 - 12:00 PM
+Oct 6 - 1:00 PM
+Oct 6 - 2:00 PM
+Oct 6 - 3:00 PM
+Oct 6 - 4:00 PM
+Oct 6 - 5:00 PM
+Oct 6 - 6:00 PM
+Oct 6 - 7:00 PM
+Oct 6 - 8:00 PM
+Oct 6 - 9:00 PM
+Oct 6 - 10:00 PM
+Oct 6 - 11:00 PM
+Oct 7 - 12:00 AM
+Oct 7 - 1:00 AM
+Oct 7 - 2:00 AM
+Oct 7 - 3:00 AM
+Oct 7 - 4:00 AM
+Oct 7 - 5:00 AM
+Oct 7 - 6:00 AM
+Oct 7 - 7:00 AM
+Oct 7 - 8:00 AM
+Oct 7 - 9:00 AM
+Oct 7 - 10:00 AM
+Oct 7 - 11:00 AM
+Oct 7 - 12:00 PM
+Oct 7 - 1:00 PM
+Oct 7 - 2:00 PM
+Oct 7 - 3:00 PM
+Oct 7 - 4:00 PM
+Oct 7 - 5:00 PM
+Oct 7 - 6:00 PM
+Oct 7 - 7:00 PM
+Oct 7 - 8:00 PM
+Oct 7 - 9:00 PM
+Oct 7 - 10:00 PM
+Oct 7 - 11:00 PM
+Oct 8 - 12:00 AM
+Oct 8 - 1:00 AM
+Oct 8 - 2:00 AM
+Oct 8 - 3:00 AM
+Oct 8 - 4:00 AM
+Oct 8 - 5:00 AM
+Oct 8 - 6:00 AM
+Oct 8 - 7:00 AM
+Oct 8 - 8:00 AM
+Oct 8 - 9:00 AM
+Oct 8 - 10:00 AM
+Oct 8 - 11:00 AM
+Oct 8 - 12:00 PM
+Oct 8 - 1:00 PM
+Oct 8 - 2:00 PM
+Oct 8 - 3:00 PM
+Oct 8 - 4:00 PM
+Oct 8 - 5:00 PM
+Oct 8 - 6:00 PM
+Oct 8 - 7:00 PM
+Oct 8 - 8:00 PM
+Oct 8 - 9:00 PM
+Oct 8 - 10:00 PM
+Oct 8 - 11:00 PM
+Oct 9 - 12:00 AM
+Oct 9 - 1:00 AM
+Oct 9 - 2:00 AM
+Oct 9 - 3:00 AM
+Oct 9 - 4:00 AM
+Oct 9 - 5:00 AM
+Oct 9 - 6:00 AM
+Oct 9 - 7:00 AM
+Oct 9 - 8:00 AM
+Oct 9 - 9:00 AM
+Oct 9 - 10:00 AM
+Oct 9 - 11:00 AM
+Oct 9 - 12:00 PM
+Oct 9 - 1:00 PM
+Oct 9 - 2:00 PM
+Oct 9 - 3:00 PM
+Oct 9 - 4:00 PM
+Oct 9 - 5:00 PM
+Oct 9 - 6:00 PM
+Oct 9 - 7:00 PM
+Oct 9 - 8:00 PM
+Oct 9 - 9:00 PM
+Oct 9 - 10:00 PM
+Oct 9 - 11:00 PM
+Oct 10 - 12:00 AM
+Oct 10 - 1:00 AM
+Oct 10 - 2:00 AM
+Oct 10 - 3:00 AM
+Oct 10 - 4:00 AM
+Oct 10 - 5:00 AM
+Oct 10 - 6:00 AM
+Oct 10 - 7:00 AM
+Oct 10 - 8:00 AM
+Oct 10 - 9:00 AM
+Oct 10 - 10:00 AM
+Oct 10 - 11:00 AM
+Oct 10 - 12:00 PM
+Oct 10 - 1:00 PM
+Oct 10 - 2:00 PM
+Oct 10 - 3:00 PM
+Oct 10 - 4:00 PM
+Oct 10 - 5:00 PM
+Oct 10 - 6:00 PM
+Oct 10 - 7:00 PM
+Oct 10 - 8:00 PM
+Oct 10 - 9:00 PM
+Oct 10 - 10:00 PM
+Oct 10 - 11:00 PM
+Oct 11 - 12:00 AM
+Oct 11 - 1:00 AM
+Oct 11 - 2:00 AM
+Oct 11 - 3:00 AM
+Oct 11 - 4:00 AM
+Oct 11 - 5:00 AM
+Oct 11 - 6:00 AM
+Oct 11 - 7:00 AM
+Oct 11 - 8:00 AM
+Oct 11 - 9:00 AM
+Oct 11 - 10:00 AM
+Oct 11 - 11:00 AM
+Oct 11 - 12:00 PM
+Oct 11 - 1:00 PM
+Oct 11 - 2:00 PM
+Oct 11 - 3:00 PM
+Oct 11 - 4:00 PM
+Oct 11 - 5:00 PM
+Oct 11 - 6:00 PM
+Oct 11 - 7:00 PM
+Oct 11 - 8:00 PM
+Oct 11 - 9:00 PM
+Oct 11 - 10:00 PM
+Oct 11 - 11:00 PM</desc></programme></tv>
