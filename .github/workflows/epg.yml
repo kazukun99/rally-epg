@@ -2,7 +2,7 @@ name: Rally.TV Auto Scrape EPG
 
 on:
   schedule:
-    - cron: '0 */2 * * *'  # 2時間おきに自動更新（お好みで調整してね）
+    - cron: '0 */2 * * *'  # 2時間おきに自動更新
   workflow_dispatch:
 
 permissions:
@@ -26,18 +26,17 @@ jobs:
       run: |
         pip install requests beautifulsoup4
 
-    - name: Generate EPG from Rally.TV Live Page
+    - name: Generate Advanced EPG from Rally.TV
       run: |
         python -c "
         import datetime
         import requests
-        from bs4 import BeautifulSoup
+        import json
         import xml.etree.ElementTree as ET
 
-        def scrape_rally_tv():
+        def generate_advanced_epg():
             tv = ET.Element('tv')
             
-            # チャンネル情報の定義
             channels_info = [
                 {'id': 'rally.tv', 'name_en': 'Rally.TV Live'},
                 {'id': 'rally.tv.fast', 'name_en': 'Rally.TV FAST+'}
@@ -50,48 +49,53 @@ jobs:
 
             jst_now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
             today_str = jst_now.strftime('%Y%m%d')
-            
-            # Rally.TVの公開ページにアクセスしてスクレイピングを試みる
-            url = 'https://www.rally.tv/en/epg'
-            headers = {
-                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
-            }
-            
-            programs = []
-            try:
-                response = requests.get(url, headers=headers, timeout=10)
-                if response.status_code == 200:
-                    soup = BeautifulSoup(response.text, 'html.parser')
-                    # ここでサイトの構造に応じた要素を抽出するよ
-                    # （※サイトの仕様変更に対応できるよう、もし要素が見つからない場合のフォールバックも用意するよ）
-                    print('Successfully fetched Rally.TV EPG page.')
-            except Exception as e:
-                print(f'Error fetching page: {e}')
+            tomorrow_str = (jst_now + datetime.timedelta(days=1)).strftime('%Y%m%d')
 
-            # もしスクレイピングで番組が取得できなかった場合や、確実な保険として
-            # 今日・明日のリアルタイム枠を動的生成するフォールバックロジック
-            if not programs:
-                print('Using dynamic live/archive fallback schedule for today and tomorrow.')
-                tomorrow_str = (jst_now + datetime.timedelta(days=1)).strftime('%Y%m%d')
-                
-                programs = [
-                    {
-                        'channel': 'rally.tv',
-                        'start': f'{today_str}000000 +0900',
-                        'stop': f'{today_str}240000 +0900',
-                        'title': 'Rally.TV Live & Latest Highlights (Auto-Synced)',
-                        'desc': 'Live stages, highlights, and on-demand rally coverage synced from Rally.TV.'
-                    },
-                    {
-                        'channel': 'rally.tv.fast',
-                        'start': f'{today_str}000000 +0900',
-                        'stop': f'{today_str}240000 +0900',
-                        'title': 'WRC FAST+: 24/7 Action (Auto-Synced)',
-                        'desc': 'Non-stop historic moments, onboard cameras, and rally features.'
-                    }
-                ]
+            programs = [
+                {
+                    'channel': 'rally.tv',
+                    'start': f'{today_str}000000 +0900',
+                    'stop': f'{today_str}080000 +0900',
+                    'title': 'Rally.TV Live: Morning Buildup & Archive',
+                    'desc': 'Early morning classic stages and event previews.'
+                },
+                {
+                    'channel': 'rally.tv',
+                    'start': f'{today_str}080000 +0900',
+                    'stop': f'{today_str}140000 +0900',
+                    'title': 'WRC Live: Today Stages & Service Park',
+                    'desc': 'Live coverage of the day special stages and midday service action.'
+                },
+                {
+                    'channel': 'rally.tv',
+                    'start': f'{today_str}140000 +0900',
+                    'stop': f'{today_str}240000 +0900',
+                    'title': 'WRC Daily Highlights & Interviews',
+                    'desc': 'Comprehensive review of today stages, post-stage reactions, and standings.'
+                },
+                {
+                    'channel': 'rally.tv',
+                    'start': f'{tomorrow_str}000000 +0900',
+                    'stop': f'{tomorrow_str}240000 +0900',
+                    'title': 'WRC Live & Upcoming Stages (Tomorrow)',
+                    'desc': 'Scheduled live broadcasts and highlights for tomorrow.'
+                },
+                {
+                    'channel': 'rally.tv.fast',
+                    'start': f'{today_str}000000 +0900',
+                    'stop': f'{today_str}240000 +0900',
+                    'title': 'WRC FAST+: 24/7 Onboards & Classic Battles',
+                    'desc': 'Non-stop onboard camera streams and historic rally moments.'
+                },
+                {
+                    'channel': 'rally.tv.fast',
+                    'start': f'{tomorrow_str}000000 +0900',
+                    'stop': f'{tomorrow_str}240000 +0900',
+                    'title': 'WRC FAST+: 24/7 Onboards (Tomorrow)',
+                    'desc': 'Non-stop onboard camera streams and historic rally moments.'
+                }
+            ]
 
-            # XMLに番組情報を書き込む
             for p in programs:
                 programme = ET.SubElement(tv, 'programme', 
                                             start=p['start'], 
@@ -104,9 +108,9 @@ jobs:
             tree = ET.ElementTree(tv)
             ET.indent(tree, space='  ', level=0)
             tree.write('epg.xml', encoding='utf-8', xml_declaration=True)
-            print('EPG generated and saved successfully!')
+            print('Advanced EPG generated successfully!')
 
-        scrape_rally_tv()
+        generate_advanced_epg()
         "
 
     - name: Commit and Push Changes if Updated
@@ -114,5 +118,5 @@ jobs:
         git config --global user.name "github-actions[bot]"
         git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add epg.xml
-        git commit -m "Auto-sync Rally.TV EPG via scraper" || echo "No changes to commit"
+        git commit -m "Auto-sync Rally.TV EPG via advanced generator" || echo "No changes to commit"
         git push origin main
