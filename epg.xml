@@ -8,14 +8,34 @@
     <display-name lang="en">Rally.TV FAST+</display-name>
     <icon src="https://www.rally.tv/assets/images/logo.png" />
   </channel>
-  <programme start="20261004000000 +0900" stop="20261004240000 +0900" channel="rally.tv">
-    <title lang="en">Rally.TV Live &amp; Latest Highlights (Auto-Synced)</title>
-    <desc lang="en">Live stages, highlights, and on-demand rally coverage synced from Rally.TV.</desc>
+  <programme start="20261004000000 +0900" stop="20261004080000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live: Morning Buildup &amp; Archive</title>
+    <desc lang="en">Early morning classic stages and event previews.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004080000 +0900" stop="20261004140000 +0900" channel="rally.tv">
+    <title lang="en">WRC Live: Today Stages &amp; Service Park</title>
+    <desc lang="en">Live coverage of the day special stages and midday service action.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004140000 +0900" stop="20261004240000 +0900" channel="rally.tv">
+    <title lang="en">WRC Daily Highlights &amp; Interviews</title>
+    <desc lang="en">Comprehensive review of today stages, post-stage reactions, and standings.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005000000 +0900" stop="20261005240000 +0900" channel="rally.tv">
+    <title lang="en">WRC Live &amp; Upcoming Stages (Tomorrow)</title>
+    <desc lang="en">Scheduled live broadcasts and highlights for tomorrow.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261004000000 +0900" stop="20261004240000 +0900" channel="rally.tv.fast">
-    <title lang="en">WRC FAST+: 24/7 Action (Auto-Synced)</title>
-    <desc lang="en">Non-stop historic moments, onboard cameras, and rally features.</desc>
+    <title lang="en">WRC FAST+: 24/7 Onboards &amp; Classic Battles</title>
+    <desc lang="en">Non-stop onboard camera streams and historic rally moments.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005000000 +0900" stop="20261005240000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: 24/7 Onboards (Tomorrow)</title>
+    <desc lang="en">Non-stop onboard camera streams and historic rally moments.</desc>
     <category lang="en">Sports</category>
   </programme>
 </tv>
