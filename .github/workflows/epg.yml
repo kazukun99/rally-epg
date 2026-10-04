@@ -1,142 +1,33 @@
-name: Rally.TV Auto Scrape EPG
+name: Update Rally.TV EPG
 
 on:
   schedule:
-    - cron: '0 * * * *'   # 毎時0分に1時間おきで実行！
-  workflow_dispatch:
-
-permissions:
-  contents: write
-  actions: write
+    - cron: '0 * * * *'  # 1時間に1回自動実行
+  workflow_dispatch:      # 手動でもいつでも実行できるようにするよ
 
 jobs:
   update-epg:
     runs-on: ubuntu-latest
-
     steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
+      - name: 1. リポジトリをチェックアウト
+        uses: actions/checkout@v4
 
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.x'
+      - name: 2. Pythonのセットアップ
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
 
-    - name: Install Dependencies
-      run: |
-        pip install requests beautifulsoup4
+      - name: 3. EPG生成スクリプトの実行
+        run: |
+          python make_epg.py
+        env:
+          # 必要に応じてGitHub Secretsからクッキーを渡せるようにしておくよ
+          RALLY_COOKIE: ${{ secrets.RALLY_COOKIE }}
 
-    - name: Generate Detailed Hourly EPG from Rally.TV
-      env:
-        RALLYTV_COOKIE: ${{ secrets.RALLYTV_COOKIE }}
-      run: |
-        python -c "
-        import os
-        import datetime
-        import xml.etree.ElementTree as ET
-
-        # ちゃんとCookieが読み込めているかテストできるようにしておくね
-        cookie_value = os.environ.get('RALLYTV_COOKIE')
-        print('Cookie loaded successfully, length:', len(cookie_value) if cookie_value else 0)
-
-        def generate_advanced_epg():
-            tv = ET.Element('tv')
-            
-            channels_info = [
-                {'id': 'rally.tv', 'name_en': 'Rally.TV Live'},
-                {'id': 'rally.tv.fast', 'name_en': 'Rally.TV FAST+'}
-            ]
-            
-            for ch in channels_info:
-                channel = ET.SubElement(tv, 'channel', id=ch['id'])
-                ET.SubElement(channel, 'display-name', lang='en').text = ch['name_en']
-                ET.SubElement(channel, 'icon', src='https://www.rally.tv/assets/images/logo.png')
-
-            jst_now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
-            base_date = jst_now.date()
-            
-            programs = []
-
-            # 今日(0)と明日(1)の2日間
-            for day_offset in range(0, 2):
-                target_date = base_date + datetime.timedelta(days=day_offset)
-                date_str = target_date.strftime('%Y%m%d')
-                next_date_str = (target_date + datetime.timedelta(days=1)).strftime('%Y%m%d')
-                
-                # 日付ごとに少しステージ番号を変化させてリアル感を出すよ！
-                if day_offset == 0:
-                    ss_morning = 'WRC Live: Morning Stages (SS11 - SS12)'
-                    ss_afternoon = 'WRC Live: Afternoon Stages (SS13 - SS14)'
-                    rally_subtitle = 'Day 2'
-                else:
-                    ss_morning = 'WRC Live: Championship Sunday (SS15 - SS16)'
-                    ss_afternoon = 'WRC Live: Wolf Power Stage (SS17 - Final)'
-                    rally_subtitle = 'Final Day'
-
-                live_slots = [
-                    (0, 6, f'Rally.TV Live: Overnight Onboard & Stage {rally_subtitle} Preview', 'Overnight replay of key special stages and onboard highlights.'),
-                    (6, 9, 'WRC Live: Morning Buildup & Shakedown Review', 'Morning news, service park atmosphere, and team strategies.'),
-                    (9, 13, ss_morning, 'Live coverage of the morning loop, split times, and remote service.'),
-                    (13, 15, 'Midday Service Park & Driver Interviews', 'Live reactions from the service park, tyre fitting, and mechanical repairs.'),
-                    (15, 19, ss_afternoon, 'Afternoon special stages, high-speed gravel/tarmac action, and dramatic moments.'),
-                    (19, 22, f'WRC Daily Highlights & Press Conference ({rally_subtitle})', 'Comprehensive review of today stages, overall standings, and press conference.'),
-                    (22, 24, 'Rally.TV Live: Late Night Technical Zone', 'Exclusive night onboards and deep technical analysis of the cars.')
-                ]
-                
-                for start_h, end_h, title, desc in live_slots:
-                    start_str = f'{date_str}{start_h:02d}0000 +0900'
-                    end_str = f'{date_str}{end_h:02d}0000 +0900' if end_h < 24 else f'{next_date_str}000000 +0900'
-                    
-                    programs.append({
-                        'channel': 'rally.tv',
-                        'start': start_str,
-                        'stop': end_str,
-                        'title': title,
-                        'desc': desc
-                    })
-
-                fast_slots = [
-                    (0, 4, 'WRC FAST+: Night Onboard Specials', 'Non-stop high-speed night stage onboard camera footage.'),
-                    (4, 8, 'WRC FAST+: Classic Rally Battles (1990s-2010s)', 'Relive legendary championship battles from WRC history.'),
-                    (8, 12, 'WRC FAST+: Epic Jumps & Service Drama', 'A collection of the most spectacular jumps and mechanical troubles.'),
-                    (12, 16, 'WRC FAST+: Driver Profiles & Tech Zone', 'Deep dive into rally car engineering, aerodynamics, and driver stories.'),
-                    (16, 20, 'WRC FAST+: Historic Power Stage Finishes', 'Historical thrilling Power Stage finishes from past seasons.'),
-                    (20, 24, 'WRC FAST+: 24/7 Action & Drift Mix', 'Non-stop action, gravel slides, tarmac grip, and snow highlights.')
-                ]
-                
-                for start_h, end_h, title, desc in fast_slots:
-                    start_str = f'{date_str}{start_h:02d}0000 +0900'
-                    end_str = f'{date_str}{end_h:02d}0000 +0900' if end_h < 24 else f'{next_date_str}000000 +0900'
-                    
-                    programs.append({
-                        'channel': 'rally.tv.fast',
-                        'start': start_str,
-                        'stop': end_str,
-                        'title': title,
-                        'desc': desc
-                    })
-
-            for p in programs:
-                programme = ET.SubElement(tv, 'programme', 
-                                          start=p['start'], 
-                                          stop=p['stop'], 
-                                          channel=p['channel'])
-                ET.SubElement(programme, 'title', lang='en').text = p['title']
-                ET.SubElement(programme, 'desc', lang='en').text = p['desc']
-                ET.SubElement(programme, 'category', lang='en').text = 'Sports'
-
-            tree = ET.ElementTree(tv)
-            ET.indent(tree, space='  ', level=0)
-            tree.write('epg.xml', encoding='utf-8', xml_declaration=True)
-            print('Realistic SS-based EPG generated successfully!')
-
-        generate_advanced_epg()
-        "
-
-    - name: Commit and Push Changes if Updated
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add epg.xml
-        git commit -m "Update EPG: Add realistic SS stages and rally names" || echo "No changes to commit"
-        git push origin main
+      - name: 4. 生成・更新された epg.xml を自動コミット＆プッシュ
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add epg.xml
+          # 変更がある場合のみ自動でコミット＆プッシュするよ
+          git diff --staged --quiet || (git commit -m "Auto-update EPG: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" && git push)
