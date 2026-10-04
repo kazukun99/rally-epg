@@ -1,40 +1,9 @@
-name: Update Rally.TV EPG
-
-on:
-  schedule:
-    # 毎日日本時間の午前6時（UTC 21:00）に自動実行
-    - cron: '0 21 * * *'
-  workflow_dispatch: # いつでも手動で実行できるボタン
-
-permissions:
-  contents: write
-  actions: write
-
-jobs:
-  update-epg:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Set up Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.x'
-
-    - name: Generate Precise JST EPG
-      run: |
-        python -c "
-        import datetime
+import datetime
         import xml.etree.ElementTree as ET
 
         def generate_epg():
             tv = ET.Element('tv')
             
-            # 1. チャンネルの定義（あなたのM3Uと完全一致）
             channels_info = [
                 {'id': 'rally.tv', 'name_en': 'Rally.TV Live'},
                 {'id': 'rally.tv.fast', 'name_en': 'Rally.TV FAST+'}
@@ -42,77 +11,100 @@ jobs:
             
             for ch in channels_info:
                 channel = ET.SubElement(tv, 'channel', id=ch['id'])
-                ET.SubElement(channel, 'display-name', lang='en').text = ch['name_en']
+                ET.SubElement(channel, 'display-name', lang='en').text = ch_info if 'ch_info' in locals() else ch['name_en']
                 ET.SubElement(channel, 'icon', src='https://rally.tv')
 
-            # GitHubサーバーの時間(UTC)に関係なく、確実に『日本時間の今日の日付』を計算して取得
+            # 日本時間の「今日」と「明日」の日付文字列を自動計算
             jst_now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
             today_str = jst_now.strftime('%Y%m%d')
+            
+            jst_tomorrow = jst_now + datetime.timedelta(days=1)
+            tomorrow_str = jst_tomorrow.strftime('%Y%m%d')
 
-            # 2. あなたが作成した公式のタイムテーブル（すべて純粋な日本時間 +0900 に完全補正）
-            official_schedule_rally_tv = [
+            # ==========================================================
+            # 【公式詳細スタイル・ステージスケジュール】
+            # あのとき大お気に入りだった、細かいSSごとのタイムテーブルを完全再現！
+            # ==========================================================
+            is_rally_week = True  # ラリー開催中の切り替えフラグ
+
+            if is_rally_week:
+                schedule_rally_tv = [
+                    # --- 【今日】の細かいスケジュール ---
+                    {
+                        'start': f'{today_str}080000 +0900',
+                        'stop': f'{today_str}090000 +0900',
+                        'title': 'WRC Live: Shakedown',
+                        'desc': 'Official shakedown stage, testing setups before the rally starts.'
+                    },
+                    {
+                        'start': f'{today_str}130000 +0900',
+                        'stop': f'{today_str}143000 +0900',
+                        'title': 'WRC Live: SS1 - Opening Super Special Stage',
+                        'desc': 'The thrilling ceremonial start and first head-to-head showdown of the rally.'
+                    },
+                    {
+                        'start': f'{today_str}180000 +0900',
+                        'stop': f'{today_str}190000 +0900',
+                        'title': 'WRC Daily Highlights & Day 1 Wrap-up',
+                        'desc': 'Comprehensive review of today stages, interviews, and standings.'
+                    },
+
+                    # --- 【明日】の細かいスケジュール（先読み表示） ---
+                    {
+                        'start': f'{tomorrow_str}073000 +0900',
+                        'stop': f'{tomorrow_str}090000 +0900',
+                        'title': 'WRC Live: SS2 - Morning Loop Opener',
+                        'desc': 'Day 2 kicks off with high-speed gravel and technical sections.'
+                    },
+                    {
+                        'start': f'{tomorrow_str}110000 +0900',
+                        'stop': f'{tomorrow_str}123000 +0900',
+                        'title': 'WRC Live: SS3 - Mid-Morning Technical Test',
+                        'desc': 'Challenging stages testing driver concentration and tyre management.'
+                    },
+                    {
+                        'start': f'{tomorrow_str}130000 +0900',
+                        'stop': f'{tomorrow_str}143000 +0900',
+                        'title': 'WRC Live: Midday Service & Remote Fitting',
+                        'desc': 'Service park action, mechanical repairs, and driver reactions.'
+                    },
+                    {
+                        'start': f'{tomorrow_str}150000 +0900',
+                        'stop': f'{tomorrow_str}163000 +0900',
+                        'title': 'WRC Live: SS4 - Afternoon Decisive Loop',
+                        'desc': 'The crucial afternoon rerun of the morning stages under fading light.'
+                    }
+                ]
+            else:
+                # --- オフウィーク（開催なし）：定番アーカイブ ---
+                schedule_rally_tv = [
+                    {
+                        'start': f'{today_str}000000 +0900',
+                        'stop': f'{today_str}240000 +0900',
+                        'title': 'WRC 24/7 Archive & Classic Marathons (Today)',
+                        'desc': 'Enjoy classic WRC highlights, historical seasons, and documentaries.'
+                    },
+                    {
+                        'start': f'{tomorrow_str}000000 +0900',
+                        'stop': f'{tomorrow_str}240000 +0900',
+                        'title': 'WRC 24/7 Archive & Classic Marathons (Tomorrow)',
+                        'desc': 'Enjoy classic Wrc highlights, historical seasons, and documentaries.'
+                    }
+                ]
+
+            # FASTチャンネル用の番組
+            schedule_fast = [
                 {
                     'start': f'{today_str}000000 +0900',
-                    'stop': f'{today_str}070000 +0900',
-                    'title': 'WRC Midnight Shakedown & Onboard Replay',
-                    'desc': 'Detailed replay of the latest WRC stages and onboard cameras.'
-                },
-                {
-                    'start': f'{today_str}070000 +0900',
-                    'stop': f'{today_str}083000 +0900',
-                    'title': 'LIVE: Stage Analysis & Morning Studio | WRC Rally',
-                    'desc': 'Expert analysis, driver interviews, and live morning stage coverage.'
-                },
-                {
-                    'start': f'{today_str}083000 +0900',
-                    'stop': f'{today_str}110000 +0900',
-                    'title': 'LIVE: Championship Stages - Main Feed',
-                    'desc': 'Uninterrupted live broadcast of today\'s key competitive stages.'
-                },
-                {
-                    'start': f'{today_str}110000 +0900',
-                    'stop': f'{today_str}140000 +0900',
-                    'title': 'Midday Service Park Live & Reactions',
-                    'desc': 'Live coverage from the service park as mechanics repair and adjust the cars.'
-                },
-                {
-                    'start': f'{today_str}140000 +0900',
-                    'stop': f'{today_str}180000 +0900',
-                    'title': 'LIVE: Afternoon Loop Stages',
-                    'desc': 'The afternoon battle for podium positions continues live.'
-                },
-                {
-                    'start': f'{today_str}180000 +0900',
                     'stop': f'{today_str}240000 +0900',
-                    'title': 'Daily Highlights & End of Day Wrap-up',
-                    'desc': 'Comprehensive review of today\'s fastest stages, incidents, and standings.'
-                }
-            ]
-
-            official_schedule_fast = [
-                {
-                    'start': f'{today_str}000000 +0900',
-                    'stop': f'{today_str}060000 +0900',
-                    'title': 'WRC Classic Battles: Historic Seasons',
-                    'desc': 'Relive legendary title fights from WRC history.'
+                    'title': 'WRC FAST+: Onboards & Historic Moments (Today)',
+                    'desc': 'Non-stop historic rally action and onboard cameras.'
                 },
                 {
-                    'start': f'{today_str}060000 +0900',
-                    'stop': f'{today_str}120000 +0900',
-                    'title': 'WRC2 & WRC3 Focus: Future Champions',
-                    'desc': 'In-depth highlights and onboard action from supporting categories.'
-                },
-                {
-                    'start': f'{today_str}120000 +0900',
-                    'stop': f'{today_str}180000 +0900',
-                    'title': 'Legendary Rallies Marathon: Safari & Monte-Carlo',
-                    'desc': 'Back-to-back broadcasts of the most iconic rallies in motorsport.'
-                },
-                {
-                    'start': f'{today_str}180000 +0900',
-                    'stop': f'{today_str}240000 +0900',
-                    'title': 'WRC Technical Zone & Driver Profiles',
-                    'desc': 'Deep dive into Rally1 hybrid technology and driver features.'
+                    'start': f'{tomorrow_str}000000 +0900',
+                    'stop': f'{tomorrow_str}240000 +0900',
+                    'title': 'WRC FAST+: Onboards & Historic Moments (Tomorrow)',
+                    'desc': 'Non-stop historic rally action and onboard cameras.'
                 }
             ]
 
@@ -122,27 +114,16 @@ jobs:
                                                 start=p['start'], 
                                                 stop=p['stop'], 
                                                 channel=ch_id)
-                    
                     ET.SubElement(programme, 'title', lang='en').text = p['title']
                     ET.SubElement(programme, 'desc', lang='en').text = p['desc']
                     ET.SubElement(programme, 'category', lang='en').text = 'Sports'
 
-            add_custom_programmes('rally.tv', official_schedule_rally_tv)
-            add_custom_programmes('rally.tv.fast', official_schedule_fast)
+            add_custom_programmes('rally.tv', schedule_rally_tv)
+            add_custom_programmes('rally.tv.fast', schedule_fast)
 
             tree = ET.ElementTree(tv)
             ET.indent(tree, space='  ', level=0)
             tree.write('epg.xml', encoding='utf-8', xml_declaration=True)
-            print('Perfect JST EPG generated successfully!')
+            print('Official detailed style EPG (Today + Tomorrow) generated successfully!')
 
         generate_epg()
-        "
-
-    - name: Commit and Push Changes
-      run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-        git add epg.xml
-        # 毎回古いファイルを強制的に上書きし、GitHubに100%確実にプッシュ保存させます
-        git commit -m "Generate precise pure JST epg.xml" || echo "No changes to commit"
-        git push origin main
