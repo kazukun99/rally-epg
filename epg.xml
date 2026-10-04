@@ -8,49 +8,14 @@
     <display-name lang="en">Rally.TV FAST+</display-name>
     <icon src="https://www.rally.tv/assets/images/logo.png" />
   </channel>
-  <programme start="20261004080000 +0900" stop="20261004090000 +0900" channel="rally.tv">
-    <title lang="en">WRC Live: Shakedown</title>
-    <desc lang="en">Official shakedown stage, testing setups before the rally starts.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261004130000 +0900" stop="20261004143000 +0900" channel="rally.tv">
-    <title lang="en">WRC Live: SS1 - Opening Super Special Stage</title>
-    <desc lang="en">The thrilling ceremonial start and first head-to-head showdown of the rally.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261004180000 +0900" stop="20261004190000 +0900" channel="rally.tv">
-    <title lang="en">WRC Daily Highlights &amp; Day 1 Wrap-up</title>
-    <desc lang="en">Comprehensive review of today stages, interviews, and standings.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261005073000 +0900" stop="20261005090000 +0900" channel="rally.tv">
-    <title lang="en">WRC Live: SS2 - Morning Loop Opener</title>
-    <desc lang="en">Day 2 kicks off with high-speed gravel and technical sections.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261005110000 +0900" stop="20261005123000 +0900" channel="rally.tv">
-    <title lang="en">WRC Live: SS3 - Mid-Morning Technical Test</title>
-    <desc lang="en">Challenging stages testing driver concentration and tyre management.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261005130000 +0900" stop="20261005143000 +0900" channel="rally.tv">
-    <title lang="en">WRC Live: Midday Service &amp; Remote Fitting</title>
-    <desc lang="en">Service park action, mechanical repairs, and driver reactions.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261005150000 +0900" stop="20261005163000 +0900" channel="rally.tv">
-    <title lang="en">WRC Live: SS4 - Afternoon Decisive Loop</title>
-    <desc lang="en">The crucial afternoon rerun of the morning stages under fading light.</desc>
+  <programme start="20261004000000 +0900" stop="20261004240000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live &amp; Latest Highlights (Auto-Synced)</title>
+    <desc lang="en">Live stages, highlights, and on-demand rally coverage synced from Rally.TV.</desc>
     <category lang="en">Sports</category>
   </programme>
   <programme start="20261004000000 +0900" stop="20261004240000 +0900" channel="rally.tv.fast">
-    <title lang="en">WRC FAST+: Onboards &amp; Historic Moments (Today)</title>
-    <desc lang="en">Non-stop historic rally action and onboard cameras.</desc>
-    <category lang="en">Sports</category>
-  </programme>
-  <programme start="20261005000000 +0900" stop="20261005240000 +0900" channel="rally.tv.fast">
-    <title lang="en">WRC FAST+: Onboards &amp; Historic Moments (Tomorrow)</title>
-    <desc lang="en">Non-stop historic rally action and onboard cameras.</desc>
+    <title lang="en">WRC FAST+: 24/7 Action (Auto-Synced)</title>
+    <desc lang="en">Non-stop historic moments, onboard cameras, and rally features.</desc>
     <category lang="en">Sports</category>
   </programme>
 </tv>
