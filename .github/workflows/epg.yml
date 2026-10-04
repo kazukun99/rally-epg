@@ -2,7 +2,7 @@ name: Rally.TV Auto Scrape EPG
 
 on:
   schedule:
-    - cron: '0 */2 * * *'
+    - cron: '0 * * * *'   # 毎時0分に1時間おきで実行！
   workflow_dispatch:
 
 permissions:
