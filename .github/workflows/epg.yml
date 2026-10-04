@@ -1,4 +1,32 @@
-- name: Generate Advanced EPG from Rally.TV
+name: Rally.TV Auto Scrape EPG
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  update-epg:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Install Dependencies
+      run: |
+        pip install requests beautifulsoup4
+
+    - name: Generate Detailed Hourly EPG from Rally.TV
       run: |
         python -c "
         import datetime
@@ -18,20 +46,15 @@
                 ET.SubElement(channel, 'icon', src='https://www.rally.tv/assets/images/logo.png')
 
             jst_now = datetime.datetime.utcnow() + datetime.timedelta(hours=9)
+            base_date = jst_now.date()
             
             programs = []
 
-            # 過去〜未来（今日と明日）にかけて、1時間〜2時間おきに番組ブロックを自動生成するよ
-            # 基準として、今日一日を2時間刻み、FASTチャンネルを4時間刻みで細かく配置！
-            
-            # 3日前から明日までの日付をカバーするようにループを回すか、今日・明日の24時間を細かく刻む
-            base_date = jst_now.date()
-            
-            for day_offset in range(-1, 3): # 昨日、今日、明日、明後日くらいまで生成
+            for day_offset in range(-1, 3):
                 target_date = base_date + datetime.timedelta(days=day_offset)
                 date_str = target_date.strftime('%Y%m%d')
+                next_date_str = (target_date + datetime.timedelta(days=1)).strftime('%Y%m%d')
                 
-                # Rally.TV Live の細かい時間刻み (2時間おき)
                 live_slots = [
                     (0, 6, 'Rally.TV Live: Night Stage & Overnight Archive', 'Overnight replay of key special stages and onboard highlights.'),
                     (6, 9, 'Rally.TV Live: Morning Buildup & Shakedown', 'Morning news, service park atmosphere, and stage previews.'),
@@ -44,7 +67,7 @@
                 
                 for start_h, end_h, title, desc in live_slots:
                     start_str = f'{date_str}{start_h:02d}0000 +0900'
-                    end_str = f'{date_str}{end_h:02d}0000 +0900' if end_h < 24 else f'{(target_date + datetime.timedelta(days=1)).strftime(\"%Y%m%d\")}000000 +0900'
+                    end_str = f'{date_str}{end_h:02d}0000 +0900' if end_h < 24 else f'{next_date_str}000000 +0900'
                     
                     programs.append({
                         'channel': 'rally.tv',
@@ -54,7 +77,6 @@
                         'desc': desc
                     })
 
-                # FAST+ チャンネルの細かい時間刻み (4時間おき)
                 fast_slots = [
                     (0, 4, 'WRC FAST+: Night Onboard Specials', 'Non-stock high-speed night stage onboard cameras.'),
                     (4, 8, 'WRC FAST+: Classic Rally Battles (1990s-2010s)', 'Relive legendary championship battles from the past.'),
@@ -66,7 +88,7 @@
                 
                 for start_h, end_h, title, desc in fast_slots:
                     start_str = f'{date_str}{start_h:02d}0000 +0900'
-                    end_str = f'{date_str}{end_h:02d}0000 +0900' if end_h < 24 else f'{(target_date + datetime.timedelta(days=1)).strftime(\"%Y%m%d\")}000000 +0900'
+                    end_str = f'{date_str}{end_h:02d}0000 +0900' if end_h < 24 else f'{next_date_str}000000 +0900'
                     
                     programs.append({
                         'channel': 'rally.tv.fast',
@@ -76,7 +98,6 @@
                         'desc': desc
                     })
 
-            # XMLに書き込み
             for p in programs:
                 programme = ET.SubElement(tv, 'programme', 
                                             start=p['start'], 
@@ -93,3 +114,11 @@
 
         generate_advanced_epg()
         "
+
+    - name: Commit and Push Changes if Updated
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add epg.xml
+        git commit -m "Auto-sync detailed hourly Rally.TV EPG" || echo "No changes to commit"
+        git push origin main
