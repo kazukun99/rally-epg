@@ -8,34 +8,264 @@
     <display-name lang="en">Rally.TV FAST+</display-name>
     <icon src="https://www.rally.tv/assets/images/logo.png" />
   </channel>
-  <programme start="20261004000000 +0900" stop="20261004080000 +0900" channel="rally.tv">
-    <title lang="en">Rally.TV Live: Morning Buildup &amp; Archive</title>
-    <desc lang="en">Early morning classic stages and event previews.</desc>
+  <programme start="20261003000000 +0900" stop="20261003060000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live: Night Stage &amp; Overnight Archive</title>
+    <desc lang="en">Overnight replay of key special stages and onboard highlights.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261004080000 +0900" stop="20261004140000 +0900" channel="rally.tv">
-    <title lang="en">WRC Live: Today Stages &amp; Service Park</title>
-    <desc lang="en">Live coverage of the day special stages and midday service action.</desc>
+  <programme start="20261003060000 +0900" stop="20261003090000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live: Morning Buildup &amp; Shakedown</title>
+    <desc lang="en">Morning news, service park atmosphere, and stage previews.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261004140000 +0900" stop="20261004240000 +0900" channel="rally.tv">
-    <title lang="en">WRC Daily Highlights &amp; Interviews</title>
-    <desc lang="en">Comprehensive review of today stages, post-stage reactions, and standings.</desc>
+  <programme start="20261003090000 +0900" stop="20261003130000 +0900" channel="rally.tv">
+    <title lang="en">WRC Live: Morning Stages (SS1-SS4)</title>
+    <desc lang="en">Live coverage of the morning loop and remote service.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261005000000 +0900" stop="20261005240000 +0900" channel="rally.tv">
-    <title lang="en">WRC Live &amp; Upcoming Stages (Tomorrow)</title>
-    <desc lang="en">Scheduled live broadcasts and highlights for tomorrow.</desc>
+  <programme start="20261003130000 +0900" stop="20261003150000 +0900" channel="rally.tv">
+    <title lang="en">Midday Service Park &amp; Driver Interviews</title>
+    <desc lang="en">Live reactions from the service park, tyre fitting, and tactical analysis.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261004000000 +0900" stop="20261004240000 +0900" channel="rally.tv.fast">
-    <title lang="en">WRC FAST+: 24/7 Onboards &amp; Classic Battles</title>
-    <desc lang="en">Non-stop onboard camera streams and historic rally moments.</desc>
+  <programme start="20261003150000 +0900" stop="20261003190000 +0900" channel="rally.tv">
+    <title lang="en">WRC Live: Afternoon Stages (SS5-SS8)</title>
+    <desc lang="en">Afternoon special stages and high-speed action.</desc>
     <category lang="en">Sports</category>
   </programme>
-  <programme start="20261005000000 +0900" stop="20261005240000 +0900" channel="rally.tv.fast">
-    <title lang="en">WRC FAST+: 24/7 Onboards (Tomorrow)</title>
-    <desc lang="en">Non-stop onboard camera streams and historic rally moments.</desc>
+  <programme start="20261003190000 +0900" stop="20261003220000 +0900" channel="rally.tv">
+    <title lang="en">WRC Daily Highlights &amp; Wrap-up</title>
+    <desc lang="en">Comprehensive review of today stages, standings, and press conference.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003220000 +0900" stop="20261004000000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live: Late Night Onboards</title>
+    <desc lang="en">Exclusive night stages and technical breakdown.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003000000 +0900" stop="20261003040000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Night Onboard Specials</title>
+    <desc lang="en">Non-stock high-speed night stage onboard cameras.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003040000 +0900" stop="20261003080000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Classic Rally Battles (1990s-2010s)</title>
+    <desc lang="en">Relive legendary championship battles from the past.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003080000 +0900" stop="20261003120000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Epic Jumps &amp; Service Highlights</title>
+    <desc lang="en">A collection of the most spectacular jumps and mechanical dramas.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003120000 +0900" stop="20261003160000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Driver Profiles &amp; Tech Zone</title>
+    <desc lang="en">Deep dive into rally car engineering and driver stories.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003160000 +0900" stop="20261003200000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Power Stage Classics</title>
+    <desc lang="en">Historical thrilling Power Stage finishes.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261003200000 +0900" stop="20261004000000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: 24/7 Action &amp; Drift Mix</title>
+    <desc lang="en">Non-stop action, gravel, tarmac, and snow highlights.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004000000 +0900" stop="20261004060000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live: Night Stage &amp; Overnight Archive</title>
+    <desc lang="en">Overnight replay of key special stages and onboard highlights.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004060000 +0900" stop="20261004090000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live: Morning Buildup &amp; Shakedown</title>
+    <desc lang="en">Morning news, service park atmosphere, and stage previews.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004090000 +0900" stop="20261004130000 +0900" channel="rally.tv">
+    <title lang="en">WRC Live: Morning Stages (SS1-SS4)</title>
+    <desc lang="en">Live coverage of the morning loop and remote service.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004130000 +0900" stop="20261004150000 +0900" channel="rally.tv">
+    <title lang="en">Midday Service Park &amp; Driver Interviews</title>
+    <desc lang="en">Live reactions from the service park, tyre fitting, and tactical analysis.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004150000 +0900" stop="20261004190000 +0900" channel="rally.tv">
+    <title lang="en">WRC Live: Afternoon Stages (SS5-SS8)</title>
+    <desc lang="en">Afternoon special stages and high-speed action.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004190000 +0900" stop="20261004220000 +0900" channel="rally.tv">
+    <title lang="en">WRC Daily Highlights &amp; Wrap-up</title>
+    <desc lang="en">Comprehensive review of today stages, standings, and press conference.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004220000 +0900" stop="20261005000000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live: Late Night Onboards</title>
+    <desc lang="en">Exclusive night stages and technical breakdown.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004000000 +0900" stop="20261004040000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Night Onboard Specials</title>
+    <desc lang="en">Non-stock high-speed night stage onboard cameras.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004040000 +0900" stop="20261004080000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Classic Rally Battles (1990s-2010s)</title>
+    <desc lang="en">Relive legendary championship battles from the past.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004080000 +0900" stop="20261004120000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Epic Jumps &amp; Service Highlights</title>
+    <desc lang="en">A collection of the most spectacular jumps and mechanical dramas.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004120000 +0900" stop="20261004160000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Driver Profiles &amp; Tech Zone</title>
+    <desc lang="en">Deep dive into rally car engineering and driver stories.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004160000 +0900" stop="20261004200000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Power Stage Classics</title>
+    <desc lang="en">Historical thrilling Power Stage finishes.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261004200000 +0900" stop="20261005000000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: 24/7 Action &amp; Drift Mix</title>
+    <desc lang="en">Non-stop action, gravel, tarmac, and snow highlights.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005000000 +0900" stop="20261005060000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live: Night Stage &amp; Overnight Archive</title>
+    <desc lang="en">Overnight replay of key special stages and onboard highlights.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005060000 +0900" stop="20261005090000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live: Morning Buildup &amp; Shakedown</title>
+    <desc lang="en">Morning news, service park atmosphere, and stage previews.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005090000 +0900" stop="20261005130000 +0900" channel="rally.tv">
+    <title lang="en">WRC Live: Morning Stages (SS1-SS4)</title>
+    <desc lang="en">Live coverage of the morning loop and remote service.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005130000 +0900" stop="20261005150000 +0900" channel="rally.tv">
+    <title lang="en">Midday Service Park &amp; Driver Interviews</title>
+    <desc lang="en">Live reactions from the service park, tyre fitting, and tactical analysis.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005150000 +0900" stop="20261005190000 +0900" channel="rally.tv">
+    <title lang="en">WRC Live: Afternoon Stages (SS5-SS8)</title>
+    <desc lang="en">Afternoon special stages and high-speed action.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005190000 +0900" stop="20261005220000 +0900" channel="rally.tv">
+    <title lang="en">WRC Daily Highlights &amp; Wrap-up</title>
+    <desc lang="en">Comprehensive review of today stages, standings, and press conference.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005220000 +0900" stop="20261006000000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live: Late Night Onboards</title>
+    <desc lang="en">Exclusive night stages and technical breakdown.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005000000 +0900" stop="20261005040000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Night Onboard Specials</title>
+    <desc lang="en">Non-stock high-speed night stage onboard cameras.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005040000 +0900" stop="20261005080000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Classic Rally Battles (1990s-2010s)</title>
+    <desc lang="en">Relive legendary championship battles from the past.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005080000 +0900" stop="20261005120000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Epic Jumps &amp; Service Highlights</title>
+    <desc lang="en">A collection of the most spectacular jumps and mechanical dramas.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005120000 +0900" stop="20261005160000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Driver Profiles &amp; Tech Zone</title>
+    <desc lang="en">Deep dive into rally car engineering and driver stories.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005160000 +0900" stop="20261005200000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Power Stage Classics</title>
+    <desc lang="en">Historical thrilling Power Stage finishes.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261005200000 +0900" stop="20261006000000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: 24/7 Action &amp; Drift Mix</title>
+    <desc lang="en">Non-stop action, gravel, tarmac, and snow highlights.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261006000000 +0900" stop="20261006060000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live: Night Stage &amp; Overnight Archive</title>
+    <desc lang="en">Overnight replay of key special stages and onboard highlights.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261006060000 +0900" stop="20261006090000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live: Morning Buildup &amp; Shakedown</title>
+    <desc lang="en">Morning news, service park atmosphere, and stage previews.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261006090000 +0900" stop="20261006130000 +0900" channel="rally.tv">
+    <title lang="en">WRC Live: Morning Stages (SS1-SS4)</title>
+    <desc lang="en">Live coverage of the morning loop and remote service.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261006130000 +0900" stop="20261006150000 +0900" channel="rally.tv">
+    <title lang="en">Midday Service Park &amp; Driver Interviews</title>
+    <desc lang="en">Live reactions from the service park, tyre fitting, and tactical analysis.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261006150000 +0900" stop="20261006190000 +0900" channel="rally.tv">
+    <title lang="en">WRC Live: Afternoon Stages (SS5-SS8)</title>
+    <desc lang="en">Afternoon special stages and high-speed action.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261006190000 +0900" stop="20261006220000 +0900" channel="rally.tv">
+    <title lang="en">WRC Daily Highlights &amp; Wrap-up</title>
+    <desc lang="en">Comprehensive review of today stages, standings, and press conference.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261006220000 +0900" stop="20261007000000 +0900" channel="rally.tv">
+    <title lang="en">Rally.TV Live: Late Night Onboards</title>
+    <desc lang="en">Exclusive night stages and technical breakdown.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261006000000 +0900" stop="20261006040000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Night Onboard Specials</title>
+    <desc lang="en">Non-stock high-speed night stage onboard cameras.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261006040000 +0900" stop="20261006080000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Classic Rally Battles (1990s-2010s)</title>
+    <desc lang="en">Relive legendary championship battles from the past.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261006080000 +0900" stop="20261006120000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Epic Jumps &amp; Service Highlights</title>
+    <desc lang="en">A collection of the most spectacular jumps and mechanical dramas.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261006120000 +0900" stop="20261006160000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Driver Profiles &amp; Tech Zone</title>
+    <desc lang="en">Deep dive into rally car engineering and driver stories.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261006160000 +0900" stop="20261006200000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: Power Stage Classics</title>
+    <desc lang="en">Historical thrilling Power Stage finishes.</desc>
+    <category lang="en">Sports</category>
+  </programme>
+  <programme start="20261006200000 +0900" stop="20261007000000 +0900" channel="rally.tv.fast">
+    <title lang="en">WRC FAST+: 24/7 Action &amp; Drift Mix</title>
+    <desc lang="en">Non-stop action, gravel, tarmac, and snow highlights.</desc>
     <category lang="en">Sports</category>
   </programme>
 </tv>
