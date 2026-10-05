@@ -8,20 +8,23 @@ JST = timezone(timedelta(hours=9))
 # 1. 現在の正確な日本時間（オンタイム）を絶対基準にするよ！
 now_jst = datetime.now(JST)
 
-# 基準から「12時間前」をスタート地点にし、未来24時間までをカバーするウィンドウ
+# 基準から「12時間前」をスタート地点にし、未来24時間までをカバーするウィンドウ（合計36時間分）
 start_base = now_jst - timedelta(hours=12)
-total_slots = 36  # 過去12時間 + 未来24時間 = 合計36時間分のスロット（1時間刻み）
+total_slots = 36  
 
 print(f"✨ オンタイム基準 (JST): {now_jst.strftime('%Y-%m-%d %H:%M:%S')}")
 print(f"📅 番組表の開始 (前12時間): {start_base.strftime('%Y-%m-%d %H:%M:%S')}")
 
-# 2. JSONデータの存在確認（デバッグフォルダのパスに合わせるよ）
+# 2. JSONデータの読み込み（存在しなくてもエラーで落ちないように安全に処理するよ）
+slots = []
 try:
     with open('rallytv_debug/epg_by_time.json', 'r', encoding='utf-8') as f:
         slots = json.load(f)
     print(f"📦 JSON読み込み成功: 構造を確認しました（データ数: {len(slots)}）")
 except FileNotFoundError:
-    print("⚠️ 警告: rallytv_debug/epg_by_time.json が見つからないけれど、オンタイム基準で生成を続行するよ！")
+    print("⚠️ 案内: rallytv_debug/epg_by_time.json が見つかりませんが、オンタイム基準で生成を続行します。")
+except Exception as e:
+    print(f"⚠️ 案内: JSON読み込み時に軽微なスキップが発生しました: {e}")
 
 # 3. XMLTVのルート要素作成 (<tv>)
 root = ET.Element('tv')
