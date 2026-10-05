@@ -40,7 +40,7 @@ for i in range(total_slots):
     start_time = start_base + timedelta(hours=i)
     stop_time = start_time + timedelta(hours=1)
     
-    # 日本時間のタイムゾーン付き文字列に変換 (例: 20261005103406 +0900)
+    # 日本時間のタイムゾーン付き文字列に変換 (例: 20261005110000 +0900)
     start_str = start_time.strftime('%Y%m%d%H%M%S +0900')
     stop_str = stop_time.strftime('%Y%m%d%H%M%S +0900')
     
