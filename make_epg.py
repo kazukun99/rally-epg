@@ -20,16 +20,8 @@ except Exception as e:
 
 print("🔍 --- チェックここまで ---\n")
 
-# 2. 日本時間（JST = UTC+9）の定義と、絶対基準（オンタイム）の設定
+# 日本時間（JST = UTC+9）の定義
 JST = timezone(timedelta(hours=9))
-now_jst = datetime.now(JST)
-
-window_start = now_jst - timedelta(hours=12)
-window_end = now_jst + timedelta(hours=24)
-
-print(f"✨ オンタイム基準 (JST): {now_jst.strftime('%Y-%m-%d %H:%M:%S')}")
-print(f"📅 ウィンドウ開始 (過去12h): {window_start.strftime('%Y-%m-%d %H:%M:%S')}")
-print(f"📅 ウィンドウ終了 (未来24h): {window_end.strftime('%Y-%m-%d %H:%M:%S')}")
 
 parsed_slots = []
 for idx, item in enumerate(raw_slots):
@@ -73,24 +65,23 @@ for i, slot in enumerate(parsed_slots):
     else:
         slot_stop = slot_start + timedelta(hours=1)
     
-    # ウィンドウの範囲内かチェック
-    if slot_stop >= window_start and slot_start <= window_end:
-        start_str = slot_start.strftime('%Y%m%d%H%M%S +0900')
-        stop_str = slot_stop.strftime('%Y%m%d%H%M%S +0900')
-        
-        programme = ET.SubElement(root, 'programme', {
-            'start': start_str,
-            'stop': stop_str,
-            'channel': 'rallytv.1'
-        })
-        
-        title = ET.SubElement(programme, 'title', lang='ja')
-        title.text = slot['container_text']
-        
-        desc = ET.SubElement(programme, 'desc', lang='ja')
-        desc.text = f"Rally.TV Live - Slot: {slot['time_slot_str']}"
-        
-        generated_count += 1
+    # 時間フィルターを外したので、JSONにある全データを対象にするよ！
+    start_str = slot_start.strftime('%Y%m%d%H%M%S +0900')
+    stop_str = slot_stop.strftime('%Y%m%d%H%M%S +0900')
+    
+    programme = ET.SubElement(root, 'programme', {
+        'start': start_str,
+        'stop': stop_str,
+        'channel': 'rallytv.1'
+    })
+    
+    title = ET.SubElement(programme, 'title', lang='ja')
+    title.text = slot['container_text']
+    
+    desc = ET.SubElement(programme, 'desc', lang='ja')
+    desc.text = f"Rally.TV Live - Slot: {slot['time_slot_str']}"
+    
+    generated_count += 1
 
 tree = ET.ElementTree(root)
 tree.write('epg.xml', encoding='utf-8', xml_declaration=True)
