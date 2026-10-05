@@ -21,27 +21,17 @@ try:
         raw_slots = json.load(f)
     print(f"📦 JSON読み込み成功: データ数 {len(raw_slots)} 件")
 except FileNotFoundError:
-    print("⚠️ 案内: rallytv_debug/epg_by_time.json が見つかりませんでした。空の番組表を生成します。")
+    print("⚠️ 案内: rallytv_debug/epg_by_time.json が見つかりませんでした。")
 except Exception as e:
     print(f"⚠️ 案内: JSON読み込みエラー: {e}")
 
-# 3. XMLTVのルート要素作成 (<tv>)
-root = ET.Element('tv')
-
-# チャンネル定義
-channel = ET.SubElement(root, 'channel', id='rallytv.1')
-display_name = ET.SubElement(channel, 'display-name')
-display_name.text = 'Rally.TV Live'
-
-# 4. APIデータを素直に走査して、ウィンドウ内の番組を抽出・出力する
-generated_count = 0
-
+# 3. 事전에全スロットの時刻をパースしてリスト化しておく（次の番組の時間を覗き見するため！）
+parsed_slots = []
 for item in raw_slots:
     time_slot_str = item.get('time_slot')
     if not time_slot_str:
         continue
     
-    # 日付文字列のパース処理（今年 2026年 を補完して安全にパース）
     parsed_time = None
     clean_str = f"2026 {time_slot_str}"
     for fmt in ('%Y %b %d - %I:%M %p', '%Y %b %d - %H:%M'):
@@ -50,15 +40,41 @@ for item in raw_slots:
             break
         except ValueError:
             continue
-                
-    if not parsed_time:
-        continue
+            
+    if parsed_time:
+        # container_textやその他の情報を番組名・説明文に活用するよ
+        container_text = item.get('container_text', 'Live streaming coverage')
+        parsed_slots.append({
+            'start_time': parsed_time,
+            'time_slot_str': time_slot_str,
+            'container_text': container_text
+        })
 
-    slot_start = parsed_time
-    slot_stop = slot_start + timedelta(hours=1) # 必要に応じてデータの幅に合わせる
+# 時間順に並び替え
+parsed_slots.sort(key=lambda x: x['start_time'])
+
+# 4. XMLTVのルート要素作成 (<tv>)
+root = ET.Element('tv')
+
+# チャンネル定義
+channel = ET.SubElement(root, 'channel', id='rallytv.1')
+display_name = ET.SubElement(channel, 'display-name')
+display_name.text = 'Rally.TV Live'
+
+# 5. 各番組の終了時間を「次の番組の開始時間」に設定し、タイトルも綺麗に反映して出力する
+generated_count = 0
+
+for i, slot in enumerate(parsed_slots):
+    slot_start = slot['start_time']
     
-    # 🌟 過去12時間 〜 未来24時間のウィンドウ内に入っているものだけを綺麗に抽出するよ
-    if window_start <= slot_start <= window_end:
+    # 次の番組があれば、その開始時間をこの番組の終了時間(stop)にする！
+    if i + 1 < len(parsed_slots):
+        slot_stop = parsed_slots[i + 1]['start_time']
+    else:
+        slot_stop = slot_start + timedelta(hours=1)
+    
+    # 🌟 過去12時間 〜 未来24時間のウィンドウにかかっているものを抽出するよ
+    if slot_stop >= window_start and slot_start <= window_end:
         start_str = slot_start.strftime('%Y%m%d%H%M%S +0900')
         stop_str = slot_stop.strftime('%Y%m%d%H%M%S +0900')
         
@@ -68,16 +84,17 @@ for item in raw_slots:
             'channel': 'rallytv.1'
         })
         
+        # 番組タイトルに正式なテキスト（container_text）を反映させるよ
         title = ET.SubElement(programme, 'title', lang='ja')
-        title.text = f"Rally.TV Live - {time_slot_str}"
+        title.text = slot['container_text']
         
         desc = ET.SubElement(programme, 'desc', lang='ja')
-        desc.text = item.get('container_text', 'Live streaming coverage')
+        desc.text = f"Rally.TV Live - Slot: {slot['time_slot_str']}"
         
         generated_count += 1
 
-# 5. XMLファイルとして安全に保存
+# 6. XMLファイルとして安全に保存
 tree = ET.ElementTree(root)
 tree.write('epg.xml', encoding='utf-8', xml_declaration=True)
 
-print(f"✨ 完了！オンタイム基準のウィンドウに一致した {generated_count} 件の番組を epg.xml に書き出したよ、かず……！💕")
+print(f"✨ 完了！ウィンドウに一致した {generated_count} 件の番組を可変長スロット＆正式タイトルで epg.xml に書き出したよ、かず……！💕")
