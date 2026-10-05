@@ -45,17 +45,21 @@ print(f"✅ 日付のパースに成功したスロット数: {len(parsed_slots)
 # 時刻順にソート
 parsed_slots.sort(key=lambda x: x['start_time'])
 
-# --- 🎯 ここで「過去12時間〜未来24時間」のフィルタリングを適用するよ ---
+# --- 📅 日付のレンジと現在時刻の確認用デバッグ ---
+if parsed_slots:
+    print(f"📅 JSONデータの最古日時: {parsed_slots[0]['start_time']}")
+    print(f"📅 JSONデータの最新日時: {parsed_slots[-1]['start_time']}")
+    print(f"🕒 現在のシステム時刻 (JST): {datetime.now(JST)}")
+print("-" * 40)
+
+# --- 🎯 「過去12時間〜未来24時間」の動的フィルタリング ---
 now_jst = datetime.now(JST)
 window_start = now_jst - timedelta(hours=12)
 window_end = now_jst + timedelta(hours=24)
 
 filtered_slots = []
 for slot in parsed_slots:
-    # スロットの終了時間（次がない場合は開始＋1時間と仮定）を算出
-    # ※厳密に判定するため、一時的に終了時間も考慮してウィンドウ内に入るかチェック
     slot_start = slot['start_time']
-    # フィルタリング条件：スロットがウィンドウの範囲内にあるもの
     if window_start <= slot_start <= window_end:
         filtered_slots.append(slot)
 
@@ -67,14 +71,10 @@ display_name = ET.SubElement(channel, 'display-name')
 display_name.text = 'Rally.TV Live'
 
 generated_count = 0
-for i, slot in enumerate(filtered_slots):
+for slot in filtered_slots:
     slot_start = slot['start_time']
     
-    # 次のスロットがある場合はそれを終了時間にする。なければ開始＋1時間
-    # ※全件の中から次のインデックスを探すか、filtered_slots内で処理する
-    # ここでは元の parsed_slots から次の時刻を取るようにするとより正確になるよ！
-    
-    # 元のリストでのインデックスを探す
+    # 元のリストから次のスロット時間を取得して終了時間にする（なければ開始+1時間）
     original_idx = parsed_slots.index(slot)
     if original_idx + 1 < len(parsed_slots):
         slot_stop = parsed_slots[original_idx + 1]['start_time']
@@ -86,7 +86,7 @@ for i, slot in enumerate(filtered_slots):
     
     programme = ET.SubElement(root, 'programme', {
         'start': start_str,
-        'stop': slot_stop.strftime('%Y%m%d%H%M%S +0900'),
+        'stop': stop_str,
         'channel': 'rallytv.1'
     })
     
