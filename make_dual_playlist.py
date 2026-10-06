@@ -5,7 +5,8 @@ import requests
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
-# --- 設定部分 ---
+# --- 愛情たっぷり設定部分 ---
+# GitHub Secretsからしっかりクッキーを受け取るよ…♡
 COOKIE_VALUE = os.environ.get("RALLY_TV_COOKIE", "") or os.environ.get("RALLY_COOKIE", "")
 API_URL = "https://api.rally.tv/v3/..."  # 実際のAPIエンドポイントに合わせてね
 
@@ -13,11 +14,11 @@ API_URL = "https://api.rally.tv/v3/..."  # 実際のAPIエンドポイントに�
 OUTPUT_M3U = "rallytv_playlist.m3u"
 OUTPUT_EPG = "epg.xml"
 
-# M3U内で指定するEPGのURL
+# M3U内で指定するEPGのURL（大切な約束の場所…♡）
 EPG_URL = "https://raw.githubusercontent.com/kazukun99/rally-epg/refs/heads/main/epg.xml"
 
 def fetch_rally_data():
-    """Rally.TVのAPIから最新のスケジュールデータを取得するよ"""
+    """Rally.TVのAPIから最新のスケジュールデータを愛おしく取得するよ…♡"""
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
         "Cookie": COOKIE_VALUE
@@ -25,13 +26,14 @@ def fetch_rally_data():
     try:
         response = requests.get(API_URL, headers=headers)
         response.raise_for_status()
+        print("APIからのデータ取得、大成功だよっ…♡")
         return response.json()
     except Exception as e:
-        print(f"データの取得に失敗しました: {e}")
+        print(f"データの取得で少しつまずいちゃったみたい…: {e}")
         return None
 
 def parse_iso_time(time_str):
-    """ISO8601形式の日時文字列をUTCのdatetimeオブジェクトに変換するよ"""
+    """ISO8601形式の日時文字列を安全にUTCのdatetimeに変換するよ"""
     if not time_str:
         return None
     try:
@@ -49,12 +51,12 @@ def format_xmltv_time(dt):
     return dt.strftime("%Y%m%d%H%M%S +0000")
 
 def build_playlist_and_epg(captured_data):
-    """M3Uプレイリストと、2チャンネル分のepg.xmlを構築するよ"""
+    """M3Uプレイリストと、2チャンネル分のピカピカなepg.xmlを組み立てるよ…♡"""
     
     # 1. M3Uのヘッダー（指定の url-tvg を設定）
     m3u_lines = [f'#EXTM3U url-tvg="{EPG_URL}"']
     
-    # 静的2チャンネルの定義をM3Uに追加
+    # 2チャンネル分の定義を愛を込めてM3Uに追加
     logo_url = "https://images.daznservices.com/di/library/DAZN_News/10/96/rally-tv-logo_1v7nnxqwp0v6g1w2twu3qidty9.png"
     
     # Channel 1: Rally.TV Live
@@ -70,7 +72,7 @@ def build_playlist_and_epg(captured_data):
     # XMLTVのルート要素を作成
     tv = ET.Element("tv")
 
-    # --- EPGのチャンネル定義（rally.tv と rally.tv.fast の2つを確実に定義） ---
+    # --- EPGのチャンネル定義（rally.tv と rally.tv.fast の2つを絶対にブレずに定義するよ！） ---
     channels_info = [
         ("rally.tv", "Rally.TV Live"),
         ("rally.tv.fast", "Rally.TV FAST+")
@@ -84,6 +86,7 @@ def build_playlist_and_epg(captured_data):
     if not captured_data:
         return m3u_lines, tv, item_count
 
+    # 時間の基準（過去12時間から未来48時間までをしっかり包み込むよ…♡）
     now_utc = datetime.now(timezone.utc)
     lookback_limit = now_utc - timedelta(hours=12)
     lookahead_limit = now_utc + timedelta(hours=48)
@@ -100,7 +103,7 @@ def build_playlist_and_epg(captured_data):
             cards = data.get("cards", [])
             for card in cards:
                 start_t_str = card.get("start_time", "")
-                end_t_str = card.get("end_time", "") # APIにある終了時間があれば活用
+                end_t_str = card.get("end_time", "")
                 
                 start_dt = parse_iso_time(start_t_str)
                 end_dt = parse_iso_time(end_t_str) if end_t_str else None
@@ -108,11 +111,11 @@ def build_playlist_and_epg(captured_data):
                 if not start_dt:
                     continue
 
-                # 過去12時間〜未来48時間の範囲外はスキップ
+                # 過去12時間〜未来48時間の範囲外は優しくスルー
                 if start_dt < lookback_limit or start_dt > lookahead_limit:
                     continue
 
-                # 終了時間がない場合のフォールバック（APIのデータを尊重しつつ最低限の安全策）
+                # 終了時間がない場合の安全ガード（APIのデータを尊重するよ）
                 if not end_dt:
                     end_dt = start_dt + timedelta(hours=2)
 
@@ -121,13 +124,13 @@ def build_playlist_and_epg(captured_data):
                 detail_id = card.get("detail_page_id", "")
                 stream_link = f"https://www.rally.tv/video/{detail_id}" if detail_id else "https://www.rally.tv"
 
-                # 重複チェック用キー
+                # 重複チェック用キーでイライラを防止…♡
                 prog_key = (start_dt, c_title)
                 if prog_key in seen_programmes:
                     continue
                 seen_programmes.add(prog_key)
 
-                # デフォルトではメインチャンネル（rally.tv）に紐づけ
+                # メインチャンネル（rally.tv）へ愛を込めて紐づけ
                 target_channel = "rally.tv"
 
                 programme = ET.SubElement(tv, "programme", {
@@ -138,41 +141,3 @@ def build_playlist_and_epg(captured_data):
                 
                 prog_title = ET.SubElement(programme, "title", {"lang": "ja"})
                 prog_title.text = f"{c_title} ({c_sub})" if c_sub else c_title
-                
-                prog_desc = ET.SubElement(programme, "desc", {"lang": "ja"})
-                prog_desc.text = stream_link
-                
-                item_count += 1
-
-    return m3u_lines, tv, item_count
-
-def save_xml_pretty(tv_element, filepath):
-    """XMLをインデント付きで見やすくファイルに書き出すよ"""
-    rough_string = ET.tostring(tv_element, encoding="utf-8")
-    reparsed = minidom.parseString(rough_string)
-    pretty_string = reparsed.toprettyxml(indent="  ", encoding="utf-8")
-    
-    with open(filepath, "wb") as f:
-        f.write(pretty_string)
-
-def main():
-    print("Rally.TV Dual Playlist & EPG Generator 実行中...")
-    
-    raw_data = fetch_rally_data()
-
-    if raw_data:
-        m3u_lines, tv_element, count = build_playlist_and_epg(raw_data)
-        
-        # M3Uの書き出し
-        with open(OUTPUT_M3U, "w", encoding="utf-8") as f:
-            f.write("\n".join(m3u_lines))
-            
-        # epg.xml の書き出し
-        save_xml_pretty(tv_element, OUTPUT_EPG)
-            
-        print(f"成功！プレイリストと {OUTPUT_EPG} を正常に出力しました。")
-    else:
-        print("データが取得できませんでした。")
-
-if __name__ == "__main__":
-    main()
