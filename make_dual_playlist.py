@@ -50,9 +50,9 @@ def generate_epg_xml():
     # 現在時刻（JST基準）を取得
     now_jst = datetime.datetime.now(JST)
     
-    # ウィンドウ：少し広めに持たせて生データを素直に拾う
-    window_start = now_jst - datetime.timedelta(days=1)
-    window_end = now_jst + datetime.timedelta(days=10)
+    # ウィンドウ：過去12時間から未来48時間に変更
+    window_start = now_jst - datetime.timedelta(hours=12)
+    window_end = now_jst + datetime.timedelta(hours=48)
 
     print(f"Target Window (JST): {window_start} ~ {window_end}")
 
