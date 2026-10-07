@@ -24,7 +24,7 @@ jobs:
 
       - name: 4. デュアルチャンネル番組表生成スクリプトの実行 (JST・番組データ連動)
         run: |
-          python make_dual_playlist.py
+          python make_epg.py
         env:
           RALLY_COOKIE: ${{ secrets.RALLY_COOKIE }}
 
