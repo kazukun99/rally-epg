@@ -2,7 +2,7 @@ name: Update Rally.TV EPG & Playlists
 
 on:
   schedule:
-    - cron: '0 * * * *'  # 1時間に1回自動実行
+    - cron: '18 * * * *'  # 1時間に1回自動実行
   workflow_dispatch:      # 手動でもいつでも実行できるようにするよ
 
 jobs:
