@@ -7,14 +7,10 @@ from xml.dom import minidom
 
 # --- 設定部分 ---
 COOKIE_VALUE = os.environ.get("RALLY_TV_COOKIE", "") or os.environ.get("RALLY_COOKIE", "")
-API_URL = "https://api.rally.tv/v3/..."  # 実際のAPIエンドポイントに合わせてね
+API_URL = "https://api.rally.tv/v3/..."  # 必要に応じて実際のAPIエンドポイントを指定してね
 
-# 出力ファイル
-OUTPUT_M3U = "rallytv_playlist.m3u"
+# 出力ファイル（EPGに特化）
 OUTPUT_EPG = "epg.xml"
-
-# EGPのURL（固定・変更厳禁）
-EPG_URL = "https://raw.githubusercontent.com/kazukun99/rally-epg/refs/heads/main/epg.xml"
 
 def fetch_rally_data():
     """Rally.TVのAPIから最新のスケジュールデータを取得するよ"""
@@ -31,47 +27,19 @@ def fetch_rally_data():
         print(f"データの取得で少しつまずいちゃったみたい…: {e}")
         return None
 
-def parse_iso_time(time_str):
-    """ISO8601形式の日時文字列を安全にUTCのdatetimeに変換するよ"""
-    if not time_str:
-        return None
-    try:
-        if time_str.endswith('Z'):
-            time_str = time_str[:-1] + '+00:00'
-        dt = datetime.fromisoformat(time_str)
-        return dt.astimezone(timezone.utc)
-    except Exception:
-        return None
-
 def format_xmltv_time(dt):
     """XMLTV形式の時刻文字列（YYYYMMDDHHMMSS +0000）に変換するよ"""
     if not dt:
         return ""
     return dt.strftime("%Y%m%d%H%M%S +0000")
 
-def build_playlist_and_epg(captured_data):
-    """M3Uプレイリストと、2チャンネル分のepg.xmlを組み立てるよ"""
+def generate_epg(captured_data):
+    """仕様に基づいた固定チャンネルIDで epg.xml を組み立ててファイルに保存するよ"""
     
-    # 1. M3Uのヘッダー（指定の url-tvg を設定）
-    m3u_lines = [f'#EXTM3U url-tvg="{EPG_URL}"']
-    
-    # 固定のロゴURL
-    logo_url = "https://images.daznservices.com/di/library/DAZN_News/10/96/rally-tv-logo_1v7nnxqwp0v6g1w2twu3qidty9.png"
-    
-    # Channel 1: Rally.TV Live（固定データ）
-    m3u_lines.append(f'#EXTINF:-1 group-title="Rally.TV" tvg-id="rally.tv" tvg-logo="{logo_url}",Rally.TV Live')
-    m3u_lines.append("https://rally-tv-live.akamaized.net/hls/live/2117704/RallyTV-Pri/master.m3u8")
-    
-    # Channel 2: Rally.TV FAST+（固定データ）
-    m3u_lines.append(f'#EXTINF:-1 group-title="Rally.TV" tvg-id="rally.tv.fast" tvg-logo="{logo_url}",Rally.TV FAST+')
-    m3u_lines.append("https://di4fb7mbsq3nf.cloudfront.net/playlist.m3u8")
-
-    item_count = 2
-
     # XMLTVのルート要素を作成
     tv = ET.Element("tv")
 
-    # --- EPGのチャンネル定義（rally.tv と rally.tv.fast） ---
+    # --- 1. チャンネル定義（rally.tv と rally.tv.fast に固定） ---
     channels_info = [
         ("rally.tv", "Rally.TV Live"),
         ("rally.tv.fast", "Rally.TV FAST+")
@@ -80,3 +48,42 @@ def build_playlist_and_epg(captured_data):
     for ch_id, ch_name in channels_info:
         ch_elem = ET.SubElement(tv, "channel", id=ch_id)
         name_elem = ET.SubElement(ch_elem, "display-name")
+        name_elem.text = ch_name
+
+    # --- 2. 番組情報（programme）の構築 ---
+    # ※APIから取得したデータ構造に合わせてここでループ処理を記述します。
+    # 例としてダミー構造を入れていますが、必要に応じて captured_data をパースしてください。
+    if captured_data and isinstance(captured_data, list):
+        for item in captured_data:
+            # TODO: APIのレスポンス仕様に合わせて start, stop, title, desc を抽出・設定
+            pass
+    
+    # テスト用・フォールバック用のサンプル番組要素（必要に応じて調整してね）
+    now_utc = datetime.now(timezone.utc)
+    start_str = format_xmltv_time(now_utc)
+    stop_str = format_xmltv_time(now_utc + timedelta(hours=1))
+
+    for ch_id, ch_name in channels_info:
+        prog_elem = ET.SubElement(tv, "programme", start=start_str, stop=stop_str, channel=ch_id)
+        
+        title_elem = ET.SubElement(prog_elem, "title", lang="en")
+        title_elem.text = f"{ch_name} - Broadcast"
+        
+        desc_elem = ET.SubElement(prog_elem, "desc", lang="en")
+        desc_elem.text = f"Live broadcast schedule for {ch_name}."
+
+    # --- 3. XMLファイルへの美しい出力 ---
+    rough_string = ET.tostring(tv, encoding="utf-8")
+    reparsed = minidom.parseString(rough_string)
+    pretty_xml = reparsed.toprettyxml(indent="  ", encoding="utf-8")
+
+    # ファイルに保存
+    with open(OUTPUT_EPG, "wb") as f:
+        f.write(pretty_xml)
+    
+    print(f"{OUTPUT_EPG} の生成が完了したよっ…♡")
+
+if __name__ == "__main__":
+    print("Rally.TV EPG自動生成スクリプトを開始するよ…♡")
+    data = fetch_rally_data()
+    generate_epg(data)
