@@ -32,15 +32,3 @@ jobs:
       - name: 5. EPGを生成
         run: |
           python make_epg.py
-
-      - name: 6. 生成ファイルを自動コミット＆プッシュ
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          git add *.xml *.txt *.m3u 2>/dev/null || true
-
-          git diff --staged --quiet || (
-            git commit -m "Auto-update EPG & Playlists: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
-            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
-          )
