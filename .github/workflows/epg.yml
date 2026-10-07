@@ -2,12 +2,13 @@ name: Update Rally.TV EPG & Playlists
 
 on:
   schedule:
-    - cron: '18 * * * *'  # 1時間に1回自動実行
-  workflow_dispatch:      # 手動でもいつでも実行できるようにするよ
+    - cron: '18 * * * *'
+  workflow_dispatch:
 
 jobs:
   update-epg:
     runs-on: ubuntu-latest
+
     steps:
       - name: 1. リポジトリをチェックアウト
         uses: actions/checkout@v4
@@ -23,24 +24,23 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install requests; fi
 
       - name: 4. HTMLを取得
-  run: |
-    python fetch_page_source.py
-  env:
-    RALLY_COOKIE: ${{ secrets.RALLY_COOKIE }}
-
-- name: 5. EPGを生成
-  run: |
-    python make_epg.py
+        run: |
+          python fetch_page_source.py
         env:
           RALLY_COOKIE: ${{ secrets.RALLY_COOKIE }}
 
-      - name: 5. 生成・更新されたプレイリスト・番組表ファイルを自動コミット＆プッシュ
+      - name: 5. EPGを生成
+        run: |
+          python make_epg.py
+
+      - name: 6. 生成ファイルを自動コミット＆プッシュ
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          
-          # 生成される可能性のある m3u や xml などの成果物をステージング
-          git add *.m3u *.xml 2>/dev/null || true
-          
-          # 変更がある場合のみ自動でコミット＆プッシュするよ
-          git diff --staged --quiet || (git commit -m "Auto-update EPG & Playlists: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" && git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }})
+
+          git add *.xml *.txt *.m3u 2>/dev/null || true
+
+          git diff --staged --quiet || (
+            git commit -m "Auto-update EPG & Playlists: $(date -u '+%Y-%m-%d %H:%M:%S UTC')"
+            git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
+          )
