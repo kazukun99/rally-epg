@@ -22,9 +22,13 @@ jobs:
           python -m pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; else pip install requests; fi
 
-      - name: 4. デュアルチャンネル番組表生成スクリプトの実行 (JST・番組データ連動)
-        run: |
-          python make_epg.py
+      - name: 4. HTMLを取得
+  run: |
+    python fetch_page_source.py
+
+- name: 5. EPGを生成
+  run: |
+    python make_epg.py
         env:
           RALLY_COOKIE: ${{ secrets.RALLY_COOKIE }}
 
