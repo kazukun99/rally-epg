@@ -112,6 +112,8 @@ def build_xml(rows, path):
         title_el.text = row["title"]
         
     fast_count = 0
+    for row in rows[:20]:
+        print(f'TITLE CHECK: {row["title"]}')
     for row in rows:
         if "highlights" not in row["title"]:
             continue
