@@ -21,6 +21,7 @@ def is_excluded_title(title):
     return any(word.lower() in t for word in EXCLUDE_KEYWORDS)
 
 TITLE_PATTERN = re.compile(r'\\"title\\":\\"(.*?)\\"')
+ID_PATTERN = re.compile(r'"id"#:"#(.*?)#"')
 START_PATTERN = re.compile(r'\\"start_time\\":\\"(.*?)\\"')
 END_PATTERN = re.compile(r'\\"end_time\\":\\"(.*?)\\"')
 
@@ -33,26 +34,29 @@ def unescape_json_string(s):
 
 def extract_values(text):
     titles = [unescape_json_string(x) for x in TITLE_PATTERN.findall(text)]
+    ids = ID_PATTERN.findall(text)
     starts = START_PATTERN.findall(text)
     ends = END_PATTERN.findall(text)
-    return titles, starts, ends
+    return ids, titles, starts, ends
 
-def build_programmes(titles, starts, ends):
-    max_len = min(len(titles), len(starts), len(ends))
+def build_programmes(ids, titles, starts, ends):
+    max_len = min(len(ids), len(titles), len(starts), len(ends))
     rows = []
 
     for i in range(max_len):
+        item_id = ids[i].strip()
         title = titles[i].strip()
         start = starts[i].strip()
         end = ends[i].strip()
 
-        if not title or not start or not end:
+        if not item_id or not title or not start or not end:
             continue
 
         if is_excluded_title(title):
             continue
 
         rows.append({
+            "id": item_id,
             "title": title,
             "start": start,
             "end": end,
@@ -72,6 +76,7 @@ def save_cleaned_txt(rows, path):
             f.write(f"#{i}\n")
             f.write(f"start: {row['start']}\n")
             f.write(f"end: {row['end']}\n")
+            f.write(f"id: {row['id']}\n")
             f.write(f"title: {row['title']}\n\n")
 
 def iso_to_xmltv(iso_text):
@@ -105,13 +110,12 @@ def build_xml(rows, path):
 
 def main():
     text = load_html(INPUT_HTML)
-    titles, starts, ends = extract_values(text)
-
+    ids, titles, starts, ends = extract_values(text)
     print(f"title 件数: {len(titles)}")
     print(f"start_time 件数: {len(starts)}")
     print(f"end_time 件数: {len(ends)}")
 
-    rows = build_programmes(titles, starts, ends)
+    rows = build_programmes(ids, titles, starts, ends)
 
     save_cleaned_txt(rows, OUTPUT_TXT)
     build_xml(rows, OUTPUT_XML)
