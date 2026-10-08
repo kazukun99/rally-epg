@@ -50,7 +50,8 @@ def build_programmes(titles, starts, ends):
             "end": end
         })
 
-    unique_map =[object Object]    for row in rows:
+    unique_map = {} 
+    for row in rows:
         key = (row["start"], row["end"], row["title"])
         if key not in unique_map:
             unique_map[key] = row
