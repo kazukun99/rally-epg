@@ -75,7 +75,7 @@ def save_cleaned_txt(rows, path):
             f.write(f"title: {row['title']}\n\n")
 
 def iso_to_xmltv(iso_text):
-    dt = datetime.fromisoformat(iso_text.replace("Z", "+00:00")) - timedelta(hours=1)
+    dt = datetime.fromisoformat(iso_text.replace("Z", "+00:00"))
     dt_utc = dt.astimezone(timezone.utc)
     return dt_utc.strftime("%Y%m%d%H%M%S +0000")
 
