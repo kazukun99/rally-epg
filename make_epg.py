@@ -110,29 +110,27 @@ def build_xml(rows, path):
         )
         title_el = ET.SubElement(programme, "title", lang="ja")
         title_el.text = row["title"]
-        
+
     fast_count = 0
 
-for row in rows:
-    print(f'TITLE CHECK: {row["title"]}')
+    for row in rows:
+        if "highlights" not in row["title"].lower():
+            continue
 
-    if "highlights" not in row["title"].lower():
-        continue
+        fast_count += 1
 
-    fast_count += 1
-
-    programme = ET.SubElement(
-        tv,
-        "programme",
-        start=iso_to_xmltv(row["start"]),
-        stop=iso_to_xmltv(row["end"]),
-        channel=FAST_CHANNEL_ID
-    )
-    title_el = ET.SubElement(programme, "title", lang="ja")
-    title_el.text = row["title"]
+        programme = ET.SubElement(
+            tv,
+            "programme",
+            start=iso_to_xmltv(row["start"]),
+            stop=iso_to_xmltv(row["end"]),
+            channel=FAST_CHANNEL_ID
+        )
+        title_el = ET.SubElement(programme, "title", lang="ja")
+        title_el.text = row["title"]
 
     print(f"FAST matches: {fast_count}")
-    
+
     rough = ET.tostring(tv, encoding="utf-8")
     pretty = minidom.parseString(rough).toprettyxml(indent="  ", encoding="utf-8")
 
