@@ -21,8 +21,8 @@ jobs:
 
       - name: 3. 必要な依存ライブラリのインストール
         run: |
+          pip install requests
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-
       - name: 4. HTMLを取得
         run: |
           python fetch_page_source.py
