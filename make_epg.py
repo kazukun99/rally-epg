@@ -11,9 +11,9 @@ OUTPUT_TXT = "epg_cleaned.txt"
 CHANNEL_ID = "rally.tv"
 CHANNEL_NAME = "Rally.TV"
 
-TITLE_PATTERN = re.compile(r'"title"\s*:\s*"((?:\\.|[^"\\])*)"')
-START_PATTERN = re.compile(r'"start_time"\s*:\s*"((?:\\.|[^"\\])*)"')
-END_PATTERN = re.compile(r'"end_time"\s*:\s*"((?:\\.|[^"\\])*)"')
+TITLE_PATTERN = re.compile(r'\\"title\\":\\"(.*?)\\"')
+START_PATTERN = re.compile(r'\\"start_time\\":\\"(.*?)\\"')
+END_PATTERN = re.compile(r'\\"end_time\\":\\"(.*?)\\"')
 
 def load_html(path):
     with open(path, "r", encoding="utf-8") as f:
