@@ -114,6 +114,8 @@ def build_xml(rows, path):
         if FAST_INCLUDE_KEYWORD not in row["title"]:
             continue
 
+    fast_count += 1
+
     programme = ET.SubElement(
         tv,
         "programme",
@@ -123,6 +125,8 @@ def build_xml(rows, path):
     )
     title_el = ET.SubElement(programme, "title", lang="ja")
     title_el.text = row["title"]
+
+print(f"FAST matches: {fast_count}")
     
     rough = ET.tostring(tv, encoding="utf-8")
     pretty = minidom.parseString(rough).toprettyxml(indent="  ", encoding="utf-8")
