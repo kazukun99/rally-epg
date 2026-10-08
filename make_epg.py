@@ -21,7 +21,7 @@ def is_excluded_title(title):
     return any(word.lower() in t for word in EXCLUDE_KEYWORDS)
 
 TITLE_PATTERN = re.compile(r'\\"title\\":\\"(.*?)\\"')
-ID_PATTERN = re.compile(r'¥"id¥":¥"(.*?)¥"')
+ID_PATTERN = re.compile(r'\\"id\\":\\"(.*?)\\"')
 START_PATTERN = re.compile(r'\\"start_time\\":\\"(.*?)\\"')
 END_PATTERN = re.compile(r'\\"end_time\\":\\"(.*?)\\"')
 
