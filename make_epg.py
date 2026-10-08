@@ -110,6 +110,8 @@ def build_xml(rows, path):
         )
         title_el = ET.SubElement(programme, "title", lang="ja")
         title_el.text = row["title"]
+        
+    fast_count = 0
     for row in rows:
         if FAST_INCLUDE_KEYWORD not in row["title"]:
             continue
