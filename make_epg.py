@@ -113,7 +113,7 @@ def build_xml(rows, path):
         
     fast_count = 0
     for row in rows:
-        if FAST_INCLUDE_KEYWORD not in row["title"]:
+        if "highlights" not in row["title"]:
             continue
 
     fast_count += 1
