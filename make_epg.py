@@ -35,7 +35,7 @@ def extract_values(text):
 
 def build_programmes(titles, starts, ends):
     max_len = min(len(titles), len(starts), len(ends))
-    rows =
+    rows = []
     for i in range(max_len):
         title = titles[i].strip()
         start = starts[i].strip()
