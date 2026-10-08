@@ -32,3 +32,8 @@ jobs:
       - name: 5. EPGを生成
         run: |
           python make_epg.py
+      - name: 6. epg.xml を保存
+        uses: actions/upload-artifact@v4
+        with:
+          name: epg-xml
+          path: epg.xml
