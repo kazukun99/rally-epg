@@ -10,6 +10,11 @@ OUTPUT_TXT = "epg_cleaned.txt"
 
 CHANNEL_ID = "rally.tv"
 CHANNEL_NAME = "Rally.TV"
+
+FAST_CHANNEL_ID = "rally.tv.fast"
+FAST_CHANNEL_NAME = "Rally.TV FAST+"
+FAST_INCLUDE_KEYWORD = "Event Highlights"
+
 EXCLUDE_KEYWORDS = [
     "GTM",
     "Onboard",
@@ -91,6 +96,10 @@ def build_xml(rows, path):
     display_name = ET.SubElement(channel, "display-name")
     display_name.text = CHANNEL_NAME
 
+    channel_fast = ET.SubElement(tv, "channel", id=FAST_CHANNEL_ID)
+    display_name_fast = ET.SubElement(channel_fast, "display-name")
+    display_name_fast.text = FAST_CHANNEL_NAME
+
     for row in rows:
         programme = ET.SubElement(
             tv,
@@ -101,7 +110,20 @@ def build_xml(rows, path):
         )
         title_el = ET.SubElement(programme, "title", lang="ja")
         title_el.text = row["title"]
+    for row in rows:
+        if FAST_INCLUDE_KEYWORD not in row["title"]:
+        continue
 
+    programme = ET.SubElement(
+        tv,
+        "programme",
+        start=iso_to_xmltv(row["start"]),
+        stop=iso_to_xmltv(row["end"]),
+        channel=FAST_CHANNEL_ID
+    )
+    title_el = ET.SubElement(programme, "title", lang="ja")
+    title_el.text = row["title"]
+    
     rough = ET.tostring(tv, encoding="utf-8")
     pretty = minidom.parseString(rough).toprettyxml(indent="  ", encoding="utf-8")
 
