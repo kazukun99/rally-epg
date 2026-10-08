@@ -10,6 +10,15 @@ OUTPUT_TXT = "epg_cleaned.txt"
 
 CHANNEL_ID = "rally.tv"
 CHANNEL_NAME = "Rally.TV"
+EXCLUDE_KEYWORDS = [
+    "GTM",
+    "Onboard",
+    "On Board",
+]
+
+def is_excluded_title(title):
+    t = title.lower()
+    return any(word.lower() in t for word in EXCLUDE_KEYWORDS)
 
 TITLE_PATTERN = re.compile(r'\\"title\\":\\"(.*?)\\"')
 START_PATTERN = re.compile(r'\\"start_time\\":\\"(.*?)\\"')
@@ -38,6 +47,9 @@ def build_programmes(titles, starts, ends):
         end = ends[i].strip()
 
         if not title or not start or not end:
+            continue
+
+        if is_excluded_title(title):
             continue
 
         rows.append({
