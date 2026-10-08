@@ -111,6 +111,7 @@ def build_xml(rows, path):
 def main():
     text = load_html(INPUT_HTML)
     ids, titles, starts, ends = extract_values(text)
+    print(f"id 件数: {len(ids)}")
     print(f"title 件数: {len(titles)}")
     print(f"start_time 件数: {len(starts)}")
     print(f"end_time 件数: {len(ends)}")
