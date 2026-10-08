@@ -15,16 +15,12 @@ TITLE_PATTERN = re.compile(r'"title"\s*:\s*"((?:\\.|[^"\\])*)"')
 START_PATTERN = re.compile(r'"start_time"\s*:\s*"((?:\\.|[^"\\])*)"')
 END_PATTERN = re.compile(r'"end_time"\s*:\s*"((?:\\.|[^"\\])*)"')
 
-
 def load_html(path):
     with open(path, "r", encoding="utf-8") as f:
         return f.read()
 
-
 def unescape_json_string(s):
-    s = s.encode("utf-8").decode("unicode_escape")
-    return html.unescape(s)
-
+    return html.unescape(bytes(s, "utf-8").decode("unicode_escape"))
 
 def extract_values(text):
     titles = [unescape_json_string(x) for x in TITLE_PATTERN.findall(text)]
@@ -32,10 +28,10 @@ def extract_values(text):
     ends = END_PATTERN.findall(text)
     return titles, starts, ends
 
-
 def build_programmes(titles, starts, ends):
     max_len = min(len(titles), len(starts), len(ends))
     rows = []
+
     for i in range(max_len):
         title = titles[i].strip()
         start = starts[i].strip()
@@ -47,17 +43,16 @@ def build_programmes(titles, starts, ends):
         rows.append({
             "title": title,
             "start": start,
-            "end": end
+            "end": end,
         })
 
-    unique_map = {} 
+    unique_map = {}
     for row in rows:
         key = (row["start"], row["end"], row["title"])
         if key not in unique_map:
             unique_map[key] = row
 
     return list(unique_map.values())
-
 
 def save_cleaned_txt(rows, path):
     with open(path, "w", encoding="utf-8") as f:
@@ -67,12 +62,10 @@ def save_cleaned_txt(rows, path):
             f.write(f"end: {row['end']}\n")
             f.write(f"title: {row['title']}\n\n")
 
-
 def iso_to_xmltv(iso_text):
     dt = datetime.fromisoformat(iso_text.replace("Z", "+00:00"))
     dt_utc = dt.astimezone(timezone.utc)
     return dt_utc.strftime("%Y%m%d%H%M%S +0000")
-
 
 def build_xml(rows, path):
     tv = ET.Element("tv")
@@ -89,7 +82,6 @@ def build_xml(rows, path):
             stop=iso_to_xmltv(row["end"]),
             channel=CHANNEL_ID
         )
-
         title_el = ET.SubElement(programme, "title", lang="ja")
         title_el.text = row["title"]
 
@@ -98,7 +90,6 @@ def build_xml(rows, path):
 
     with open(path, "wb") as f:
         f.write(pretty)
-
 
 def main():
     text = load_html(INPUT_HTML)
@@ -114,9 +105,8 @@ def main():
     build_xml(rows, OUTPUT_XML)
 
     print(f"重複除去後 件数: {len(rows)}")
-    print(f"{OUTPUT_TXT} に保存しました")
-    print(f"{OUTPUT_XML} に保存しました")
-
+    print("epg_cleaned.txt に保存しました")
+    print("epg.xml に保存しました")
 
 if __name__ == "__main__":
     main()
