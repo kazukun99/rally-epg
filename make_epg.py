@@ -120,7 +120,6 @@ def pick_connected_rows(rows, max_gap_minutes=5):
 
     best_group = max(groups, key=len)
     return best_group
-
 def debug_print_connected_chains(rows):
     sorted_items = sorted(rows, key=lambda r: parse_dt(r["start"]))
     used = set()
