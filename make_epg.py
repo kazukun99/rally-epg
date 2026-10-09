@@ -70,6 +70,7 @@ def build_programmes(ids, titles, starts, ends):
 
         rows.append({
             "id": item_id,
+            "channel_id": "rally.tv",
             "title": title,
             "start": start,
             "end": end,
@@ -89,6 +90,7 @@ def save_cleaned_txt(rows, path):
             f.write(f"#{i}\n")
             f.write(f"start: {row['start']}\n")
             f.write(f"end: {row['end']}\n")
+            f.write(f"channel_id: {row['channel_id']}\n")
             f.write(f"id: {row['id']}\n")
             f.write(f"title: {row['title']}\n\n")
 
