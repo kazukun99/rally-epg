@@ -125,7 +125,8 @@ def pick_connected_rows(rows, max_gap_minutes=5):
 def debug_print_connected_chains(rows):
     sorted_items = sorted(rows, key=lambda r: parse_dt(r["start"]))
     used = set()
-    chains =    for i, row in enumerate(sorted_items):
+    chains =[]
+    for i, row in enumerate(sorted_items):
         if i in used:
             continue
 
