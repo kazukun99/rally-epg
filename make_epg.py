@@ -4,7 +4,7 @@ from datetime import datetime, timezone, timedelta
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
-INPUT_HTML = "page_source_fast.html"
+INPUT_HTML = "page_source.html"
 OUTPUT_XML = "epg.xml"
 OUTPUT_TXT = "epg_cleaned.txt"
 
@@ -70,7 +70,7 @@ def build_programmes(ids, titles, starts, ends):
 
         rows.append({
             "id": item_id,
-            "channel_id": "rally.tv.fast",
+            "channel_id": "rally.tv",
             "title": title,
             "start": start,
             "end": end,
@@ -194,7 +194,7 @@ def build_xml(rows, path):
             "programme",
             start=iso_to_xmltv(row["start"]),
             stop=iso_to_xmltv(row["end"]),
-            channel=row["channel_id"]
+            channel=CHANNEL_ID
         )
         title_el = ET.SubElement(programme, "title", lang="ja")
         title_el.text = row["title"]
