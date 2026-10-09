@@ -60,6 +60,14 @@ def build_programmes(ids, titles, starts, ends):
         if is_excluded_title(title):
             continue
 
+start_dt = parse_dt(start)
+end_dt = parse_dt(end)
+duration = end_dt - start_dt
+
+if duration >= timedelta(days=2):
+    print(f"skip long LIVE item: {title} {start} - {end}")
+    continue
+
         rows.append({
             "id": item_id,
             "title": title,
