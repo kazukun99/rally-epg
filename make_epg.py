@@ -202,8 +202,7 @@ def build_xml(rows, path):
     fast_count = 0
 
     for row in rows:
-        if "highlights" not in row["title"].lower():
-            continue
+        
 
         fast_count += 1
 
