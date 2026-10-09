@@ -68,7 +68,7 @@ if duration >= timedelta(days=2):
     print(f"skip long LIVE item: {title} {start} - {end}")
     continue
 
-        rows.append({
+rows.append({
             "id": item_id,
             "title": title,
             "start": start,
