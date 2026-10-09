@@ -94,9 +94,9 @@ def parse_dt(text):
 
 def pick_connected_rows(rows, max_gap_minutes=5):
     if not rows:
-        return
-        sorted_rows = sorted(rows, key=lambda r: parse_dt(r["start"]))
+        return []
 
+    sorted_rows = sorted(rows, key=lambda r: parse_dt(r["start"]))
     connected = [sorted_rows[0]]
 
     while True:
