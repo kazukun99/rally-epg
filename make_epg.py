@@ -123,56 +123,17 @@ def pick_connected_rows(rows, max_gap_minutes=5):
     return connected
 
 def debug_print_connected_chains(rows):
-    from collections import defaultdict
+    sorted_items = sorted(rows, key=lambda r: parse_dt(r["start"]))
+    used = set()
+    chains =[]    for i, row in enumerate(sorted_items):
+        if i in used:
+            continue
 
-    by_channel = defaultdict(list)
-    for row in rows:
-        by_channel[row["channel"]].append(row)
+        chain = [row]
+        used.add(i)
+        current = row
 
-    for channel_id, items in by_channel.items():
-        sorted_items = sorted(items, key=lambda r: parse_dt(r["start"]))
-        used = set()
-        chains =[]   
-        for i, row in enumerate(sorted_items):
-            if i in used:
-                continue
-
-            chain = [row]
-            used.add(i)
-            current = row
-
-            while True:
-                next_index = None
-
-                for j, candidate in enumerate(sorted_items):
-                    if j in used:
-                        continue
-                    if candidate["start"] == current["end"]:
-                        next_index = j
-                        break
-
-                if next_index is None:
-                    break
-
-                chain.append(sorted_items[next_index])
-                used.add(next_index)
-                current = sorted_items[next_index]
-
-            chains.append(chain)
-
-        print(f"\n=== channel: {channel_id} ===")
-        print(f"chains: {len(chains)}")
-
-        for idx, chain in enumerate(chains, 1):
-            first = chain[0]
-            last = chain[-1]
-            print(
-                f"[{idx}] count={len(chain)} "
-                f"start={first['start']} "
-                f"end={last['end']} "
-                f"first={first['title']} "
-                f"last={last['title']}"
-            )
+        while True:
 def build_xml(rows, path):
     rows = pick_connected_rows(rows)
     tv = ET.Element("tv")
