@@ -51,6 +51,11 @@ jobs:
         with:
           name: page-source
           path: page_source.html
+      - name: 8b. page_source_fast.html を保存
+        uses: actions/upload-artifact@v4
+        with:
+          name: page-source-fast
+          path: page_source_fast.html
 
       - name: 9. epg.xml をコミットして push
         run: |
