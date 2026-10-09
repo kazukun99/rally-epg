@@ -103,7 +103,7 @@ def pick_connected_rows(rows, max_gap_minutes=5):
         last = connected[-1]
         last_end = parse_dt(last["end"])
 
-        candidates =
+        candidates = 
         for row in sorted_rows:
             if row in connected:
                 continue
