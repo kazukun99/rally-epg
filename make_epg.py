@@ -194,7 +194,7 @@ def build_xml(rows, path):
             "programme",
             start=iso_to_xmltv(row["start"]),
             stop=iso_to_xmltv(row["end"]),
-            channel=CHANNEL_ID
+            channel=row["channel_id"]
         )
         title_el = ET.SubElement(programme, "title", lang="ja")
         title_el.text = row["title"]
