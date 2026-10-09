@@ -132,7 +132,8 @@ def debug_print_connected_chains(rows):
     for channel_id, items in by_channel.items():
         sorted_items = sorted(items, key=lambda r: parse_dt(r["start"]))
         used = set()
-        chains =        for i, row in enumerate(sorted_items):
+        chains =   
+        for i, row in enumerate(sorted_items):
             if i in used:
                 continue
 
