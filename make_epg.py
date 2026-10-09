@@ -104,33 +104,22 @@ def parse_dt(text):
 
 def pick_connected_rows(rows, max_gap_minutes=5):
     if not rows:
-        return []
+        return    sorted_rows = sorted(rows, key=lambda r: (r["start"], r["end"], r["title"]))
 
-    sorted_rows = sorted(rows, key=lambda r: parse_dt(r["start"]))
-    connected = [sorted_rows[0]]
+    groups =    current_group = [sorted_rows[0]]
 
-    while True:
-        last = connected[-1]
-        last_end = parse_dt(last["end"])
+    for row in sorted_rows[1:]:
+        prev = current_group[-1]
+        if row["start"] == prev["end"]:
+            current_group.append(row)
+        else:
+            groups.append(current_group)
+            current_group = [row]
 
-        candidates = []
-        for row in sorted_rows:
-            if row in connected:
-                continue
+    groups.append(current_group)
 
-            start_dt = parse_dt(row["start"])
-            gap_min = (start_dt - last_end).total_seconds() / 60
-
-            if abs(gap_min) <= max_gap_minutes:
-                candidates.append((abs(gap_min), start_dt, row))
-
-        if not candidates:
-            break
-
-        candidates.sort(key=lambda x: (x[0], x[1]))
-        connected.append(candidates[0][2])
-
-    return connected
+    best_group = max(groups, key=len)
+    return best_group
 
 def debug_print_connected_chains(rows):
     sorted_items = sorted(rows, key=lambda r: parse_dt(r["start"]))
