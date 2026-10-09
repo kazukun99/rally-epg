@@ -96,7 +96,10 @@ def save_cleaned_txt(rows, path):
 
 def pick_connected_rows(rows, max_gap_minutes=5):
     if not rows:
-        return    sorted_rows = sorted(rows, key=lambda r: (r["start"], r["end"], r["title"]))
+        return    sorted_rows = sorted(
+        rows,
+        key=lambda r: (r["start"], r["end"], r["title"])
+    )
 
     groups =    current_group = [sorted_rows[0]]
 
