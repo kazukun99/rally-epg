@@ -88,8 +88,42 @@ def iso_to_xmltv(iso_text):
     dt = datetime.fromisoformat(iso_text.replace("Z", "+00:00"))
     dt_utc = dt.astimezone(timezone.utc)
     return dt_utc.strftime("%Y%m%d%H%M%S +0000")
+def parse_dt(text):
+    return datetime.fromisoformat(text.replace("Z", "+00:00"))
+
+
+def pick_connected_rows(rows, max_gap_minutes=5):
+    if not rows:
+        return
+        sorted_rows = sorted(rows, key=lambda r: parse_dt(r["start"]))
+
+    connected = [sorted_rows[0]]
+
+    while True:
+        last = connected[-1]
+        last_end = parse_dt(last["end"])
+
+        candidates =
+        for row in sorted_rows:
+            if row in connected:
+                continue
+
+            start_dt = parse_dt(row["start"])
+            gap_min = (start_dt - last_end).total_seconds() / 60
+
+            if abs(gap_min) <= max_gap_minutes:
+                candidates.append((abs(gap_min), start_dt, row))
+
+        if not candidates:
+            break
+
+        candidates.sort(key=lambda x: (x[0], x[1]))
+        connected.append(candidates[0][2])
+
+    return connected
 
 def build_xml(rows, path):
+    rows = pick_connected_rows(rows)
     tv = ET.Element("tv")
 
     channel = ET.SubElement(tv, "channel", id=CHANNEL_ID)
