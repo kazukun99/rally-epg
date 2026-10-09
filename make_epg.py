@@ -121,7 +121,6 @@ def pick_connected_rows(rows, max_gap_minutes=5):
         connected.append(candidates[0][2])
 
     return connected
-
 def build_xml(rows, path):
     rows = pick_connected_rows(rows)
     tv = ET.Element("tv")
