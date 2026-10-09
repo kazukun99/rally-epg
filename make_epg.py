@@ -81,7 +81,7 @@ for row in rows:
         if key not in unique_map:
             unique_map[key] = row
 
-    return list(unique_map.values())
+return list(unique_map.values())
 
 def save_cleaned_txt(rows, path):
     with open(path, "w", encoding="utf-8") as f:
