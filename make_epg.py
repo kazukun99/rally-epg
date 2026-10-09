@@ -4,7 +4,7 @@ from datetime import datetime, timezone, timedelta
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
-INPUT_HTML = "page_source.html"
+INPUT_HTML = "page_source_fast.html"
 OUTPUT_XML = "epg.xml"
 OUTPUT_TXT = "epg_cleaned.txt"
 
