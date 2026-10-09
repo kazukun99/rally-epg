@@ -76,7 +76,7 @@ rows.append({
         })
 
 unique_map = {}
-    for row in rows:
+for row in rows:
         key = (row["start"], row["end"], row["title"])
         if key not in unique_map:
             unique_map[key] = row
