@@ -93,7 +93,14 @@ def save_cleaned_txt(rows, path):
             f.write(f"channel_id: {row['channel_id']}\n")
             f.write(f"id: {row['id']}\n")
             f.write(f"title: {row['title']}\n\n")
+            
+def iso_to_xmltv(iso_text):
+    dt = datetime.fromisoformat(iso_text.replace("Z", "+00:00"))
+    dt_utc = dt.astimezone(timezone.utc)
+    return dt_utc.strftime("%Y%m%d%H%M%S +0000")
 
+def parse_dt(text):
+    return datetime.fromisoformat(text.replace("Z", "+00:00"))
 def pick_connected_rows(rows, max_gap_minutes=5):
     if not rows:
         return
