@@ -125,7 +125,7 @@ def pick_connected_rows(rows, max_gap_minutes=5):
 def debug_print_connected_chains(rows):
     sorted_items = sorted(rows, key=lambda r: parse_dt(r["start"]))
     used = set()
-    chains =[]    for i, row in enumerate(sorted_items):
+    chains =    for i, row in enumerate(sorted_items):
         if i in used:
             continue
 
@@ -134,6 +134,37 @@ def debug_print_connected_chains(rows):
         current = row
 
         while True:
+            next_index = None
+
+            for j, candidate in enumerate(sorted_items):
+                if j in used:
+                    continue
+                if candidate["start"] == current["end"]:
+                    next_index = j
+                    break
+
+            if next_index is None:
+                break
+
+            chain.append(sorted_items[next_index])
+            used.add(next_index)
+            current = sorted_items[next_index]
+
+        chains.append(chain)
+
+    print("\n=== channel: all ===")
+    print(f"chains: {len(chains)}")
+
+    for idx, chain in enumerate(chains, 1):
+        first = chain[0]
+        last = chain[-1]
+        print(
+            f"[{idx}] count={len(chain)} "
+            f"start={first['start']} "
+            f"end={last['end']} "
+            f"first={first['title']} "
+            f"last={last['title']}"
+        )
 def build_xml(rows, path):
     rows = pick_connected_rows(rows)
     tv = ET.Element("tv")
