@@ -34,6 +34,7 @@ jobs:
         run: |
           python make_epg.py
           python fetch_page_source_fast.py
+          
       - name: 6. epg.xml を保存
         uses: actions/upload-artifact@v4
         with:
