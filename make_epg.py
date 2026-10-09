@@ -70,7 +70,7 @@ def build_programmes(ids, titles, starts, ends):
 
         rows.append({
             "id": item_id,
-            "channel_id": "rally.tv",
+            "channel_id": "rally.tv.fast",
             "title": title,
             "start": start,
             "end": end,
