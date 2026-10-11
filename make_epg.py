@@ -29,8 +29,7 @@ TITLE_PATTERN = re.compile(r'\\"title\\":\\"(.*?)\\"')
 ID_PATTERN = re.compile(r'\\"id\\":\\"(.*?)\\"')
 START_PATTERN = re.compile(r'\\"start_time\\":\\"(.*?)\\"')
 END_PATTERN = re.compile(r'\\"end_time\\":\\"(.*?)\\"')
-PROGRAM_PATTERN = re.compile(
-    r'\\"id\\":\\"(.*?)\\".*?\\"title\\":\\"(.*?)\\".*?\\"start_time\\":\\"(.*?)\\".*?\\"end_time\\":\\"(.*?)\\"'
+PROGRAM_PATTERN = re.compile(r'\\"id\\":\\"(.*?)\\".*?\\"title\\":\\"(.*?)\\".*?\\"start_time\\":\\"(.*?)\\".*?\\"end_time\\":\\"(.*?)\\"')
 
 def load_html(path):
     with open(path, "r", encoding="utf-8") as f:
