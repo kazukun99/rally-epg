@@ -169,7 +169,7 @@ def build_onair_connected_rows(rows, target_time):
     for i, row in enumerate(rows):
         if "SS13" in str(row.get("title")):
             print("SS13 row:", i, row.get("id"), row.get("title"), row.get("start"), row.get("end"))
-         if "SS11" in str(row.get("title")):
+        if "SS11" in str(row.get("title")):
             print("SS11 row:", i, row.get("id"), row.get("title"), row.get("start"), row.get("end"))   
         if parse_dt(row["start"]) <= target_time < parse_dt(row["end"]):
             overlaps.append((i, row))
