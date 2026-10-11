@@ -244,7 +244,6 @@ def main():
     print(f"end_time 件数: {len(ends)}")
 
     rows = build_programmes(ids, titles, starts, ends)
-    debug_print_connected_chains(rows)
     save_cleaned_txt(rows, OUTPUT_TXT)
     build_xml(rows, OUTPUT_XML)
 
