@@ -42,6 +42,10 @@ def extract_values(text):
     ids = ID_PATTERN.findall(text)
     starts = START_PATTERN.findall(text)
     ends = END_PATTERN.findall(text)
+    print("sample pairs start")
+    for i in range(min(5, len(ids), len(titles), len(starts), len(ends))):
+        print("pair:", i, ids[i], titles[i], starts[i], ends[i])
+    print("sample pairs end")
     return ids, titles, starts, ends
 
 def build_programmes(ids, titles, starts, ends):
