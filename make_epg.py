@@ -184,8 +184,9 @@ def debug_print_connected_chains(rows):
         )
 def build_xml(rows, path):
     rows = pick_connected_rows(rows)
+    print("### BUILD_XML START ###")
     onair_row = find_onair_row(rows)
-    print("ON AIR:", onair_row["title"] if onair_row else "not found")
+    print("### ON AIR ###", onair_row["title"] if onair_row else "not found")
     
     tv = ET.Element("tv")
 
