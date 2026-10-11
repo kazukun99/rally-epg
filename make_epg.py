@@ -103,55 +103,11 @@ def parse_dt(text):
     return datetime.fromisoformat(text.replace("Z", "+00:00"))
 
 
-def find_onair_block(html):
-    marker = 'Watch now'
-    idx = html.find(marker)
-    print("marker debug:", marker, html.find(marker))
-    print("before marker debug:", html[max(0, idx - 300):idx])
-    if idx == -1:
-    
-        return None
-
-    block_start = html.rfind('{"id":"', 0, idx)
-    print("block_start debug:", block_start)
-    
-    if block_start == -1:
-        return None
-
-    block_end = html.find('}', idx)
-    if block_end == -1:
-        return None
-
-    return html[block_start:block_end + 1]
-
-
-def extract_onair_title_and_times(html):
-    block = find_onair_block(html)
-    print("block debug:", block[:300] if block else None)
-    
-    if not block:
-        return None, None, None
-
-    title_match = TITLE_PATTERN.search(block)
-    start_match = START_PATTERN.search(block)
-    end_match = END_PATTERN.search(block)
-
-    if not title_match or not start_match or not end_match:
-        return None, None, None
-
-    title = title_match.group(1)
-    start = start_match.group(1)
-    end = end_match.group(1)
-    return title, start, end
-
-
-def find_onair_row(rows, onair_title, onair_start, onair_end):
+def find_onair_row(rows, target_time):
     for row in rows:
-        if (
-            row["title"] == onair_title
-            and row["start"] == onair_start
-            and row["end"] == onair_end
-        ):
+        start = parse_dt(row["start"])
+        end = parse_dt(row["end"])
+        if start <= target_time < end:
             return row
     return None
 
@@ -182,7 +138,8 @@ def collect_forward(rows, base_row):
 
 
 def collect_backward(rows, base_row):
-    result =    current = base_row
+    result = []
+    current = base_row
 
     while True:
         current_start = current["start"]
@@ -206,15 +163,11 @@ def collect_backward(rows, base_row):
     return result
 
 
-def build_onair_connected_rows(rows, html):
-    onair_title, onair_start, onair_end = extract_onair_title_and_times(html)
-    print("onair debug:", onair_title, onair_start, onair_end)
-    if not onair_title:
-        return 
-    base_row = find_onair_row(rows, onair_title, onair_start, onair_end)
-    print("base_row debug:", base_row)
+def build_onair_connected_rows(rows, target_time):
+    base_row = find_onair_row(rows, target_time)
     if not base_row:
-        return 
+        return []
+
     backward = collect_backward(rows, base_row)
     forward = collect_forward(rows, base_row)
 
@@ -222,10 +175,9 @@ def build_onair_connected_rows(rows, html):
 
 
 def build_xml(rows, path):
-    html = load_html(INPUT_HTML)
-    rows = build_onair_connected_rows(rows, html)
-    print("rows debug:", rows)
-    
+    target_time = datetime.now(timezone.utc)
+    rows = build_onair_connected_rows(rows, target_time)
+
     tv = ET.Element("tv")
 
     channel = ET.SubElement(tv, "channel", id=CHANNEL_ID)
