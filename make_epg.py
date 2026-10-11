@@ -112,6 +112,8 @@ def find_onair_block(html):
         return None
 
     block_start = html.rfind('{"id":"', 0, idx)
+    print("block_start debug:", block_start)
+    
     if block_start == -1:
         return None
 
