@@ -164,7 +164,7 @@ def collect_backward(rows, base_row):
 
 
 def build_onair_connected_rows(rows, target_time):
-    overlaps =
+    overlaps = 
     for i, row in enumerate(rows):
         if row["start"] <= target_time < row["end"]:
             overlaps.append((i, row))
