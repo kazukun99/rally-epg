@@ -202,10 +202,10 @@ def collect_backward(rows, base_row):
 def build_onair_connected_rows(rows, html):
     onair_title, onair_start, onair_end = extract_onair_title_and_times(html)
     if not onair_title:
-        return
+        return    base_row = find_onair_row(rows, onair_title, onair_start, onair_end)
     base_row = find_onair_row(rows, onair_title, onair_start, onair_end)
     if not base_row:
-        return
+        return    backward = collect_backward(rows, base_row)
     backward = collect_backward(rows, base_row)
     forward = collect_forward(rows, base_row)
 
