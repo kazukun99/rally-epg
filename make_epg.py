@@ -104,7 +104,7 @@ def parse_dt(text):
 
 
 def find_onair_block(html):
-    marker = '"label":"Watch now"'
+    marker = 'Watch now'
     idx = html.find(marker)
     if idx == -1:
         return None
