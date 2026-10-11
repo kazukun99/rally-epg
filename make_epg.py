@@ -107,6 +107,7 @@ def find_onair_block(html):
     marker = 'Watch now'
     idx = html.find(marker)
     print("marker debug:", marker, html.find(marker))
+    print("before marker debug:", html[max(0, idx - 300):idx])
     if idx == -1:
     
         return None
