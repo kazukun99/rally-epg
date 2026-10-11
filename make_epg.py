@@ -101,6 +101,13 @@ def iso_to_xmltv(iso_text):
 
 def parse_dt(text):
     return datetime.fromisoformat(text.replace("Z", "+00:00"))
+def find_onair_row(rows):
+    now = datetime.now(timezone.utc)
+    for row in rows:
+        start = parse_dt(row["start"])
+        end = parse_dt(row["end"])
+        if start <= now < end:
+            return row
 def pick_connected_rows(rows, max_gap_minutes=5):
     if not rows:
         return []
@@ -177,6 +184,9 @@ def debug_print_connected_chains(rows):
         )
 def build_xml(rows, path):
     rows = pick_connected_rows(rows)
+    onair_row = find_onair_row(rows)
+    print("ON AIR:", onair_row["title"] if onair_row else "not found")
+    
     tv = ET.Element("tv")
 
     channel = ET.SubElement(tv, "channel", id=CHANNEL_ID)
