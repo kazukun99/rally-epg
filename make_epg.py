@@ -215,7 +215,8 @@ def build_onair_connected_rows(rows, html):
 def build_xml(rows, path):
     html = load_html(INPUT_HTML)
     rows = build_onair_connected_rows(rows, html)
-
+    print("rows debug:", rows)
+    
     tv = ET.Element("tv")
 
     channel = ET.SubElement(tv, "channel", id=CHANNEL_ID)
