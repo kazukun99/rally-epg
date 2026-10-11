@@ -164,6 +164,21 @@ def collect_backward(rows, base_row):
 
 
 def build_onair_connected_rows(rows, target_time):
+    overlaps =    for i, row in enumerate(rows):
+        if row["start"] <= target_time < row["end"]:
+            overlaps.append((i, row))
+
+    print("overlap count:", len(overlaps))
+    for i, row in overlaps[:10]:
+        print("overlap row:", i, row.get("id"), row.get("title"), row.get("start"), row.get("end"))
+
+        prev_rows = rows[max(0, i - 2):i]
+        next_rows = rows[i + 1:i + 3]
+
+        for p in prev_rows:
+            print("  prev:", p.get("id"), p.get("title"), p.get("start"), p.get("end"))
+        for n in next_rows:
+            print("  next:", n.get("id"), n.get("title"), n.get("start"), n.get("end"))
     base_row = find_onair_row(rows, target_time)
     if not base_row:
         return []
