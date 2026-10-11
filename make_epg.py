@@ -101,6 +101,8 @@ def iso_to_xmltv(iso_text):
 
 def parse_dt(text):
     return datetime.fromisoformat(text.replace("Z", "+00:00"))
+
+
 def find_onair_row(rows, target_time):
     for row in rows:
         start = parse_dt(row["start"])
@@ -108,86 +110,73 @@ def find_onair_row(rows, target_time):
         if start <= target_time < end:
             return row
     return None
-def pick_connected_rows(rows, max_gap_minutes=5):
-    if not rows:
-        return []
 
-    sorted_rows = sorted(rows, key=lambda r: parse_dt(r["start"]))
-    connected = [sorted_rows[0]]
+
+def collect_forward(rows, base_row):
+    result = [base_row]
+    current = base_row
 
     while True:
-        last = connected[-1]
-        last_end = parse_dt(last["end"])
+        current_end = current["end"]
+        next_row = None
 
-        candidates = []
-        for row in sorted_rows:
-            if row in connected:
-                continue
-
-            start_dt = parse_dt(row["start"])
-            gap_min = (start_dt - last_end).total_seconds() / 60
-
-            if abs(gap_min) <= max_gap_minutes:
-                candidates.append((abs(gap_min), start_dt, row))
-
-        if not candidates:
-            break
-
-        candidates.sort(key=lambda x: (x[0], x[1]))
-        connected.append(candidates[0][2])
-
-    return connected
-    
-def debug_print_connected_chains(rows):
-    sorted_items = sorted(rows, key=lambda r: parse_dt(r["start"]))
-    used = set()
-    chains =[]
-    for i, row in enumerate(sorted_items):
-        if i in used:
-            continue
-
-        chain = [row]
-        used.add(i)
-        current = row
-
-        while True:
-            next_index = None
-
-            for j, candidate in enumerate(sorted_items):
-                if j in used:
-                    continue
-                if candidate["start"] == current["end"]:
-                    next_index = j
-                    break
-
-            if next_index is None:
+        for row in rows:
+            if row["start"] == current_end:
+                next_row = row
                 break
 
-            chain.append(sorted_items[next_index])
-            used.add(next_index)
-            current = sorted_items[next_index]
+        if not next_row:
+            break
 
-        chains.append(chain)
+        if next_row in result:
+            break
 
-    print("\n=== channel: all ===")
-    print(f"chains: {len(chains)}")
+        result.append(next_row)
+        current = next_row
 
-    for idx, chain in enumerate(chains, 1):
-        first = chain[0]
-        last = chain[-1]
-        print(
-            f"[{idx}] count={len(chain)} "
-            f"start={first['start']} "
-            f"end={last['end']} "
-            f"first={first['title']} "
-            f"last={last['title']}"
-        )
+    return result
+
+
+def collect_backward(rows, base_row):
+    result = []
+    current = base_row
+
+    while True:
+        current_start = current["start"]
+        prev_row = None
+
+        for row in rows:
+            if row["end"] == current_start:
+                prev_row = row
+                break
+
+        if not prev_row:
+            break
+
+        if prev_row in result:
+            break
+
+        result.append(prev_row)
+        current = prev_row
+
+    result.reverse()
+    return result
+
+
+def build_onair_connected_rows(rows, target_time):
+    base_row = find_onair_row(rows, target_time)
+    if not base_row:
+        return []
+
+    backward = collect_backward(rows, base_row)
+    forward = collect_forward(rows, base_row)
+
+    return backward + forward
+
+
 def build_xml(rows, path):
-    rows = pick_connected_rows(rows)
-    print("### BUILD_XML START ###")
     target_time = datetime.now(timezone.utc)
-    onair_row = find_onair_row(rows, target_time)
-    print("### ON AIR ###", onair_row["title"] if onair_row else "not found")
+    rows = build_onair_connected_rows(rows, target_time)
 
     tv = ET.Element("tv")
 
