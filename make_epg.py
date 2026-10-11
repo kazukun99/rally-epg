@@ -122,6 +122,8 @@ def find_onair_block(html):
 
 def extract_onair_title_and_times(html):
     block = find_onair_block(html)
+    print("block debug:", block[:300] if block else None)
+    
     if not block:
         return None, None, None
 
