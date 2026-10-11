@@ -29,6 +29,8 @@ TITLE_PATTERN = re.compile(r'\\"title\\":\\"(.*?)\\"')
 ID_PATTERN = re.compile(r'\\"id\\":\\"(.*?)\\"')
 START_PATTERN = re.compile(r'\\"start_time\\":\\"(.*?)\\"')
 END_PATTERN = re.compile(r'\\"end_time\\":\\"(.*?)\\"')
+PROGRAM_PATTERN = re.compile(
+    r'\\"id\\":\\"(.*?)\\".*?\\"title\\":\\"(.*?)\\".*?\\"start_time\\":\\"(.*?)\\".*?\\"end_time\\":\\"(.*?)\\"'
 
 def load_html(path):
     with open(path, "r", encoding="utf-8") as f:
@@ -38,10 +40,17 @@ def unescape_json_string(s):
     return html.unescape(bytes(s, "utf-8").decode("unicode_escape"))
 
 def extract_values(text):
-    titles = [unescape_json_string(x) for x in TITLE_PATTERN.findall(text)]
-    ids = ID_PATTERN.findall(text)
-    starts = START_PATTERN.findall(text)
-    ends = END_PATTERN.findall(text)
+    matches = PROGRAM_PATTERN.findall(text)
+
+    ids =    titles =    starts =    ends =    for item_id, title, start, end in matches:
+        ids.append(item_id)
+        titles.append(unescape_json_string(title))
+        starts.append(start)
+        ends.append(end)
+
+    return ids, titles, starts, ends
+
+        
     print("sample pairs start")
     for i in range(min(5, len(ids), len(titles), len(starts), len(ends))):
         print("pair:", i, ids[i], titles[i], starts[i], ends[i])
