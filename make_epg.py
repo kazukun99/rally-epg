@@ -109,17 +109,15 @@ def find_onair_block(html):
     if idx == -1:
         return None
 
-    block_start = html.rfind('[{"id":"', 0, idx)
-    if block_start == -1:
-        block_start = html.rfind('{"id":"', 0, idx)
+    block_start = html.rfind('{"id":"', 0, idx)
     if block_start == -1:
         return None
 
-    block_end = html.find('}]', idx)
+    block_end = html.find('}', idx)
     if block_end == -1:
         return None
 
-    return html[block_start:block_end + 2]
+    return html[block_start:block_end + 1]
 
 
 def extract_onair_title_and_times(html):
