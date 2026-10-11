@@ -182,12 +182,13 @@ def debug_print_connected_chains(rows):
             f"first={first['title']} "
             f"last={last['title']}"
         )
-rows = pick_connected_rows(rows)
-print("### BUILD_XML START ###")
-target_time = datetime.now(timezone.utc)
-onair_row = find_onair_row(rows, target_time)
-print("### ON AIR ###", onair_row["title"] if onair_row else "not found")
-    
+def build_xml(rows, path):
+    rows = pick_connected_rows(rows)
+    print("### BUILD_XML START ###")
+    target_time = datetime.now(timezone.utc)
+    onair_row = find_onair_row(rows, target_time)
+    print("### ON AIR ###", onair_row["title"] if onair_row else "not found")
+
     tv = ET.Element("tv")
 
     channel = ET.SubElement(tv, "channel", id=CHANNEL_ID)
