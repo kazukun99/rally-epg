@@ -103,11 +103,50 @@ def parse_dt(text):
     return datetime.fromisoformat(text.replace("Z", "+00:00"))
 
 
-def find_onair_row(rows, target_time):
+def find_onair_block(html):
+    marker = '"label":"Watch now"'
+    idx = html.find(marker)
+    if idx == -1:
+        return None
+
+    block_start = html.rfind('[{"id":"', 0, idx)
+    if block_start == -1:
+        block_start = html.rfind('{"id":"', 0, idx)
+    if block_start == -1:
+        return None
+
+    block_end = html.find('}]', idx)
+    if block_end == -1:
+        return None
+
+    return html[block_start:block_end + 2]
+
+
+def extract_onair_title_and_times(html):
+    block = find_onair_block(html)
+    if not block:
+        return None, None, None
+
+    title_match = TITLE_PATTERN.search(block)
+    start_match = START_PATTERN.search(block)
+    end_match = END_PATTERN.search(block)
+
+    if not title_match or not start_match or not end_match:
+        return None, None, None
+
+    title = title_match.group(1)
+    start = start_match.group(1)
+    end = end_match.group(1)
+    return title, start, end
+
+
+def find_onair_row(rows, onair_title, onair_start, onair_end):
     for row in rows:
-        start = parse_dt(row["start"])
-        end = parse_dt(row["end"])
-        if start <= target_time < end:
+        if (
+            row["title"] == onair_title
+            and row["start"] == onair_start
+            and row["end"] == onair_end
+        ):
             return row
     return None
 
@@ -138,8 +177,7 @@ def collect_forward(rows, base_row):
 
 
 def collect_backward(rows, base_row):
-    result = []
-    current = base_row
+    result =    current = base_row
 
     while True:
         current_start = current["start"]
@@ -163,20 +201,20 @@ def collect_backward(rows, base_row):
     return result
 
 
-def build_onair_connected_rows(rows, target_time):
-    base_row = find_onair_row(rows, target_time)
+def build_onair_connected_rows(rows, html):
+    onair_title, onair_start, onair_end = extract_onair_title_and_times(html)
+    if not onair_title:
+        return    base_row = find_onair_row(rows, onair_title, onair_start, onair_end)
     if not base_row:
-        return []
-
-    backward = collect_backward(rows, base_row)
+        return    backward = collect_backward(rows, base_row)
     forward = collect_forward(rows, base_row)
 
     return backward + forward
 
 
 def build_xml(rows, path):
-    target_time = datetime.now(timezone.utc)
-    rows = build_onair_connected_rows(rows, target_time)
+    html = load_html(INPUT_HTML)
+    rows = build_onair_connected_rows(rows, html)
 
     tv = ET.Element("tv")
 
