@@ -107,6 +107,7 @@ def find_onair_block(html):
     marker = 'Watch now'
     idx = html.find(marker)
     if idx == -1:
+    print("marker debug:", marker, html.find(marker))
         return None
 
     block_start = html.rfind('{"id":"', 0, idx)
