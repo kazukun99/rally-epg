@@ -45,7 +45,7 @@ def extract_values(text):
     titles = []
     starts = []
     ends = []
-
+    for item_id, title, start, end in matches:
     
 
     return ids, titles, starts, ends
