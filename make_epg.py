@@ -41,7 +41,7 @@ def unescape_json_string(s):
 def extract_values(text):
     matches = PROGRAM_PATTERN.findall(text)
 
-    ids =    titles =    starts =    ends =    for item_id, title, start, end in matches:
+    ids =titles =starts =ends =for item_id, title, start, end in matches:
         ids.append(item_id)
         titles.append(unescape_json_string(title))
         starts.append(start)
