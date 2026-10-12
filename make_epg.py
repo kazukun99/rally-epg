@@ -46,6 +46,9 @@ def extract_values(text):
     ends = []
     for item_id, title, start, end in matches:
         ids.append(item_id)
+        titles.append(unescape_json_string(title))  # ここでタイトルを追加する
+        starts.append(start)                      # ここで開始時間を追加する
+        ends.append(end)                          # ここで終了時間を追加する
 
     return ids, titles, starts, ends
 
