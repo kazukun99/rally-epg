@@ -2,7 +2,8 @@ name: Update Rally.TV EPG & Playlists
 
 on:
   workflow_dispatch:
-
+  schedule:
+    - cron: '18 * * * *'  # 毎時18分に自動実行
 jobs:
   update-epg:
     runs-on: ubuntu-latest
