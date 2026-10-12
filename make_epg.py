@@ -37,28 +37,33 @@ def load_html(path):
 def unescape_json_string(s):
     return html.unescape(bytes(s, "utf-8").decode("unicode_escape"))
 
+import re
+
 def extract_values(text):
-    matches = PROGRAM_PATTERN.findall(text)
-    
     ids = []
     titles = []
     starts = []
     ends = []
-    for item_id, title, start, end in matches:
-        ids.append(item_id)
-        titles.append(unescape_json_string(title))  # ここでタイトルを追加する
-        starts.append(start)                      # ここで開始時間を追加する
-        ends.append(end)                          # ここで終了時間を追加する
+
+    # 各項目を個別の正規表現で安全に抽出する
+    # HTML内のエスケープされたJSON構造に対応
+    id_matches = re.findall(r'\\"id\\":\\"(.*?)\\"', text)
+    title_matches = re.findall(r'\\"title\\":\\"(.*?)\\"', text)
+    start_matches = re.findall(r'\\"start_time\\":\\"(.*?)\\"', text)
+    end_matches = re.findall(r'\\"end_time\\":\\"(.*?)\\"', text)
+
+    if id_matches:
+        ids.extend(id_matches)
+    if title_matches:
+        titles.extend(title_matches)
+    if start_matches:
+        starts.extend(start_matches)
+    if end_matches:
+        ends.extend(end_matches)
+
+    print(f"抽出数 -> id: {len(ids)}, title: {len(titles)}, start: {len(starts)}, end: {len(ends)}")
 
     return ids, titles, starts, ends
-
-        
-    print("sample pairs start")
-    for i in range(min(5, len(ids), len(titles), len(starts), len(ends))):
-        print("pair:", i, ids[i], titles[i], starts[i], ends[i])
-    print("sample pairs end")
-    return ids, titles, starts, ends
-
 def build_programmes(ids, titles, starts, ends):
     max_len = min(len(ids), len(titles), len(starts), len(ends))
     rows = []
