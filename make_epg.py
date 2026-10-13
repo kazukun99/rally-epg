@@ -185,42 +185,29 @@ def collect_backward(rows, base_row, max_count=2):
     return backward
 
 
+
+
 def build_onair_connected_rows(rows, target_time):
     print("target_time:", target_time)
-    overlaps = []
-    for i, row in enumerate(rows):
-        if "SS13" in str(row.get("title")):
-            print("SS13 row:", i, row.get("id"), row.get("title"), row.get("start"), row.get("end"))
-        if "SS11" in str(row.get("title")):
-            print("SS11 row:", i, row.get("id"), row.get("title"), row.get("start"), row.get("end"))    
-        if parse_dt(row["start"]) <= target_time < parse_dt(row["end"]):
-            overlaps.append((i, row))
-
-    print("overlap count:", len(overlaps))
-    for i, row in overlaps[:10]:
-        print("overlap row:", i, row.get("id"), row.get("title"), row.get("start"), row.get("end"))
-
-        prev_rows = rows[max(0, i - 2):i]
-        next_rows = rows[i + 1:i + 3]
-
-        for p in prev_rows:
-            print("  prev:", p.get("id"), p.get("title"), p.get("start"), p.get("end"))
-        for n in next_rows:
-            print("  next:", n.get("id"), n.get("title"), n.get("start"), n.get("end"))
+    
+    # 過去4時間から、未来7日分（168時間）までの範囲を設定
+    past_limit = target_time - timedelta(hours=4)
+    future_limit = target_time + timedelta(hours=7 * 24)
+    
+    filtered_rows = []
+    for row in rows:
+        try:
+            start_dt = parse_dt(row["start"])
+            end_dt = parse_dt(row["end"])
+        except Exception:
+            continue
+        
+        # 指定した時間範囲（過去4時間〜未来7日）と重なっている番組をすべて抽出
+        if end_dt >= past_limit and start_dt <= future_limit:
+            filtered_rows.append(row)
             
-    # 1. 基準となる現在放送中の行を特定
-    base_row = find_onair_row(rows, target_time)
-    if not base_row:
-        return []
-
-    # 2. 過去と未来の番組を取得
-    backward = collect_backward(rows, base_row)
-    forward = collect_forward(rows, base_row)
-
-    # 3. 過去番組 + 現在の番組(base_row) + 未来の番組 を1本のチェーンとして結合して返す
-    connected_rows = backward + [base_row] + forward
-
-    return connected_rows
+    print(f"時間範囲フィルター後の件数: {len(filtered_rows)}件 (過去4時間〜未来7日分)")
+    return filtered_rows
 
 
 def build_xml(rows, path):
