@@ -59,6 +59,10 @@ def build_programmes(text, target_channel_id):
         title = titles[i].strip()
         start = starts[i].strip()
         end = ends[i].strip()
+        
+        # 💡 ここに生データのチェック用 print を入れてみる！
+        if "New Zealand" in title or "Belgium" in title or "Greece" in title:
+            print(f"【生データ確認】タイトル: {title} | 開始: {start}")
 
         if not item_id or not title or not start or not end:
             continue
