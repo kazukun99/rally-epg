@@ -6,17 +6,14 @@
   <channel id="rally.tv.fast">
     <display-name>Rally.TV FAST+</display-name>
   </channel>
-  <programme start="20261013040650 +0000" stop="20261013050010 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally de Portugal 2022</title>
-  </programme>
   <programme start="20261013050010 +0000" stop="20261013055330 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Italia Sardegna 2022</title>
   </programme>
   <programme start="20261013055330 +0000" stop="20261013064650 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Safari Rally Kenya 2022</title>
   </programme>
-  <programme start="20261013055330 +0000" stop="20261013064650 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Safari Rally Kenya 2022</title>
+  <programme start="20261013064650 +0000" stop="20261013074010 +0000" channel="rally.tv">
+    <title lang="ja">Full Event Highlights | Rally Estonia 2022</title>
   </programme>
   <programme start="20261013064650 +0000" stop="20261013074010 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Estonia 2022</title>
@@ -192,17 +189,14 @@
   <programme start="20261015004516 +0000" stop="20261015013836 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Italia Sardegna 2017</title>
   </programme>
-  <programme start="20261013040650 +0000" stop="20261013050010 +0000" channel="rally.tv.fast">
-    <title lang="ja">Full Event Highlights | Rally de Portugal 2022</title>
-  </programme>
   <programme start="20261013050010 +0000" stop="20261013055330 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Italia Sardegna 2022</title>
   </programme>
   <programme start="20261013055330 +0000" stop="20261013064650 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Safari Rally Kenya 2022</title>
   </programme>
-  <programme start="20261013055330 +0000" stop="20261013064650 +0000" channel="rally.tv.fast">
-    <title lang="ja">Full Event Highlights | Safari Rally Kenya 2022</title>
+  <programme start="20261013064650 +0000" stop="20261013074010 +0000" channel="rally.tv.fast">
+    <title lang="ja">Full Event Highlights | Rally Estonia 2022</title>
   </programme>
   <programme start="20261013064650 +0000" stop="20261013074010 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Estonia 2022</title>
