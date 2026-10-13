@@ -6,6 +6,66 @@
   <channel id="rally.tv.fast">
     <display-name>Rally.TV FAST+</display-name>
   </channel>
+  <programme start="20261013144650 +0000" stop="20261013154010 +0000" channel="rally.tv">
+    <title lang="ja">Full Event Highlights | Rally Sweden 2022</title>
+  </programme>
+  <programme start="20261013144650 +0000" stop="20261013154010 +0000" channel="rally.tv.fast">
+    <title lang="ja">Full Event Highlights | Rally Sweden 2022</title>
+  </programme>
+  <programme start="20261013153636 +0000" stop="20261013160238 +0000" channel="rally.tv">
+    <title lang="ja">Full Event Highlights | Coates Hire Rally Australia 2014</title>
+  </programme>
+  <programme start="20261013153636 +0000" stop="20261013160238 +0000" channel="rally.tv.fast">
+    <title lang="ja">Full Event Highlights | Coates Hire Rally Australia 2014</title>
+  </programme>
+  <programme start="20261013154010 +0000" stop="20261013163330 +0000" channel="rally.tv">
+    <title lang="ja">Full Event Highlights | Croatia Rally 2022</title>
+  </programme>
+  <programme start="20261013154010 +0000" stop="20261013163330 +0000" channel="rally.tv.fast">
+    <title lang="ja">Full Event Highlights | Croatia Rally 2022</title>
+  </programme>
+  <programme start="20261013160238 +0000" stop="20261013165445 +0000" channel="rally.tv">
+    <title lang="ja">Full Event Highlights | Rally Chile Bio Bío 2025</title>
+  </programme>
+  <programme start="20261013160238 +0000" stop="20261013165445 +0000" channel="rally.tv.fast">
+    <title lang="ja">Full Event Highlights | Rally Chile Bio Bío 2025</title>
+  </programme>
+  <programme start="20261013163330 +0000" stop="20261013172650 +0000" channel="rally.tv">
+    <title lang="ja">Full Event Highlights | Rally de Portugal 2022</title>
+  </programme>
+  <programme start="20261013163330 +0000" stop="20261013172650 +0000" channel="rally.tv.fast">
+    <title lang="ja">Full Event Highlights | Rally de Portugal 2022</title>
+  </programme>
+  <programme start="20261013165445 +0000" stop="20261013174645 +0000" channel="rally.tv">
+    <title lang="ja">Full Event Highlights | EKO Acropolis Rally Greece 2024</title>
+  </programme>
+  <programme start="20261013165445 +0000" stop="20261013174645 +0000" channel="rally.tv.fast">
+    <title lang="ja">Full Event Highlights | EKO Acropolis Rally Greece 2024</title>
+  </programme>
+  <programme start="20261013172650 +0000" stop="20261013182010 +0000" channel="rally.tv">
+    <title lang="ja">Full Event Highlights | Rally Italia Sardegna 2022</title>
+  </programme>
+  <programme start="20261013172650 +0000" stop="20261013182010 +0000" channel="rally.tv.fast">
+    <title lang="ja">Full Event Highlights | Rally Italia Sardegna 2022</title>
+  </programme>
+  <programme start="20261013174645 +0000" stop="20261013181252 +0000" channel="rally.tv">
+    <title lang="ja">Full Event Highlights | Rally Islas Canarias 2024</title>
+  </programme>
+  <programme start="20261013174645 +0000" stop="20261013181252 +0000" channel="rally.tv.fast">
+    <title lang="ja">Full Event Highlights | Rally Islas Canarias 2024</title>
+  </programme>
+  <programme start="20261013181252 +0000" stop="20261013190452 +0000" channel="rally.tv">
+    <title lang="ja">Full Event Highlights | Secto Rally Finland 2024</title>
+  </programme>
+  <programme start="20261013181252 +0000" stop="20261013190452 +0000" channel="rally.tv.fast">
+    <title lang="ja">Full Event Highlights | Secto Rally Finland 2024</title>
+  </programme>
+  <programme start="20261013182010 +0000" stop="20261013191330 +0000" channel="rally.tv">
+    <title lang="ja">Full Event Highlights | Safari Rally Kenya 2022</title>
+  </programme>
+  <programme start="20261013182010 +0000" stop="20261013191330 +0000" channel="rally.tv.fast">
+    <title lang="ja">Full Event Highlights | Safari Rally Kenya 2022</title>
+  </programme>
   <programme start="20261013190452 +0000" stop="20261013195652 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Vodafone Rally de Portugal 2019</title>
   </programme>
