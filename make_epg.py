@@ -127,87 +127,37 @@ def parse_dt(text):
     return datetime.fromisoformat(text.replace("Z", "+00:00"))
 
 
-def find_onair_row(rows, target_time):
+from datetime import datetime, timedelta, timezone
+
+# タイムゾーン定義（UTC）
+UTC = timezone.utc
+
+def parse_dt(text):
+    # 文字列をdatetimeオブジェクトに変換（Zは+00:00に置換）
+    dt = datetime.fromisoformat(text.replace("Z", "+00:00"))
+    if dt.tzinfo is None:
+        dt = dt.replace(tzinfo=UTC)
+    return dt
+
+def build_epg_rows(rows, target_time):
+    """
+    target_time を基準に、過去4時間 〜 未来7日分(168h)の番組を正しく抽出する
+    """
+    start_window = target_time - timedelta(hours=4)
+    end_window = target_time + timedelta(days=7)
+
+    result = []
     for row in rows:
-        start = parse_dt(row["start"])
-        end = parse_dt(row["end"])
-        if start <= target_time < end:
-            return row
-    return None
+        row_start = parse_dt(row["start"])
+        row_end = parse_dt(row["end"])
 
+        # 過去4h〜未来7日間のウィンドウ内に引っかかる番組だけを収集
+        if row_end > start_window and row_start < end_window:
+            result.append(row)
 
-def collect_forward(rows, base_row):
-    result = [base_row]
-    current = base_row
-
-    while True:
-        current_end = current["end"]
-        next_row = None
-
-        for row in rows:
-            if row["start"] == current_end:
-                next_row = row
-                break
-
-        if not next_row:
-            break
-
-        if next_row in result:
-            break
-
-        result.append(next_row)
-        current = next_row
-
+    # 開始時間順に並べ替え
+    result.sort(key=lambda x: parse_dt(x["start"]))
     return result
-
-
-def collect_backward(rows, base_row, max_count=2):
-    current = base_row
-    backward = []
-    count = 0
-    
-    while count < max_count:
-        current_start = current["start"]
-        prev_row = None
-
-        for row in rows:
-            if row["end"] == current_start:
-                prev_row = row
-                break
-        
-        if not prev_row:
-            break
-            
-        backward.insert(0, prev_row) # 古いものを前に追加
-        current = prev_row
-        count += 1
-        
-    return backward
-
-
-
-
-def build_onair_connected_rows(rows, target_time):
-    print("target_time:", target_time)
-    
-    # 過去4時間から、未来7日分（168時間）までの範囲を設定
-    past_limit = target_time - timedelta(hours=4)
-    future_limit = target_time + timedelta(hours=7 * 24)
-    
-    filtered_rows = []
-    for row in rows:
-        try:
-            start_dt = parse_dt(row["start"])
-            end_dt = parse_dt(row["end"])
-        except Exception:
-            continue
-        
-        # 指定した時間範囲（過去4時間〜未来7日）と重なっている番組をすべて抽出
-        if end_dt >= past_limit and start_dt <= future_limit:
-            filtered_rows.append(row)
-            
-    print(f"時間範囲フィルター後の件数: {len(filtered_rows)}件 (過去4時間〜未来7日分)")
-    return filtered_rows
 
 
 def build_xml(rows, path):
