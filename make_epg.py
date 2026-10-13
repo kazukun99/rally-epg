@@ -80,6 +80,10 @@ def build_programmes(ids, titles, starts, ends):
         if is_excluded_title(title):
             continue
 
+        # ▼ ここに追加するよ！
+        if title.strip() == "RallyTV":
+            continue
+
         start_dt = parse_dt(start)
         end_dt = parse_dt(end)
         duration = end_dt - start_dt
