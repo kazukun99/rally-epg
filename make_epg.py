@@ -163,32 +163,51 @@ def build_xml(rows, path):
         f.write(pretty)
 
 def main():
-    # 1. メインHTML (`page_source.html`) をパース
+    # 1. メインHTMLの処理
     print("--- メインHTMLの処理 ---")
     main_text = load_html(INPUT_MAIN_HTML)
     main_rows = build_programmes(main_text, CHANNEL_ID)
 
-    # 2. FAST用HTML (`page_source_fast.html`) をパースして、highlightだけにする！
+    # 2. FAST用HTMLの処理
     print("--- FAST用HTMLの処理 ---")
     fast_text = load_html(INPUT_FAST_HTML)
-    raw_fast_rows = build_programmes(fast_text, FAST_CHANNEL_ID)
+    fast_rows = build_programmes(fast_text, FAST_CHANNEL_ID)
     
-    # ★ ここで「highlight」が含まれるものだけに厳選する
-    fast_rows = [
-        row for row in raw_fast_rows 
-        if "highlight" in row["title"].lower()
-    ]
+    # 3. 見比べて綺麗に振り分けるロジック
+    # 全ての生データを一度まとめてから、条件に応じてチャンネルIDを再割り当てする
+    all_raw_rows = main_rows + fast_rows
+    
+    final_live_rows = []
+    final_fast_rows = []
+    
+    # 重複を防ぐためのセット（同じ番組が重複登録されないようにするため）
+    seen_keys = set()
 
-    # 3. 2つのデータを合体！
-    all_rows = main_rows + fast_rows
+    for row in all_raw_rows:
+        title_lower = row["title"].lower()
+        
+        # 重複チェック用のキー（開始時間とタイトル）
+        key = (row["start"], row["title"])
+        if key in seen_keys:
+            continue
+        seen_keys.add(key)
 
-    # 4. テキスト書き出し & 最終的なXML生成
+        # 【ユーザーさんのご意図に基づく判定ルール】
+        # "highlight" 以外が入っている方を LIVE にする
+        if "highlight" not in title_lower:
+            row["channel_id"] = CHANNEL_ID
+            final_live_rows.append(row)
+        else:
+            row["channel_id"] = FAST_CHANNEL_ID
+            final_fast_rows.append(row)
+
+    # 4. 最終的なデータを合体
+    all_rows = final_live_rows + final_fast_rows
+
+    # 5. テキスト書き出し & XML生成
     save_cleaned_txt(all_rows, OUTPUT_TXT)
     build_xml(all_rows, OUTPUT_XML)
 
-    print(f"合体後の総番組件数: {len(all_rows)} (メイン: {len(main_rows)}, FAST: {len(fast_rows)})")
+    print(f"合体後の総番組件数: {len(all_rows)} (メイン: {len(final_live_rows)}, FAST: {len(final_fast_rows)})")
     print("epg_cleaned.txt に保存しました")
     print("epg.xml に保存しました")
-
-if __name__ == "__main__":
-    main()
