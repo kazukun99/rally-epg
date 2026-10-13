@@ -187,12 +187,12 @@ def collect_backward(rows, base_row, max_count=2):
 
 def build_onair_connected_rows(rows, target_time):
     print("target_time:", target_time)
-    overlaps =[]
+    overlaps = []
     for i, row in enumerate(rows):
         if "SS13" in str(row.get("title")):
             print("SS13 row:", i, row.get("id"), row.get("title"), row.get("start"), row.get("end"))
         if "SS11" in str(row.get("title")):
-            print("SS11 row:", i, row.get("id"), row.get("title"), row.get("start"), row.get("end"))   
+            print("SS11 row:", i, row.get("id"), row.get("title"), row.get("start"), row.get("end"))    
         if parse_dt(row["start"]) <= target_time < parse_dt(row["end"]):
             overlaps.append((i, row))
 
@@ -207,14 +207,20 @@ def build_onair_connected_rows(rows, target_time):
             print("  prev:", p.get("id"), p.get("title"), p.get("start"), p.get("end"))
         for n in next_rows:
             print("  next:", n.get("id"), n.get("title"), n.get("start"), n.get("end"))
+            
+    # 1. 基準となる現在放送中の行を特定
     base_row = find_onair_row(rows, target_time)
     if not base_row:
         return []
 
+    # 2. 過去と未来の番組を取得
     backward = collect_backward(rows, base_row)
     forward = collect_forward(rows, base_row)
 
-    return backward + forward
+    # 3. 過去番組 + 現在の番組(base_row) + 未来の番組 を1本のチェーンとして結合して返す
+    connected_rows = backward + [base_row] + forward
+
+    return connected_rows
 
 
 def build_xml(rows, path):
