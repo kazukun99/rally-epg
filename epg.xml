@@ -150,13 +150,13 @@
   <programme start="20261013224650 +0000" stop="20261013234010 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Repco Rally New Zealand 2022</title>
   </programme>
-  <programme start="20261013225852 +0000" stop="20261013235053 +0000" channel="rally.tv">
+  <programme start="20261013225852 +0000" stop="20261013235052 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Estonia 2020</title>
   </programme>
   <programme start="20261013234010 +0000" stop="20261014003330 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | RallyRACC Catalunya de España 2022</title>
   </programme>
-  <programme start="20261013235053 +0000" stop="20261014004253 +0000" channel="rally.tv">
+  <programme start="20261013235052 +0000" stop="20261014004253 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Finland 2013</title>
   </programme>
   <programme start="20261014003330 +0000" stop="20261014010437 +0000" channel="rally.tv">
@@ -183,7 +183,7 @@
   <programme start="20261014025437 +0000" stop="20261014033202 +0000" channel="rally.tv">
     <title lang="ja">Episode 2: Now or Never | More Than Machine S2</title>
   </programme>
-  <programme start="20261014030402 +0000" stop="20261014031802 +0000" channel="rally.tv">
+  <programme start="20261014030401 +0000" stop="20261014031802 +0000" channel="rally.tv">
     <title lang="ja">Longest ever WRC stage | Rally Mexico 2016</title>
   </programme>
   <programme start="20261014031855 +0000" stop="20261014041055 +0000" channel="rally.tv">
@@ -399,7 +399,7 @@
   <programme start="20261015041839 +0000" stop="20261015051212 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | RallyRACC - Rally de Espana 2019</title>
   </programme>
-  <programme start="20261015045419 +0000" stop="20261015054620 +0000" channel="rally.tv">
+  <programme start="20261015045419 +0000" stop="20261015054619 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Royal Rally of Scandinavia 2023</title>
   </programme>
   <programme start="20261015051212 +0000" stop="20261015052707 +0000" channel="rally.tv">
@@ -408,7 +408,7 @@
   <programme start="20261015052707 +0000" stop="20261015062657 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Chile Bio Bío 2023</title>
   </programme>
-  <programme start="20261015054620 +0000" stop="20261015063830 +0000" channel="rally.tv">
+  <programme start="20261015054619 +0000" stop="20261015063830 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Guanajuato M√©xico 2018</title>
   </programme>
   <programme start="20261015063830 +0000" stop="20261015073030 +0000" channel="rally.tv">
@@ -591,13 +591,13 @@
   <programme start="20261016063828 +0000" stop="20261016073148 +0000" channel="rally.tv">
     <title lang="ja">SS20 Full Stage Replay | Secto Rally Finland 2026</title>
   </programme>
-  <programme start="20261016072131 +0000" stop="20261016081332 +0000" channel="rally.tv">
+  <programme start="20261016072131 +0000" stop="20261016081331 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | LOTOS Rally Poland 2015</title>
   </programme>
   <programme start="20261016073148 +0000" stop="20261016090158 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Neste Oil Rally Finland 2015</title>
   </programme>
-  <programme start="20261016081332 +0000" stop="20261016090542 +0000" channel="rally.tv">
+  <programme start="20261016081331 +0000" stop="20261016090542 +0000" channel="rally.tv">
     <title lang="ja">WRC2 Event Highlights | Safari Rally Kenya 2024</title>
   </programme>
   <programme start="20261016090158 +0000" stop="20261016095518 +0000" channel="rally.tv">
@@ -639,22 +639,22 @@
   <programme start="20261016141156 +0000" stop="20261016150527 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Secto Rally Finland 2025</title>
   </programme>
-  <programme start="20261016141804 +0000" stop="20261016151005 +0000" channel="rally.tv">
+  <programme start="20261016141804 +0000" stop="20261016151004 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Islas Canarias 2025</title>
   </programme>
   <programme start="20261016150527 +0000" stop="20261016155847 +0000" channel="rally.tv">
     <title lang="ja">SS22 Full Stage Replay | Rally Finland 2023</title>
   </programme>
-  <programme start="20261016151005 +0000" stop="20261016160220 +0000" channel="rally.tv">
+  <programme start="20261016151004 +0000" stop="20261016160220 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | ORLEN OIL 81st Rally Poland 2025</title>
   </programme>
   <programme start="20261016155847 +0000" stop="20261016165840 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Secto Rally Finland 2026</title>
   </programme>
-  <programme start="20261016160220 +0000" stop="20261016165421 +0000" channel="rally.tv">
+  <programme start="20261016160220 +0000" stop="20261016165420 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Italia Sardegna 2023</title>
   </programme>
-  <programme start="20261016165421 +0000" stop="20261016172021 +0000" channel="rally.tv">
+  <programme start="20261016165420 +0000" stop="20261016172021 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Sweden 2017</title>
   </programme>
   <programme start="20261016165840 +0000" stop="20261016175200 +0000" channel="rally.tv">
@@ -888,13 +888,13 @@
   <programme start="20261018011044 +0000" stop="20261018020414 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Delfi Rally Estonia 2026</title>
   </programme>
-  <programme start="20261018012623 +0000" stop="20261018021824 +0000" channel="rally.tv">
+  <programme start="20261018012623 +0000" stop="20261018021823 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Japan 2022</title>
   </programme>
   <programme start="20261018020414 +0000" stop="20261018025744 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Secto Rally Finland 2026</title>
   </programme>
-  <programme start="20261018021824 +0000" stop="20261018031024 +0000" channel="rally.tv">
+  <programme start="20261018021823 +0000" stop="20261018031024 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Islas Canarias 2026</title>
   </programme>
   <programme start="20261018025744 +0000" stop="20261018035116 +0000" channel="rally.tv">
@@ -933,7 +933,7 @@
   <programme start="20261018072042 +0000" stop="20261018075719 +0000" channel="rally.tv">
     <title lang="ja">SS2 Full Stage Replay | 82nd Rally Poland 2026</title>
   </programme>
-  <programme start="20261018075637 +0000" stop="20261018082238 +0000" channel="rally.tv">
+  <programme start="20261018075637 +0000" stop="20261018082237 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Chile Bio Bío 2023</title>
   </programme>
   <programme start="20261018075719 +0000" stop="20261018081212 +0000" channel="rally.tv">
@@ -942,7 +942,7 @@
   <programme start="20261018081212 +0000" stop="20261018090352 +0000" channel="rally.tv">
     <title lang="ja">Episode 1: Defend \u0026 Attack | More Than Machine S2</title>
   </programme>
-  <programme start="20261018082238 +0000" stop="20261018091448 +0000" channel="rally.tv">
+  <programme start="20261018082237 +0000" stop="20261018091448 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | FORUM8 ACI Rally Monza 2021</title>
   </programme>
   <programme start="20261018090352 +0000" stop="20261018094925 +0000" channel="rally.tv">
@@ -966,7 +966,7 @@
   <programme start="20261018103248 +0000" stop="20261018105848 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | BAUHAUS Royal Rally of Scandinavia 2025</title>
   </programme>
-  <programme start="20261018105848 +0000" stop="20261018112449 +0000" channel="rally.tv">
+  <programme start="20261018105848 +0000" stop="20261018112448 +0000" channel="rally.tv">
     <title lang="ja">WRC2 Event Highlights | Rally Chile Bio Bío 2024</title>
   </programme>
   <programme start="20261018110317 +0000" stop="20261018115031 +0000" channel="rally.tv">
@@ -975,19 +975,19 @@
   <programme start="20261018111601 +0000" stop="20261018112633 +0000" channel="rally.tv">
     <title lang="ja">Longest ever WRC stage | Rally Mexico 2016</title>
   </programme>
-  <programme start="20261018112449 +0000" stop="20261018121700 +0000" channel="rally.tv">
+  <programme start="20261018112448 +0000" stop="20261018121700 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | JDS Machinery Rali Ceredigion 2025</title>
   </programme>
   <programme start="20261018115031 +0000" stop="20261018124400 +0000" channel="rally.tv">
     <title lang="ja">SS6 Full Stage Replay | 82nd Rally Poland 2026</title>
   </programme>
-  <programme start="20261018121700 +0000" stop="20261018130908 +0000" channel="rally.tv">
+  <programme start="20261018121700 +0000" stop="20261018130907 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Barum Czech Rally Zlín 2023</title>
   </programme>
   <programme start="20261018124400 +0000" stop="20261018131248 +0000" channel="rally.tv">
     <title lang="ja">SS7 Full Stage Replay | 82nd Rally Poland 2026</title>
   </programme>
-  <programme start="20261018130908 +0000" stop="20261018140108 +0000" channel="rally.tv">
+  <programme start="20261018130907 +0000" stop="20261018140108 +0000" channel="rally.tv">
     <title lang="ja">WRC2 Event Highlights | Croatia Rally 2024</title>
   </programme>
   <programme start="20261018131248 +0000" stop="20261018134011 +0000" channel="rally.tv">
@@ -1119,7 +1119,7 @@
   <programme start="20261019041918 +0000" stop="20261019044518 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Neste Rally Finland 2017</title>
   </programme>
-  <programme start="20261019043450 +0000" stop="20261019044500 +0000" channel="rally.tv">
+  <programme start="20261019043450 +0000" stop="20261019044459 +0000" channel="rally.tv">
     <title lang="ja">Longest ever WRC stage | Rally Mexico 2016</title>
   </programme>
   <programme start="20261019043914 +0000" stop="20261019050634 +0000" channel="rally.tv">
@@ -1170,13 +1170,13 @@
   <programme start="20261019092245 +0000" stop="20261019093327 +0000" channel="rally.tv">
     <title lang="ja">SS8 Full Stage Replay | Barum Czech Rally Zlín 2026</title>
   </programme>
-  <programme start="20261019093138 +0000" stop="20261019102339 +0000" channel="rally.tv">
+  <programme start="20261019093138 +0000" stop="20261019102338 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Safari Rally Kenya 2023</title>
   </programme>
   <programme start="20261019093327 +0000" stop="20261019103332 +0000" channel="rally.tv">
     <title lang="ja">SS9 Full Stage Replay | Barum Czech Rally Zlín 2026</title>
   </programme>
-  <programme start="20261019102339 +0000" stop="20261019111600 +0000" channel="rally.tv">
+  <programme start="20261019102338 +0000" stop="20261019111600 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Islas Canarias 2023</title>
   </programme>
   <programme start="20261019103332 +0000" stop="20261019104344 +0000" channel="rally.tv">
@@ -1185,10 +1185,10 @@
   <programme start="20261019104344 +0000" stop="20261019111833 +0000" channel="rally.tv">
     <title lang="ja">SS10 Full Stage Replay | Barum Czech Rally Zlín 2026</title>
   </programme>
-  <programme start="20261019105736 +0000" stop="20261019110202 +0000" channel="rally.tv">
+  <programme start="20261019105735 +0000" stop="20261019110202 +0000" channel="rally.tv">
     <title lang="ja">Longest ever WRC stage | Rally Mexico 2016</title>
   </programme>
-  <programme start="20261019111600 +0000" stop="20261019120801 +0000" channel="rally.tv">
+  <programme start="20261019111600 +0000" stop="20261019120800 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Liepaja 2022</title>
   </programme>
   <programme start="20261019114958 +0000" stop="20261019120041 +0000" channel="rally.tv">
@@ -1197,7 +1197,7 @@
   <programme start="20261019120041 +0000" stop="20261019130044 +0000" channel="rally.tv">
     <title lang="ja">SS12 Full Stage Replay | Barum Czech Rally Zlín 2026</title>
   </programme>
-  <programme start="20261019120801 +0000" stop="20261019130001 +0000" channel="rally.tv">
+  <programme start="20261019120800 +0000" stop="20261019130001 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Italia Sardegna 2023</title>
   </programme>
   <programme start="20261019130001 +0000" stop="20261019135201 +0000" channel="rally.tv">
@@ -1335,8 +1335,11 @@
   <programme start="20261020040750 +0000" stop="20261020043349 +0000" channel="rally.tv">
     <title lang="ja">SS13 Full Stage Replay | Barum Czech Rally Zlín 2026</title>
   </programme>
-  <programme start="20261020043646 +0000" stop="20261020052847 +0000" channel="rally.tv">
+  <programme start="20261020043646 +0000" stop="20261020052846 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally di Roma Capitale 2023</title>
+  </programme>
+  <programme start="20261020052846 +0000" stop="20261020062047 +0000" channel="rally.tv">
+    <title lang="ja">Full Event Highlights | V-Híd Rally Hungary 2024</title>
   </programme>
   <programme start="20261013031330 +0000" stop="20261013040650 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Croatia Rally 2022</title>
@@ -1479,13 +1482,13 @@
   <programme start="20261013224650 +0000" stop="20261013234010 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Repco Rally New Zealand 2022</title>
   </programme>
-  <programme start="20261013225852 +0000" stop="20261013235053 +0000" channel="rally.tv.fast">
+  <programme start="20261013225852 +0000" stop="20261013235052 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Estonia 2020</title>
   </programme>
   <programme start="20261013234010 +0000" stop="20261014003330 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | RallyRACC Catalunya de España 2022</title>
   </programme>
-  <programme start="20261013235053 +0000" stop="20261014004253 +0000" channel="rally.tv.fast">
+  <programme start="20261013235052 +0000" stop="20261014004253 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Finland 2013</title>
   </programme>
   <programme start="20261014003330 +0000" stop="20261014010437 +0000" channel="rally.tv.fast">
@@ -1620,7 +1623,7 @@
   <programme start="20261015041839 +0000" stop="20261015051212 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | RallyRACC - Rally de Espana 2019</title>
   </programme>
-  <programme start="20261015045419 +0000" stop="20261015054620 +0000" channel="rally.tv.fast">
+  <programme start="20261015045419 +0000" stop="20261015054619 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Royal Rally of Scandinavia 2023</title>
   </programme>
   <programme start="20261015051212 +0000" stop="20261015052707 +0000" channel="rally.tv.fast">
@@ -1629,7 +1632,7 @@
   <programme start="20261015052707 +0000" stop="20261015062657 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Chile Bio Bío 2023</title>
   </programme>
-  <programme start="20261015054620 +0000" stop="20261015063830 +0000" channel="rally.tv.fast">
+  <programme start="20261015054619 +0000" stop="20261015063830 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Guanajuato M√©xico 2018</title>
   </programme>
   <programme start="20261015063830 +0000" stop="20261015073030 +0000" channel="rally.tv.fast">
@@ -1776,13 +1779,13 @@
   <programme start="20261016062923 +0000" stop="20261016072131 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Islas Canarias 2024</title>
   </programme>
-  <programme start="20261016072131 +0000" stop="20261016081332 +0000" channel="rally.tv.fast">
+  <programme start="20261016072131 +0000" stop="20261016081331 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | LOTOS Rally Poland 2015</title>
   </programme>
   <programme start="20261016073148 +0000" stop="20261016090158 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Neste Oil Rally Finland 2015</title>
   </programme>
-  <programme start="20261016081332 +0000" stop="20261016090542 +0000" channel="rally.tv.fast">
+  <programme start="20261016081331 +0000" stop="20261016090542 +0000" channel="rally.tv.fast">
     <title lang="ja">WRC2 Event Highlights | Safari Rally Kenya 2024</title>
   </programme>
   <programme start="20261016090158 +0000" stop="20261016095518 +0000" channel="rally.tv.fast">
@@ -1818,19 +1821,19 @@
   <programme start="20261016141156 +0000" stop="20261016150527 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Secto Rally Finland 2025</title>
   </programme>
-  <programme start="20261016141804 +0000" stop="20261016151005 +0000" channel="rally.tv.fast">
+  <programme start="20261016141804 +0000" stop="20261016151004 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Islas Canarias 2025</title>
   </programme>
-  <programme start="20261016151005 +0000" stop="20261016160220 +0000" channel="rally.tv.fast">
+  <programme start="20261016151004 +0000" stop="20261016160220 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | ORLEN OIL 81st Rally Poland 2025</title>
   </programme>
   <programme start="20261016155847 +0000" stop="20261016165840 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Secto Rally Finland 2026</title>
   </programme>
-  <programme start="20261016160220 +0000" stop="20261016165421 +0000" channel="rally.tv.fast">
+  <programme start="20261016160220 +0000" stop="20261016165420 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Italia Sardegna 2023</title>
   </programme>
-  <programme start="20261016165421 +0000" stop="20261016172021 +0000" channel="rally.tv.fast">
+  <programme start="20261016165420 +0000" stop="20261016172021 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Sweden 2017</title>
   </programme>
   <programme start="20261016165840 +0000" stop="20261016175200 +0000" channel="rally.tv.fast">
@@ -2046,13 +2049,13 @@
   <programme start="20261018011044 +0000" stop="20261018020414 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Delfi Rally Estonia 2026</title>
   </programme>
-  <programme start="20261018012623 +0000" stop="20261018021824 +0000" channel="rally.tv.fast">
+  <programme start="20261018012623 +0000" stop="20261018021823 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Japan 2022</title>
   </programme>
   <programme start="20261018020414 +0000" stop="20261018025744 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Secto Rally Finland 2026</title>
   </programme>
-  <programme start="20261018021824 +0000" stop="20261018031024 +0000" channel="rally.tv.fast">
+  <programme start="20261018021823 +0000" stop="20261018031024 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Islas Canarias 2026</title>
   </programme>
   <programme start="20261018025744 +0000" stop="20261018035116 +0000" channel="rally.tv.fast">
@@ -2085,10 +2088,10 @@
   <programme start="20261018070437 +0000" stop="20261018075637 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Coates Hire Rally Australia 2015</title>
   </programme>
-  <programme start="20261018075637 +0000" stop="20261018082238 +0000" channel="rally.tv.fast">
+  <programme start="20261018075637 +0000" stop="20261018082237 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Chile Bio Bío 2023</title>
   </programme>
-  <programme start="20261018082238 +0000" stop="20261018091448 +0000" channel="rally.tv.fast">
+  <programme start="20261018082237 +0000" stop="20261018091448 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | FORUM8 ACI Rally Monza 2021</title>
   </programme>
   <programme start="20261018091448 +0000" stop="20261018094049 +0000" channel="rally.tv.fast">
@@ -2103,16 +2106,16 @@
   <programme start="20261018103248 +0000" stop="20261018105848 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | BAUHAUS Royal Rally of Scandinavia 2025</title>
   </programme>
-  <programme start="20261018105848 +0000" stop="20261018112449 +0000" channel="rally.tv.fast">
+  <programme start="20261018105848 +0000" stop="20261018112448 +0000" channel="rally.tv.fast">
     <title lang="ja">WRC2 Event Highlights | Rally Chile Bio Bío 2024</title>
   </programme>
-  <programme start="20261018112449 +0000" stop="20261018121700 +0000" channel="rally.tv.fast">
+  <programme start="20261018112448 +0000" stop="20261018121700 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | JDS Machinery Rali Ceredigion 2025</title>
   </programme>
-  <programme start="20261018121700 +0000" stop="20261018130908 +0000" channel="rally.tv.fast">
+  <programme start="20261018121700 +0000" stop="20261018130907 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Barum Czech Rally Zlín 2023</title>
   </programme>
-  <programme start="20261018130908 +0000" stop="20261018140108 +0000" channel="rally.tv.fast">
+  <programme start="20261018130907 +0000" stop="20261018140108 +0000" channel="rally.tv.fast">
     <title lang="ja">WRC2 Event Highlights | Croatia Rally 2024</title>
   </programme>
   <programme start="20261018131248 +0000" stop="20261018134011 +0000" channel="rally.tv.fast">
@@ -2205,16 +2208,16 @@
   <programme start="20261019090538 +0000" stop="20261019093138 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Barum Czech Rally Zlin 2022</title>
   </programme>
-  <programme start="20261019093138 +0000" stop="20261019102339 +0000" channel="rally.tv.fast">
+  <programme start="20261019093138 +0000" stop="20261019102338 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Safari Rally Kenya 2023</title>
   </programme>
-  <programme start="20261019102339 +0000" stop="20261019111600 +0000" channel="rally.tv.fast">
+  <programme start="20261019102338 +0000" stop="20261019111600 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Islas Canarias 2023</title>
   </programme>
-  <programme start="20261019111600 +0000" stop="20261019120801 +0000" channel="rally.tv.fast">
+  <programme start="20261019111600 +0000" stop="20261019120800 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Liepaja 2022</title>
   </programme>
-  <programme start="20261019120801 +0000" stop="20261019130001 +0000" channel="rally.tv.fast">
+  <programme start="20261019120800 +0000" stop="20261019130001 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Italia Sardegna 2023</title>
   </programme>
   <programme start="20261019130001 +0000" stop="20261019135201 +0000" channel="rally.tv.fast">
@@ -2286,7 +2289,10 @@
   <programme start="20261020034446 +0000" stop="20261020043646 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally Sweden 2015</title>
   </programme>
-  <programme start="20261020043646 +0000" stop="20261020052847 +0000" channel="rally.tv.fast">
+  <programme start="20261020043646 +0000" stop="20261020052846 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Rally di Roma Capitale 2023</title>
+  </programme>
+  <programme start="20261020052846 +0000" stop="20261020062047 +0000" channel="rally.tv.fast">
+    <title lang="ja">Full Event Highlights | V-Híd Rally Hungary 2024</title>
   </programme>
 </tv>
