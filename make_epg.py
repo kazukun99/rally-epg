@@ -162,7 +162,7 @@ def build_epg_rows(rows, target_time):
 
 def build_xml(rows, path):
     target_time = datetime.now(timezone.utc)
-    rows = build_onair_connected_rows(rows, target_time)
+    rows = build_epg_rows(rows, target_time)
 
     tv = ET.Element("tv")
 
