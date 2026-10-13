@@ -161,11 +161,12 @@ def collect_forward(rows, base_row):
     return result
 
 
-def collect_backward(rows, base_row):
-    result = []
+def collect_backward(rows, base_row, max_count=2):
     current = base_row
-
-    while True:
+    backward = []
+    count = 0
+    
+    while count < max_count:
         current_start = current["start"]
         prev_row = None
 
@@ -173,18 +174,15 @@ def collect_backward(rows, base_row):
             if row["end"] == current_start:
                 prev_row = row
                 break
-
+        
         if not prev_row:
             break
-
-        if prev_row in result:
-            break
-
-        result.append(prev_row)
+            
+        backward.insert(0, prev_row) # 古いものを前に追加
         current = prev_row
-
-    result.reverse()
-    return result
+        count += 1
+        
+    return backward
 
 
 def build_onair_connected_rows(rows, target_time):
