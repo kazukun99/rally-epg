@@ -6,18 +6,6 @@
   <channel id="rally.tv.fast">
     <display-name>Rally.TV FAST+</display-name>
   </channel>
-  <programme start="20261013181252 +0000" stop="20261013190452 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Secto Rally Finland 2024</title>
-  </programme>
-  <programme start="20261013181252 +0000" stop="20261013190452 +0000" channel="rally.tv.fast">
-    <title lang="ja">Full Event Highlights | Secto Rally Finland 2024</title>
-  </programme>
-  <programme start="20261013182010 +0000" stop="20261013191330 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Safari Rally Kenya 2022</title>
-  </programme>
-  <programme start="20261013182010 +0000" stop="20261013191330 +0000" channel="rally.tv.fast">
-    <title lang="ja">Full Event Highlights | Safari Rally Kenya 2022</title>
-  </programme>
   <programme start="20261013190452 +0000" stop="20261013195652 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Vodafone Rally de Portugal 2019</title>
   </programme>
@@ -1749,7 +1737,7 @@
   <programme start="20261019041918 +0000" stop="20261019044517 +0000" channel="rally.tv.fast">
     <title lang="ja">Full Event Highlights | Neste Rally Finland 2017</title>
   </programme>
-  <programme start="20261019043450 +0000" stop="20261019044459 +0000" channel="rally.tv">
+  <programme start="20261019043449 +0000" stop="20261019044459 +0000" channel="rally.tv">
     <title lang="ja">Longest ever WRC stage | Rally Mexico 2016</title>
   </programme>
   <programme start="20261019043914 +0000" stop="20261019050634 +0000" channel="rally.tv">
