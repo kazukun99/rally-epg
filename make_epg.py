@@ -205,9 +205,16 @@ def main():
     all_rows = final_live_rows + final_fast_rows
 
     # 5. テキスト書き出し & XML生成
+    # 3. テキスト書き出し & 最終的なXML生成
     save_cleaned_txt(all_rows, OUTPUT_TXT)
     build_xml(all_rows, OUTPUT_XML)
 
-    print(f"合体後の総番組件数: {len(all_rows)} (メイン: {len(final_live_rows)}, FAST: {len(final_fast_rows)})")
-    print("epg_cleaned.txt に保存しました")
-    print("epg.xml に保存しました")
+    # 💡 ここで詳細な内訳を表示させる
+    print(f"--- 処理結果 ---")
+    print(f"総番組件数: {len(all_rows)}")
+    print(f"  - LIVEチャンネル: {len(final_live_rows)}件")
+    print(f"  - FASTチャンネル (highlight): {len(final_fast_rows)}件")
+    print("epg_cleaned.txt と epg.xml の更新が完了しました。")
+
+if __name__ == "__main__":
+    main()
