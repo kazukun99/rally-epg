@@ -168,10 +168,16 @@ def main():
     main_text = load_html(INPUT_MAIN_HTML)
     main_rows = build_programmes(main_text, CHANNEL_ID)
 
-    # 2. FAST用HTML (`page_source_fast.html`) をパース
+    # 2. FAST用HTML (`page_source_fast.html`) をパースして、highlightだけにする！
     print("--- FAST用HTMLの処理 ---")
     fast_text = load_html(INPUT_FAST_HTML)
-    fast_rows = build_programmes(fast_text, FAST_CHANNEL_ID)
+    raw_fast_rows = build_programmes(fast_text, FAST_CHANNEL_ID)
+    
+    # ★ ここで「highlight」が含まれるものだけに厳選する
+    fast_rows = [
+        row for row in raw_fast_rows 
+        if "highlight" in row["title"].lower()
+    ]
 
     # 3. 2つのデータを合体！
     all_rows = main_rows + fast_rows
