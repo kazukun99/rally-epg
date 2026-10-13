@@ -114,7 +114,7 @@ def iso_to_xmltv(iso_text):
     return dt_utc.strftime("%Y%m%d%H%M%S +0000")
 
 def build_epg_rows(rows, target_time):
-    # 過去の番組は一切含めず、未来・現在進行形の番組のみにする
+    start_window = target_time - timedelta(hours=4)
     end_window = target_time + timedelta(days=7)
 
     result = []
@@ -122,8 +122,7 @@ def build_epg_rows(rows, target_time):
         row_start = parse_dt(row["start"])
         row_end = parse_dt(row["end"])
 
-        # 番組の終了時間が「現在」より後（＝まだ終わっていない番組）を対象にする
-        if row_end > target_time and row_start < end_window:
+        if row_end > start_window and row_start < end_window:
             result.append(row)
 
     result.sort(key=lambda x: parse_dt(x["start"]))
