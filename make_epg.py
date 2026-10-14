@@ -129,27 +129,18 @@ def build_epg_rows(rows, target_time):
     result.sort(key=lambda x: parse_dt(x["start"]))
     return result
 
-def build_xml(main_rows, fast_rows, path):
+def build_xml(rows, path):
     target_time = datetime.now(timezone.utc)
-    
-    # それぞれの時間ウィンドウ適用
-    filtered_main = build_epg_rows(main_rows, target_time)
-    filtered_fast = build_epg_rows(fast_rows, target_time)
+    rows = build_onair_connected_rows(rows, target_time)
 
     tv = ET.Element("tv")
 
-    # メインチャンネル定義
+    # 1. 通常チャンネル (rally.tv) の出力（ここは今まで通り）
     channel = ET.SubElement(tv, "channel", id=CHANNEL_ID)
     display_name = ET.SubElement(channel, "display-name")
     display_name.text = CHANNEL_NAME
 
-    # FASTチャンネル定義
-    channel_fast = ET.SubElement(tv, "channel", id=FAST_CHANNEL_ID)
-    display_name_fast = ET.SubElement(channel_fast, "display-name")
-    display_name_fast.text = FAST_CHANNEL_NAME
-
-    # メイン番組の出力
-    for row in filtered_main:
+    for row in rows:
         programme = ET.SubElement(
             tv,
             "programme",
@@ -160,18 +151,31 @@ def build_xml(main_rows, fast_rows, path):
         title_el = ET.SubElement(programme, "title", lang="ja")
         title_el.text = row["title"]
 
-    # FAST番組の出力
-    for row in filtered_fast:
+    # 2. FAST+ チャンネル (rally.tv.fast) の出力 —— 💡ここを1本にまとめる！
+    channel_fast = ET.SubElement(tv, "channel", id=FAST_CHANNEL_ID)
+    display_name_fast = ET.SubElement(channel_fast, "display-name")
+    display_name_fast.text = FAST_CHANNEL_NAME
+
+    # 絞り込まれた rows の中から FAST のキーワードが含まれるものを抽出
+    fast_rows = [row for row in rows if FAST_INCLUDE_KEYWORD in row["title"]]
+
+    if fast_rows:
+        # 一番早いスタート時間 と 一番遅いエンド時間 を取得して1本に合体！
+        earliest_start = min(row["start"] for row in fast_rows)
+        latest_end = max(row["end"] for row in fast_rows)
+
         programme = ET.SubElement(
             tv,
             "programme",
-            start=iso_to_xmltv(row["start"]),
-            stop=iso_to_xmltv(row["end"]),
+            start=iso_to_xmltv(earliest_start),
+            stop=iso_to_xmltv(latest_end),
             channel=FAST_CHANNEL_ID
         )
         title_el = ET.SubElement(programme, "title", lang="ja")
-        title_el.text = row["title"]
+        title_el.text = "Rally Italia Sardegna - Event Highlights (FAST+)"
+        print(f"FAST+ チャンネルを1本にまとめました: {earliest_start} 〜 {latest_end}")
 
+    # XMLファイルとして保存
     rough = ET.tostring(tv, encoding="utf-8")
     pretty = minidom.parseString(rough).toprettyxml(indent="  ", encoding="utf-8")
 
