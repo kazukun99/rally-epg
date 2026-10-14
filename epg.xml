@@ -366,7 +366,7 @@
   <channel id="rally.tv.fast">
     <display-name>Rally.TV FAST+</display-name>
   </channel>
-  <programme start="20261012082830 +0000" stop="20261015003839 +0000" channel="rally.tv.fast">
-    <title lang="ja">Rally Italia Sardegna - Event Highlights (FAST+)</title>
+  <programme start="20261011042033 +0000" stop="20261015003839 +0000" channel="rally.tv.fast">
+    <title lang="ja">Rally.TV FAST Channel (24/7 Highlights)</title>
   </programme>
 </tv>
