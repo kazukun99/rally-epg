@@ -129,7 +129,7 @@ def build_epg_rows(rows, target_time):
     result.sort(key=lambda x: parse_dt(x["start"]))
     return result
 
-def build_xml(rows, path):
+def build_xml(main_rows, fast_rows, path):
     target_time = datetime.now(timezone.utc)
     rows = build_onair_connected_rows(rows, target_time)
 
