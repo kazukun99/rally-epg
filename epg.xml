@@ -3,9 +3,6 @@
   <channel id="rally.tv">
     <display-name>Rally.TV</display-name>
   </channel>
-  <programme start="20261011031108 +0000" stop="20261011042033 +0000" channel="rally.tv">
-    <title lang="ja">Rally TV</title>
-  </programme>
   <programme start="20261011042033 +0000" stop="20261011044802 +0000" channel="rally.tv">
     <title lang="ja">Friday Highlights | Rally Italia Sardegna 2026</title>
   </programme>
@@ -369,7 +366,7 @@
   <channel id="rally.tv.fast">
     <display-name>Rally.TV FAST+</display-name>
   </channel>
-  <programme start="20261011031108 +0000" stop="20261015003839 +0000" channel="rally.tv.fast">
+  <programme start="20261011042033 +0000" stop="20261015003839 +0000" channel="rally.tv.fast">
     <title lang="ja">Rally.TV FAST Channel (24/7 Highlights)</title>
   </programme>
 </tv>
