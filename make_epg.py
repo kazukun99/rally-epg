@@ -4,7 +4,7 @@ from datetime import datetime, timezone, timedelta
 import xml.etree.ElementTree as ET
 from xml.dom import minidom
 
-# 入力・出力ファイルの設定
+# 入力・出力ファイルの設定（2ファイル分離に対応）
 INPUT_MAIN_HTML = "page_source.html"
 INPUT_FAST_HTML = "page_source_fast.html"
 OUTPUT_XML = "epg.xml"
@@ -15,6 +15,7 @@ CHANNEL_NAME = "Rally.TV"
 
 FAST_CHANNEL_ID = "rally.tv.fast"
 FAST_CHANNEL_NAME = "Rally.TV FAST+"
+FAST_INCLUDE_KEYWORD = "Event Highlights"
 
 EXCLUDE_KEYWORDS = [
     "GTM",
@@ -31,7 +32,7 @@ def load_html(path):
         with open(path, "r", encoding="utf-8") as f:
             return f.read()
     except FileNotFoundError:
-        print(f"警告: {path} が見つかりませんでした。空のデータを返します。")
+        print(f"警告: {path} が見つかりませんでした。空データを返します。")
         return ""
 
 def extract_values(text):
@@ -43,10 +44,13 @@ def extract_values(text):
     print(f"抽出数 -> id: {len(ids)}, title: {len(titles)}, start: {len(starts)}, end: {len(ends)}")
     return ids, titles, starts, ends
 
+# タイムゾーン定義（UTC）
+UTC = timezone.utc
+
 def parse_dt(text):
     dt = datetime.fromisoformat(text.replace("Z", "+00:00"))
     if dt.tzinfo is None:
-        dt = dt.replace(tzinfo=timezone.utc)
+        dt = dt.replace(tzinfo=UTC)
     return dt
 
 def build_programmes(text, target_channel_id):
@@ -59,10 +63,6 @@ def build_programmes(text, target_channel_id):
         title = titles[i].strip()
         start = starts[i].strip()
         end = ends[i].strip()
-        
-        # 💡 ここに生データのチェック用 print を入れてみる！
-        if "New Zealand" in title or "Belgium" in title or "Greece" in title:
-            print(f"【生データ確認】タイトル: {title} | 開始: {start}")
 
         if not item_id or not title or not start or not end:
             continue
@@ -77,6 +77,7 @@ def build_programmes(text, target_channel_id):
         end_dt = parse_dt(end)
         duration = end_dt - start_dt
 
+        # 48時間以上の異常な長さをスキップ（ゴミデータ対策）
         if duration >= timedelta(days=2):
             print(f"skip long LIVE item: {title} {start} - {end}")
             continue
@@ -128,9 +129,12 @@ def build_epg_rows(rows, target_time):
     result.sort(key=lambda x: parse_dt(x["start"]))
     return result
 
-def build_xml(rows, path):
+def build_xml(main_rows, fast_rows, path):
     target_time = datetime.now(timezone.utc)
-    rows = build_epg_rows(rows, target_time)
+    
+    # それぞれの時間ウィンドウ適用
+    filtered_main = build_epg_rows(main_rows, target_time)
+    filtered_fast = build_epg_rows(fast_rows, target_time)
 
     tv = ET.Element("tv")
 
@@ -144,14 +148,26 @@ def build_xml(rows, path):
     display_name_fast = ET.SubElement(channel_fast, "display-name")
     display_name_fast.text = FAST_CHANNEL_NAME
 
-    # 各行の channel_id に応じて programme タグを生成
-    for row in rows:
+    # メイン番組の出力
+    for row in filtered_main:
         programme = ET.SubElement(
             tv,
             "programme",
             start=iso_to_xmltv(row["start"]),
             stop=iso_to_xmltv(row["end"]),
-            channel=row["channel_id"]  # ちゃんとそれぞれのチャンネルに割り振られる！
+            channel=CHANNEL_ID
+        )
+        title_el = ET.SubElement(programme, "title", lang="ja")
+        title_el.text = row["title"]
+
+    # FAST番組の出力
+    for row in filtered_fast:
+        programme = ET.SubElement(
+            tv,
+            "programme",
+            start=iso_to_xmltv(row["start"]),
+            stop=iso_to_xmltv(row["end"]),
+            channel=FAST_CHANNEL_ID
         )
         title_el = ET.SubElement(programme, "title", lang="ja")
         title_el.text = row["title"]
@@ -163,30 +179,29 @@ def build_xml(rows, path):
         f.write(pretty)
 
 def main():
-    # 1. メインHTML (`page_source.html`) をパース
+    # 1. メインHTMLの処理
     print("--- メインHTMLの処理 ---")
     main_text = load_html(INPUT_MAIN_HTML)
     main_rows = build_programmes(main_text, CHANNEL_ID)
 
-    # 2. FAST用HTML (`page_source_fast.html`) をパースして、highlightだけにする！
+    # 2. FAST用HTMLの処理（ハイライトキーワードで厳選）
     print("--- FAST用HTMLの処理 ---")
     fast_text = load_html(INPUT_FAST_HTML)
     raw_fast_rows = build_programmes(fast_text, FAST_CHANNEL_ID)
     
-    # ★ ここで「highlight」が含まれるものだけに厳選する
     fast_rows = [
         row for row in raw_fast_rows 
-        if "highlight" in row["title"].lower()
+        if FAST_INCLUDE_KEYWORD.lower() in row["title"].lower()
     ]
 
-    # 3. 2つのデータを合体！
+    # 3. テキスト保存用には合体したものを出力
     all_rows = main_rows + fast_rows
-
-    # 4. テキスト書き出し & 最終的なXML生成
     save_cleaned_txt(all_rows, OUTPUT_TXT)
-    build_xml(all_rows, OUTPUT_XML)
 
-    print(f"合体後の総番組件数: {len(all_rows)} (メイン: {len(main_rows)}, FAST: {len(fast_rows)})")
+    # 4. XML構築（メインとFASTを分離して綺麗に書き出し）
+    build_xml(main_rows, fast_rows, OUTPUT_XML)
+
+    print(f"処理完了 -> メイン件数: {len(main_rows)}, FAST件数: {len(fast_rows)}")
     print("epg_cleaned.txt に保存しました")
     print("epg.xml に保存しました")
 
