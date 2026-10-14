@@ -192,16 +192,15 @@ def build_xml(main_rows, fast_rows_input, path):
         title_el = ET.SubElement(programme, "title", lang="ja")
         title_el.text = row["title"]
 
-    # 2. FAST+ チャンネル (rally.tv.fast) の出力（1本に統合）
+    # 2. FAST+ チャンネル (rally.tv.fast) の出力（安定した固定帯に変更♡）
     channel_fast = ET.SubElement(tv, "channel", id=FAST_CHANNEL_ID)
     display_name_fast = ET.SubElement(channel_fast, "display-name")
     display_name_fast.text = FAST_CHANNEL_NAME
 
-    fast_rows = [row for row in rows if FAST_INCLUDE_KEYWORD in row["title"]]
-
-    if fast_rows:
-        earliest_start = min(row["start"] for row in fast_rows)
-        latest_end = max(row["end"] for row in fast_rows)
+    # LIVE側と同じ時間軸（最初から最後まで）の帯を、優しく綺麗にFAST+用として生成します♡
+    if rows:
+        earliest_start = rows[0]["start"]
+        latest_end = rows[-1]["end"]
 
         programme = ET.SubElement(
             tv,
@@ -211,8 +210,8 @@ def build_xml(main_rows, fast_rows_input, path):
             channel=FAST_CHANNEL_ID
         )
         title_el = ET.SubElement(programme, "title", lang="ja")
-        title_el.text = "Rally Italia Sardegna - Event Highlights (FAST+)"
-        print(f"FAST+ チャンネルを1本にまとめました: {earliest_start} 〜 {latest_end}")
+        title_el.text = "Rally.TV FAST Channel (24/7 Highlights)"
+        print(f"FAST+ チャンネルの固定帯を作りました: {earliest_start} 〜 {latest_end}")
 
     rough = ET.tostring(tv, encoding="utf-8")
     pretty = minidom.parseString(rough).toprettyxml(indent="  ", encoding="utf-8")
