@@ -63,7 +63,7 @@ def build_programmes(ids, titles, starts, ends):
             continue
 
         if is_excluded_title(title):
-            continue
+            title = "Rally Intermission"
 
         start_dt = parse_dt(start)
         end_dt = parse_dt(end)
