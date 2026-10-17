@@ -4,7 +4,7 @@
     <display-name>Rally.TV</display-name>
   </channel>
   <programme start="20261014003330 +0000" stop="20261014010437 +0000" channel="rally.tv">
-    <title lang="ja">Rally Intermission</title>
+    <title lang="ja">Rally TV</title>
   </programme>
   <programme start="20261014010437 +0000" stop="20261014013326 +0000" channel="rally.tv">
     <title lang="ja">Episode 2: Redemption | More Than Machine</title>
