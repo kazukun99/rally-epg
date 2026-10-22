@@ -3,89 +3,8 @@
   <channel id="rally.tv">
     <display-name>Rally.TV</display-name>
   </channel>
-  <programme start="20261021072200 +0000" stop="20261021082152 +0000" channel="rally.tv">
-    <title lang="ja">Rally Intermission</title>
-  </programme>
-  <programme start="20261021082152 +0000" stop="20261021091512 +0000" channel="rally.tv">
-    <title lang="ja">Best of Rally Portugal</title>
-  </programme>
-  <programme start="20261021091512 +0000" stop="20261021100832 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally de Portugal 2015</title>
-  </programme>
-  <programme start="20261021100832 +0000" stop="20261021110152 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Vodafone Rally de Portugal 2019</title>
-  </programme>
-  <programme start="20261021110152 +0000" stop="20261021123146 +0000" channel="rally.tv">
-    <title lang="ja">SS23 Full Stage Replay | Vodafone Rally de Portugal 2026</title>
-  </programme>
-  <programme start="20261021123146 +0000" stop="20261021132516 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Vodafone Rally de Portugal 2026</title>
-  </programme>
-  <programme start="20261021132516 +0000" stop="20261021141846 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Vodafone Rally de Portugal 2025</title>
-  </programme>
-  <programme start="20261021141846 +0000" stop="20261021153024 +0000" channel="rally.tv">
-    <title lang="ja">SS04 Full Stage Replay | Rally Portugal 2023</title>
-  </programme>
-  <programme start="20261021153024 +0000" stop="20261021163017 +0000" channel="rally.tv">
-    <title lang="ja">SS19 Full Stage Replay | Vodafone Rally de Portugal 2026</title>
-  </programme>
-  <programme start="20261021163017 +0000" stop="20261021173009 +0000" channel="rally.tv">
-    <title lang="ja">SS17 Full Stage Replay | Vodafone Rally de Portugal 2023</title>
-  </programme>
-  <programme start="20261021173009 +0000" stop="20261021182329 +0000" channel="rally.tv">
-    <title lang="ja">Best of Rally Portugal</title>
-  </programme>
-  <programme start="20261021182329 +0000" stop="20261021191649 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally de Portugal 2015</title>
-  </programme>
-  <programme start="20261021191649 +0000" stop="20261021201009 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Vodafone Rally de Portugal 2019</title>
-  </programme>
-  <programme start="20261021201009 +0000" stop="20261021214003 +0000" channel="rally.tv">
-    <title lang="ja">SS23 Full Stage Replay | Vodafone Rally de Portugal 2026</title>
-  </programme>
-  <programme start="20261021214003 +0000" stop="20261021223333 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Vodafone Rally de Portugal 2026</title>
-  </programme>
-  <programme start="20261021223333 +0000" stop="20261021232703 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Vodafone Rally de Portugal 2025</title>
-  </programme>
-  <programme start="20261021232703 +0000" stop="20261022003841 +0000" channel="rally.tv">
-    <title lang="ja">SS04 Full Stage Replay | Rally Portugal 2023</title>
-  </programme>
-  <programme start="20261022003841 +0000" stop="20261022013834 +0000" channel="rally.tv">
-    <title lang="ja">SS19 Full Stage Replay | Vodafone Rally de Portugal 2026</title>
-  </programme>
-  <programme start="20261022013834 +0000" stop="20261022023826 +0000" channel="rally.tv">
-    <title lang="ja">SS17 Full Stage Replay | Vodafone Rally de Portugal 2023</title>
-  </programme>
-  <programme start="20261022023826 +0000" stop="20261022033146 +0000" channel="rally.tv">
-    <title lang="ja">Best of Rally Portugal</title>
-  </programme>
-  <programme start="20261022033146 +0000" stop="20261022042506 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally de Portugal 2015</title>
-  </programme>
-  <programme start="20261022042506 +0000" stop="20261022051826 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Vodafone Rally de Portugal 2019</title>
-  </programme>
-  <programme start="20261022051826 +0000" stop="20261022064820 +0000" channel="rally.tv">
-    <title lang="ja">SS23 Full Stage Replay | Vodafone Rally de Portugal 2026</title>
-  </programme>
-  <programme start="20261022064820 +0000" stop="20261022074151 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Vodafone Rally de Portugal 2026</title>
-  </programme>
-  <programme start="20261022074151 +0000" stop="20261022083521 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Vodafone Rally de Portugal 2025</title>
-  </programme>
-  <programme start="20261022083521 +0000" stop="20261022094659 +0000" channel="rally.tv">
-    <title lang="ja">SS04 Full Stage Replay | Rally Portugal 2023</title>
-  </programme>
-  <programme start="20261022094659 +0000" stop="20261022104651 +0000" channel="rally.tv">
-    <title lang="ja">SS19 Full Stage Replay | Vodafone Rally de Portugal 2026</title>
-  </programme>
   <programme start="20261022104651 +0000" stop="20261022114902 +0000" channel="rally.tv">
-    <title lang="ja">SS13 Full Stage Replay  | 43rd Andalusia Rally-Sierra Morena 2026</title>
+    <title lang="ja">Rally Intermission</title>
   </programme>
   <programme start="20261022114902 +0000" stop="20261022121623 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | 43rd Andalusia Rally-Sierra Morena 2026</title>
@@ -204,38 +123,47 @@
   <programme start="20261023114933 +0000" stop="20261023123233 +0000" channel="rally.tv">
     <title lang="ja">SS6 Full Stage Replay | Bauhaus Royal Rally of Scandinavia 2026</title>
   </programme>
-  <programme start="20261023123233 +0000" stop="20261023125953 +0000" channel="rally.tv">
+  <programme start="20261023123233 +0000" stop="20261023125848 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Bauhaus Royal Rally of Scandinavia 2026</title>
   </programme>
-  <programme start="20261023125953 +0000" stop="20261023135600 +0000" channel="rally.tv">
+  <programme start="20261023125848 +0000" stop="20261023135455 +0000" channel="rally.tv">
     <title lang="ja">SS11 Full Stage Replay | Rally di Roma Capitale 2026</title>
   </programme>
-  <programme start="20261023135600 +0000" stop="20261023142321 +0000" channel="rally.tv">
+  <programme start="20261023135455 +0000" stop="20261023142216 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally di Roma Capitale 2026</title>
   </programme>
-  <programme start="20261023142321 +0000" stop="20261023152338 +0000" channel="rally.tv">
+  <programme start="20261023142216 +0000" stop="20261023143740 +0000" channel="rally.tv">
+    <title lang="ja">Classic Stage Highlights: SS02 2020 | Delfi Rally Estonia 2025</title>
+  </programme>
+  <programme start="20261023143740 +0000" stop="20261023153757 +0000" channel="rally.tv">
     <title lang="ja">SS15 Full Stage Replay | 82nd Rally Poland 2026</title>
   </programme>
-  <programme start="20261023152338 +0000" stop="20261023155100 +0000" channel="rally.tv">
+  <programme start="20261023153757 +0000" stop="20261023160520 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | 82nd Rally Poland 2026</title>
   </programme>
-  <programme start="20261023155100 +0000" stop="20261023162402 +0000" channel="rally.tv">
+  <programme start="20261023160520 +0000" stop="20261023163822 +0000" channel="rally.tv">
     <title lang="ja">SS9 Full Stage Replay | Barum Czech Rally ZlÃ­n 2026</title>
   </programme>
-  <programme start="20261023162402 +0000" stop="20261023165122 +0000" channel="rally.tv">
+  <programme start="20261023163822 +0000" stop="20261023170541 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Barum Czech Rally ZlÃ­n 2026</title>
   </programme>
-  <programme start="20261023165122 +0000" stop="20261023174501 +0000" channel="rally.tv">
+  <programme start="20261023170541 +0000" stop="20261023180001 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Italia Sardegna 2026</title>
   </programme>
-  <programme start="20261023174501 +0000" stop="20261023180501 +0000" channel="rally.tv">
+  <programme start="20261023180001 +0000" stop="20261023182001 +0000" channel="rally.tv">
     <title lang="ja">LIVE: Welcome to ERC Rally Six Cities North of Portugal 2026 | ERC Rally Six Cities North of Portugal 2026</title>
   </programme>
-  <programme start="20261023180501 +0000" stop="20261023190516 +0000" channel="rally.tv">
+  <programme start="20261023182001 +0000" stop="20261023192516 +0000" channel="rally.tv">
     <title lang="ja">LIVE: SS1 Monte Penha / GuimarÃ£es | ERC Rally Six Cities North of Portugal 2026</title>
   </programme>
-  <programme start="20261023190516 +0000" stop="20261023200635 +0000" channel="rally.tv">
-    <title lang="ja">SS16 Full Stage Replay | JDS Machinery Rali Ceredigion 2026</title>
+  <programme start="20261023192516 +0000" stop="20261023195236 +0000" channel="rally.tv">
+    <title lang="ja">Full Event Highlights | Barum Czech Rally ZlÃ­n 2026</title>
+  </programme>
+  <programme start="20261023195236 +0000" stop="20261023200159 +0000" channel="rally.tv">
+    <title lang="ja">Top 10 Moments of the Season | ERC 2025</title>
+  </programme>
+  <programme start="20261023200159 +0000" stop="20261023200635 +0000" channel="rally.tv">
+    <title lang="ja">Top 5 Moments | Croatia Rally 2025</title>
   </programme>
   <programme start="20261023200635 +0000" stop="20261023203355 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | JDS Machinery Rali Ceredigion 2026</title>
@@ -606,7 +534,7 @@
   <channel id="rally.tv.fast">
     <display-name>Rally.TV FAST+</display-name>
   </channel>
-  <programme start="20261021072200 +0000" stop="20261028011854 +0000" channel="rally.tv.fast">
+  <programme start="20261022104651 +0000" stop="20261028011854 +0000" channel="rally.tv.fast">
     <title lang="ja">Rally.TV FAST Channel (24/7 Highlights)</title>
   </programme>
 </tv>
