@@ -175,6 +175,9 @@ def build_xml(main_rows, fast_rows_input, path):
     rows = build_onair_connected_rows(main_rows, target_time)
 
     tv = ET.Element("tv")
+    
+    # ★ここを追加：毎時間の現在時刻をコメントとして入れることで、毎回ファイルに変化を出す
+    tv.append(ET.Comment(f" Generated at {target_time.isoformat()} "))
 
     # 1. 通常チャンネル (rally.tv) の出力
     channel = ET.SubElement(tv, "channel", id=CHANNEL_ID)
