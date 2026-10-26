@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tv>
-  <!-- Generated at 2026-10-26T01:58:30.106891+00:00 -->
+  <!-- Generated at 2026-10-26T02:52:32.413611+00:00 -->
   <channel id="rally.tv">
     <display-name>Rally.TV</display-name>
   </channel>
   <programme start="20261022104651 +0000" stop="20261022114902 +0000" channel="rally.tv">
-    <title lang="ja">Rally TV</title>
+    <title lang="ja">Rally Intermission</title>
   </programme>
   <programme start="20261022114902 +0000" stop="20261022121623 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | 43rd Andalusia Rally-Sierra Morena 2026</title>
