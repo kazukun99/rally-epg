@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tv>
-  <!-- Generated at 2026-10-29T14:18:28.857059+00:00 -->
+  <!-- Generated at 2026-10-29T16:08:25.195872+00:00 -->
   <channel id="rally.tv">
     <display-name>Rally.TV</display-name>
   </channel>
   <programme start="20261025060846 +0000" stop="20261025070206 +0000" channel="rally.tv">
-    <title lang="ja">Rally Intermission</title>
+    <title lang="ja">Rally TV</title>
   </programme>
   <programme start="20261025070206 +0000" stop="20261025075539 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rallye Monte-Carlo 2026</title>
