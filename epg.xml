@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tv>
-  <!-- Generated at 2026-10-30T20:55:47.626978+00:00 -->
+  <!-- Generated at 2026-10-30T21:52:34.100763+00:00 -->
   <channel id="rally.tv">
     <display-name>Rally.TV</display-name>
   </channel>
   <programme start="20261029002042 +0000" stop="20261029003611 +0000" channel="rally.tv">
-    <title lang="ja">Rally TV</title>
+    <title lang="ja">Rally Intermission</title>
   </programme>
   <programme start="20261029003611 +0000" stop="20261029020459 +0000" channel="rally.tv">
     <title lang="ja">SS19 Full Replay | Safari Rally Kenya 2023</title>
