@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tv>
-  <!-- Generated at 2026-11-07T02:52:44.637666+00:00 -->
+  <!-- Generated at 2026-11-07T10:21:09.940566+00:00 -->
   <channel id="rally.tv">
     <display-name>Rally.TV</display-name>
   </channel>
   <programme start="20261103003555 +0000" stop="20261103012846 +0000" channel="rally.tv">
-    <title lang="ja">Rally Intermission</title>
+    <title lang="ja">Rally TV</title>
   </programme>
   <programme start="20261103012846 +0000" stop="20261103022110 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Saudi Arabia 2025</title>
