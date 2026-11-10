@@ -1,44 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tv>
-  <!-- Generated at 2026-11-10T09:57:03.770528+00:00 -->
+  <!-- Generated at 2026-11-10T17:54:56.917067+00:00 -->
   <channel id="rally.tv">
     <display-name>Rally.TV</display-name>
   </channel>
-  <programme start="20261103051226 +0000" stop="20261103060520 +0000" channel="rally.tv">
-    <title lang="ja">Rally Intermission</title>
-  </programme>
-  <programme start="20261103060520 +0000" stop="20261103070231 +0000" channel="rally.tv">
-    <title lang="ja">SS5 Full Stage Replay | Rally Saudi Arabia 2025</title>
-  </programme>
-  <programme start="20261103070231 +0000" stop="20261103075447 +0000" channel="rally.tv">
-    <title lang="ja">Greatest moments â Argentina</title>
-  </programme>
-  <programme start="20261103075447 +0000" stop="20261103085534 +0000" channel="rally.tv">
-    <title lang="ja">SS6 Full Stage Replay | Rally Saudi Arabia 2025</title>
-  </programme>
-  <programme start="20261103085534 +0000" stop="20261103094933 +0000" channel="rally.tv">
-    <title lang="ja">SS7 Full Stage Replay | Rally Saudi Arabia 2025</title>
-  </programme>
-  <programme start="20261103094933 +0000" stop="20261103103646 +0000" channel="rally.tv">
-    <title lang="ja">SS8 Full Stage Replay | Rally Saudi Arabia 2025</title>
-  </programme>
-  <programme start="20261103103646 +0000" stop="20261103110301 +0000" channel="rally.tv">
-    <title lang="ja">The Greatest Stages of the WRC</title>
-  </programme>
-  <programme start="20261103110301 +0000" stop="20261103115525 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally Saudi Arabia 2025</title>
-  </programme>
-  <programme start="20261103115525 +0000" stop="20261103124427 +0000" channel="rally.tv">
-    <title lang="ja">SS9 Full Stage Replay | Rally Saudi Arabia 2025</title>
-  </programme>
-  <programme start="20261103124427 +0000" stop="20261103134226 +0000" channel="rally.tv">
-    <title lang="ja">SS10 Full Stage Replay | Rally Saudi Arabia 2025</title>
-  </programme>
-  <programme start="20261103134226 +0000" stop="20261103144122 +0000" channel="rally.tv">
-    <title lang="ja">SS11 Full Stage Replay | Rally Saudi Arabia 2025</title>
-  </programme>
   <programme start="20261103144122 +0000" stop="20261103152944 +0000" channel="rally.tv">
-    <title lang="ja">SS12 Full Stage Replay | Rally Saudi Arabia 2025</title>
+    <title lang="ja">Rally Intermission</title>
   </programme>
   <programme start="20261103152944 +0000" stop="20261103162954 +0000" channel="rally.tv">
     <title lang="ja">SS13 Full Stage Replay | Rally Saudi Arabia 2025</title>
@@ -829,7 +796,7 @@
   <channel id="rally.tv.fast">
     <display-name>Rally.TV FAST+</display-name>
   </channel>
-  <programme start="20261103051226 +0000" stop="20261112055418 +0000" channel="rally.tv.fast">
+  <programme start="20261103144122 +0000" stop="20261112055418 +0000" channel="rally.tv.fast">
     <title lang="ja">Rally.TV FAST Channel (24/7 Highlights)</title>
   </programme>
 </tv>
