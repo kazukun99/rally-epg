@@ -1,35 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tv>
-  <!-- Generated at 2026-11-10T17:54:56.917067+00:00 -->
+  <!-- Generated at 2026-11-10T23:27:32.981878+00:00 -->
   <channel id="rally.tv">
     <display-name>Rally.TV</display-name>
   </channel>
-  <programme start="20261103144122 +0000" stop="20261103152944 +0000" channel="rally.tv">
-    <title lang="ja">Rally Intermission</title>
-  </programme>
-  <programme start="20261103152944 +0000" stop="20261103162954 +0000" channel="rally.tv">
-    <title lang="ja">SS13 Full Stage Replay | Rally Saudi Arabia 2025</title>
-  </programme>
-  <programme start="20261103162954 +0000" stop="20261103172210 +0000" channel="rally.tv">
-    <title lang="ja">Greatest moments â Kenya</title>
-  </programme>
-  <programme start="20261103172210 +0000" stop="20261103182115 +0000" channel="rally.tv">
-    <title lang="ja">SS14 Full Stage Replay | Rally Saudi Arabia 2025</title>
-  </programme>
-  <programme start="20261103182115 +0000" stop="20261103192012 +0000" channel="rally.tv">
-    <title lang="ja">SS15 Full Stage Replay | Rally Saudi Arabia 2025</title>
-  </programme>
-  <programme start="20261103192012 +0000" stop="20261103201729 +0000" channel="rally.tv">
-    <title lang="ja">SS16 Full Stage Replay | Rally Saudi Arabia 2025</title>
-  </programme>
-  <programme start="20261103201729 +0000" stop="20261103214953 +0000" channel="rally.tv">
-    <title lang="ja">SS17 Full Stage Replay | Rally Saudi Arabia 2025</title>
-  </programme>
-  <programme start="20261103214953 +0000" stop="20261103224217 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally Saudi Arabia 2025</title>
-  </programme>
   <programme start="20261103224217 +0000" stop="20261103233432 +0000" channel="rally.tv">
-    <title lang="ja">WRC Greatest Drivers - Tommi MÃ¤kinen</title>
+    <title lang="ja">Rally Intermission</title>
   </programme>
   <programme start="20261103233432 +0000" stop="20261104002647 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rallye Monte-Carlo 2022</title>
@@ -796,7 +772,7 @@
   <channel id="rally.tv.fast">
     <display-name>Rally.TV FAST+</display-name>
   </channel>
-  <programme start="20261103144122 +0000" stop="20261112055418 +0000" channel="rally.tv.fast">
+  <programme start="20261103224217 +0000" stop="20261112055418 +0000" channel="rally.tv.fast">
     <title lang="ja">Rally.TV FAST Channel (24/7 Highlights)</title>
   </programme>
 </tv>
