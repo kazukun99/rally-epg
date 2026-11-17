@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tv>
-  <!-- Generated at 2026-11-16T22:12:53.242052+00:00 -->
+  <!-- Generated at 2026-11-17T04:33:33.366953+00:00 -->
   <channel id="rally.tv">
     <display-name>Rally.TV</display-name>
   </channel>
-  <programme start="20261110024940 +0000" stop="20261110033235 +0000" channel="rally.tv">
-    <title lang="ja">Rally Intermission</title>
-  </programme>
   <programme start="20261110033235 +0000" stop="20261110042500 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally del Paraguay 2025</title>
+    <title lang="ja">Rally Intermission</title>
   </programme>
   <programme start="20261110042500 +0000" stop="20261110051724 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Chile Bio BÃ­o 2024</title>
@@ -802,7 +799,7 @@
   <channel id="rally.tv.fast">
     <display-name>Rally.TV FAST+</display-name>
   </channel>
-  <programme start="20261110024940 +0000" stop="20261119145722 +0000" channel="rally.tv.fast">
+  <programme start="20261110033235 +0000" stop="20261119145722 +0000" channel="rally.tv.fast">
     <title lang="ja">Rally.TV FAST Channel (24/7 Highlights)</title>
   </programme>
 </tv>
