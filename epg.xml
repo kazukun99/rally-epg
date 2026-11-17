@@ -1,41 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tv>
-  <!-- Generated at 2026-11-17T04:33:33.366953+00:00 -->
+  <!-- Generated at 2026-11-17T14:32:00.734739+00:00 -->
   <channel id="rally.tv">
     <display-name>Rally.TV</display-name>
   </channel>
-  <programme start="20261110033235 +0000" stop="20261110042500 +0000" channel="rally.tv">
-    <title lang="ja">Rally Intermission</title>
-  </programme>
-  <programme start="20261110042500 +0000" stop="20261110051724 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally Chile Bio BÃ­o 2024</title>
-  </programme>
-  <programme start="20261110051724 +0000" stop="20261110060939 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | XION Rally Argentina 2015</title>
-  </programme>
-  <programme start="20261110060939 +0000" stop="20261110070154 +0000" channel="rally.tv">
-    <title lang="ja">WRC History: Best of Rally Argentina</title>
-  </programme>
-  <programme start="20261110070154 +0000" stop="20261110075422 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally Chile Bio BÃ­o 2023</title>
-  </programme>
-  <programme start="20261110075422 +0000" stop="20261110084637 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | XION Rally Argentina 2019</title>
-  </programme>
-  <programme start="20261110084637 +0000" stop="20261110093903 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | ueno Rally del Paraguay 2026</title>
-  </programme>
-  <programme start="20261110093903 +0000" stop="20261110103128 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally Chile BiobÃ­o 2026</title>
-  </programme>
-  <programme start="20261110103128 +0000" stop="20261110112301 +0000" channel="rally.tv">
-    <title lang="ja">SS13 Full Stage Replay | Rally Chile Bio BÃ­o 2025</title>
-  </programme>
-  <programme start="20261110112301 +0000" stop="20261110120556 +0000" channel="rally.tv">
-    <title lang="ja">SS12 Full Replay | Guanajuato Rally MÃ©xico 2023</title>
-  </programme>
   <programme start="20261110120556 +0000" stop="20261110125821 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally del Paraguay 2025</title>
+    <title lang="ja">Rally Intermission</title>
   </programme>
   <programme start="20261110125821 +0000" stop="20261110135045 +0000" channel="rally.tv">
     <title lang="ja">Full Event Highlights | Rally Chile Bio BÃ­o 2024</title>
@@ -799,7 +769,7 @@
   <channel id="rally.tv.fast">
     <display-name>Rally.TV FAST+</display-name>
   </channel>
-  <programme start="20261110033235 +0000" stop="20261119145722 +0000" channel="rally.tv.fast">
+  <programme start="20261110120556 +0000" stop="20261119145722 +0000" channel="rally.tv.fast">
     <title lang="ja">Rally.TV FAST Channel (24/7 Highlights)</title>
   </programme>
 </tv>
