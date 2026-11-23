@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tv>
-  <!-- Generated at 2026-11-23T02:51:37.605040+00:00 -->
+  <!-- Generated at 2026-11-23T12:58:52.874675+00:00 -->
   <channel id="rally.tv">
     <display-name>Rally.TV</display-name>
   </channel>
-  <programme start="20261116010507 +0000" stop="20261116023345 +0000" channel="rally.tv">
-    <title lang="ja">Rally Intermission</title>
-  </programme>
-  <programme start="20261116023345 +0000" stop="20261116033227 +0000" channel="rally.tv">
-    <title lang="ja">SS12 Full Stage Replay | Rally Chile Bio BÃ­o 2024</title>
-  </programme>
-  <programme start="20261116033227 +0000" stop="20261116042452 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally Chile Bio BÃ­o 2024</title>
-  </programme>
-  <programme start="20261116042452 +0000" stop="20261116055339 +0000" channel="rally.tv">
-    <title lang="ja">SS16 Full Stage Replay | Rally Chile BiobÃ­o 2026</title>
-  </programme>
-  <programme start="20261116055339 +0000" stop="20261116064604 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally Chile BiobÃ­o 2026</title>
-  </programme>
-  <programme start="20261116064604 +0000" stop="20261116081457 +0000" channel="rally.tv">
-    <title lang="ja">SS16 Full Stage Replay | Rally Chile Bio BÃ­o 2023</title>
-  </programme>
   <programme start="20261116081457 +0000" stop="20261116090723 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally Chile Bio BÃ­o 2025</title>
+    <title lang="ja">Rally Intermission</title>
   </programme>
   <programme start="20261116090723 +0000" stop="20261116100608 +0000" channel="rally.tv">
     <title lang="ja">SS12 Full Stage Replay | Rally Chile BiobÃ­o 2026</title>
@@ -1054,7 +1036,7 @@
   <channel id="rally.tv.fast">
     <display-name>Rally.TV FAST+</display-name>
   </channel>
-  <programme start="20261116010507 +0000" stop="20261126233336 +0000" channel="rally.tv.fast">
+  <programme start="20261116081457 +0000" stop="20261126233336 +0000" channel="rally.tv.fast">
     <title lang="ja">Rally.TV FAST Channel (24/7 Highlights)</title>
   </programme>
 </tv>
