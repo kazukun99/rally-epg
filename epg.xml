@@ -1,47 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <tv>
-  <!-- Generated at 2026-11-24T00:57:50.688857+00:00 -->
+  <!-- Generated at 2026-11-24T11:01:32.476174+00:00 -->
   <channel id="rally.tv">
     <display-name>Rally.TV</display-name>
   </channel>
-  <programme start="20261116212204 +0000" stop="20261116222049 +0000" channel="rally.tv">
-    <title lang="ja">Rally Intermission</title>
-  </programme>
-  <programme start="20261116222049 +0000" stop="20261116234946 +0000" channel="rally.tv">
-    <title lang="ja">SS16 Full Stage Replay | Rally Chile Bio BÃ­o 2025</title>
-  </programme>
-  <programme start="20261116234946 +0000" stop="20261117004214 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally Chile Bio BÃ­o 2023</title>
-  </programme>
-  <programme start="20261117004214 +0000" stop="20261117013451 +0000" channel="rally.tv">
-    <title lang="ja">Full Event Highlights | Rally Islas Canarias 2025</title>
-  </programme>
-  <programme start="20261117013451 +0000" stop="20261117023302 +0000" channel="rally.tv">
-    <title lang="ja">SS1 Full Stage Replay | Rally Islas Canarias 2025</title>
-  </programme>
-  <programme start="20261117023302 +0000" stop="20261117032426 +0000" channel="rally.tv">
-    <title lang="ja">SS2 Full Stage Replay | Rally Islas Canarias 2025</title>
-  </programme>
-  <programme start="20261117032426 +0000" stop="20261117041719 +0000" channel="rally.tv">
-    <title lang="ja">SS3 Full Stage Replay | Rally Islas Canarias 2025</title>
-  </programme>
-  <programme start="20261117041719 +0000" stop="20261117050935 +0000" channel="rally.tv">
-    <title lang="ja">Greatest moments â Kenya</title>
-  </programme>
-  <programme start="20261117050935 +0000" stop="20261117060657 +0000" channel="rally.tv">
-    <title lang="ja">SS4 Full Stage Replay | Rally Islas Canarias 2025</title>
-  </programme>
-  <programme start="20261117060657 +0000" stop="20261117065948 +0000" channel="rally.tv">
-    <title lang="ja">WRC Greatest Drivers - Carlos Sainz</title>
-  </programme>
-  <programme start="20261117065948 +0000" stop="20261117075105 +0000" channel="rally.tv">
-    <title lang="ja">SS5 Full Stage Replay | Rally Islas Canarias 2025</title>
-  </programme>
-  <programme start="20261117075105 +0000" stop="20261117084337 +0000" channel="rally.tv">
-    <title lang="ja">SS6 Full Stage Replay | Rally Islas Canarias 2025</title>
-  </programme>
   <programme start="20261117084337 +0000" stop="20261117094224 +0000" channel="rally.tv">
-    <title lang="ja">SS7 Full Stage Replay | Rally Islas Canarias 2025</title>
+    <title lang="ja">Rally Intermission</title>
   </programme>
   <programme start="20261117094224 +0000" stop="20261117103639 +0000" channel="rally.tv">
     <title lang="ja">SS8 Full Stage Replay | Rally Islas Canarias 2025</title>
@@ -1000,7 +964,7 @@
   <channel id="rally.tv.fast">
     <display-name>Rally.TV FAST+</display-name>
   </channel>
-  <programme start="20261116212204 +0000" stop="20261126233336 +0000" channel="rally.tv.fast">
+  <programme start="20261117084337 +0000" stop="20261126233336 +0000" channel="rally.tv.fast">
     <title lang="ja">Rally.TV FAST Channel (24/7 Highlights)</title>
   </programme>
 </tv>
